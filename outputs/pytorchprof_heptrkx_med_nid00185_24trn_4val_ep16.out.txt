@@ -1,0 +1,601 @@
+`bottleneck` is a tool that can be used as an initial step for debugging
+bottlenecks in your program.
+
+It summarizes runs of your script with the Python profiler and PyTorch's
+autograd profiler. Because your script will be profiled, please ensure that it
+exits in a finite amount of time.
+
+For more complicated uses of the profilers, please see
+https://docs.python.org/3/library/profile.html and
+https://pytorch.org/docs/master/autograd.html#profiler for more information.
+Running environment analysis...
+Running your script with cProfile
+2019-01-30 09:13:18,388 INFO Initialized rank 0 out of 1
+2019-01-30 09:13:18,388 INFO Configuration: {'output_dir': '${SCRATCH}/heptrkx/results/gnnsegclf_med_000', 'trainer': {'name': 'gnn', 'real_weight': 2.5, 'fake_weight': 0.625}, 'data': {'name': 'hitgraphs', 'input_dir': '${SCRATCH}/heptrkx/hitgraphs_med_000', 'n_train': 24, 'n_valid': 4, 'batch_size': 1, 'n_workers': 4}, 'model': {'name': 'gnn_segment_classifier', 'input_dim': 3, 'hidden_dim': 64, 'n_iters': 4, 'loss_func': 'binary_cross_entropy', 'optimizer': 'Adam', 'learning_rate': 0.001}, 'training': {'n_epochs': 16}}
+2019-01-30 09:13:18,388 INFO Saving job outputs to /global/cscratch1/sd/esaliya/heptrkx/results/gnnsegclf_med_000
+2019-01-30 09:13:18,404 INFO Loaded 24 training samples
+2019-01-30 09:13:18,404 INFO Loaded 4 validation samples
+2019-01-30 09:13:18,555 INFO Model: 
+DistributedDataParallelCPU(
+  (module): GNNSegmentClassifier(
+    (input_network): Sequential(
+      (0): Linear(in_features=3, out_features=64, bias=True)
+      (1): Tanh()
+    )
+    (edge_network): EdgeNetwork(
+      (network): Sequential(
+        (0): Linear(in_features=134, out_features=64, bias=True)
+        (1): Tanh()
+        (2): Linear(in_features=64, out_features=1, bias=True)
+        (3): Sigmoid()
+      )
+    )
+    (node_network): NodeNetwork(
+      (network): Sequential(
+        (0): Linear(in_features=201, out_features=64, bias=True)
+        (1): Tanh()
+        (2): Linear(in_features=64, out_features=64, bias=True)
+        (3): Tanh()
+      )
+    )
+  )
+)
+Parameters: 26049
+2019-01-30 09:13:18,555 INFO Epoch 0
+2019-01-30 09:13:22,064 DEBUG   batch 0, loss 0.540380
+2019-01-30 09:13:24,130 DEBUG   batch 1, loss 0.507746
+2019-01-30 09:13:28,722 DEBUG   batch 2, loss 0.429809
+2019-01-30 09:13:33,134 DEBUG   batch 3, loss 0.416700
+2019-01-30 09:13:39,059 DEBUG   batch 4, loss 0.384485
+2019-01-30 09:13:47,313 DEBUG   batch 5, loss 0.355418
+2019-01-30 09:13:51,562 DEBUG   batch 6, loss 0.421213
+2019-01-30 09:13:56,532 DEBUG   batch 7, loss 0.406975
+2019-01-30 09:14:01,164 DEBUG   batch 8, loss 0.417410
+2019-01-30 09:14:03,189 DEBUG   batch 9, loss 0.501705
+2019-01-30 09:14:05,372 DEBUG   batch 10, loss 0.471564
+2019-01-30 09:14:09,743 DEBUG   batch 11, loss 0.402166
+2019-01-30 09:14:12,154 DEBUG   batch 12, loss 0.454703
+2019-01-30 09:14:19,335 DEBUG   batch 13, loss 0.380790
+2019-01-30 09:14:26,752 DEBUG   batch 14, loss 0.382316
+2019-01-30 09:14:28,427 DEBUG   batch 15, loss 0.488842
+2019-01-30 09:14:33,733 DEBUG   batch 16, loss 0.391871
+2019-01-30 09:14:38,230 DEBUG   batch 17, loss 0.397573
+2019-01-30 09:14:40,039 DEBUG   batch 18, loss 0.475977
+2019-01-30 09:14:42,553 DEBUG   batch 19, loss 0.438854
+2019-01-30 09:14:45,211 DEBUG   batch 20, loss 0.442031
+2019-01-30 09:14:46,114 DEBUG   batch 21, loss 0.543988
+2019-01-30 09:14:48,854 DEBUG   batch 22, loss 0.440017
+2019-01-30 09:14:51,048 DEBUG   batch 23, loss 0.454832
+2019-01-30 09:14:51,058 DEBUG  Processed 24 batches
+2019-01-30 09:14:51,059 INFO   Training loss: 0.439
+2019-01-30 09:14:52,297 DEBUG  batch 0
+2019-01-30 09:14:54,232 DEBUG  batch 1
+2019-01-30 09:14:56,102 DEBUG  batch 2
+2019-01-30 09:14:56,766 DEBUG  batch 3
+2019-01-30 09:14:57,878 DEBUG  Processed 4 samples in 4 batches
+2019-01-30 09:14:57,878 INFO   Validation loss: 0.390 acc: 0.924
+2019-01-30 09:14:57,948 INFO Epoch 1
+2019-01-30 09:15:01,443 DEBUG   batch 0, loss 0.439700
+2019-01-30 09:15:03,496 DEBUG   batch 1, loss 0.460274
+2019-01-30 09:15:08,116 DEBUG   batch 2, loss 0.398471
+2019-01-30 09:15:12,542 DEBUG   batch 3, loss 0.407382
+2019-01-30 09:15:18,443 DEBUG   batch 4, loss 0.381816
+2019-01-30 09:15:26,778 DEBUG   batch 5, loss 0.354652
+2019-01-30 09:15:31,028 DEBUG   batch 6, loss 0.407686
+2019-01-30 09:15:36,002 DEBUG   batch 7, loss 0.392951
+2019-01-30 09:15:40,685 DEBUG   batch 8, loss 0.402325
+2019-01-30 09:15:42,675 DEBUG   batch 9, loss 0.477464
+2019-01-30 09:15:44,869 DEBUG   batch 10, loss 0.461122
+2019-01-30 09:15:49,239 DEBUG   batch 11, loss 0.399383
+2019-01-30 09:15:51,673 DEBUG   batch 12, loss 0.453321
+2019-01-30 09:15:58,853 DEBUG   batch 13, loss 0.366569
+2019-01-30 09:16:06,276 DEBUG   batch 14, loss 0.366043
+2019-01-30 09:16:07,950 DEBUG   batch 15, loss 0.485740
+2019-01-30 09:16:13,263 DEBUG   batch 16, loss 0.382931
+2019-01-30 09:16:17,759 DEBUG   batch 17, loss 0.393934
+2019-01-30 09:16:19,611 DEBUG   batch 18, loss 0.473756
+2019-01-30 09:16:22,189 DEBUG   batch 19, loss 0.436856
+2019-01-30 09:16:24,963 DEBUG   batch 20, loss 0.439583
+2019-01-30 09:16:25,933 DEBUG   batch 21, loss 0.533547
+2019-01-30 09:16:28,674 DEBUG   batch 22, loss 0.437741
+2019-01-30 09:16:30,875 DEBUG   batch 23, loss 0.452350
+2019-01-30 09:16:30,895 DEBUG  Processed 24 batches
+2019-01-30 09:16:30,895 INFO   Training loss: 0.425
+2019-01-30 09:16:32,069 DEBUG  batch 0
+2019-01-30 09:16:33,999 DEBUG  batch 1
+2019-01-30 09:16:35,840 DEBUG  batch 2
+2019-01-30 09:16:36,379 DEBUG  batch 3
+2019-01-30 09:16:37,491 DEBUG  Processed 4 samples in 4 batches
+2019-01-30 09:16:37,491 INFO   Validation loss: 0.394 acc: 0.923
+2019-01-30 09:16:37,555 INFO Epoch 2
+2019-01-30 09:16:40,942 DEBUG   batch 0, loss 0.437484
+2019-01-30 09:16:42,996 DEBUG   batch 1, loss 0.457992
+2019-01-30 09:16:47,609 DEBUG   batch 2, loss 0.391778
+2019-01-30 09:16:51,983 DEBUG   batch 3, loss 0.402286
+2019-01-30 09:16:57,884 DEBUG   batch 4, loss 0.377766
+2019-01-30 09:17:06,154 DEBUG   batch 5, loss 0.352124
+2019-01-30 09:17:10,436 DEBUG   batch 6, loss 0.407833
+2019-01-30 09:17:15,422 DEBUG   batch 7, loss 0.392862
+2019-01-30 09:17:20,115 DEBUG   batch 8, loss 0.401404
+2019-01-30 09:17:22,154 DEBUG   batch 9, loss 0.471130
+2019-01-30 09:17:24,349 DEBUG   batch 10, loss 0.455267
+2019-01-30 09:17:28,722 DEBUG   batch 11, loss 0.398006
+2019-01-30 09:17:31,155 DEBUG   batch 12, loss 0.450351
+2019-01-30 09:17:38,340 DEBUG   batch 13, loss 0.364960
+2019-01-30 09:17:45,772 DEBUG   batch 14, loss 0.360905
+2019-01-30 09:17:47,472 DEBUG   batch 15, loss 0.485759
+2019-01-30 09:17:52,801 DEBUG   batch 16, loss 0.381466
+2019-01-30 09:17:57,299 DEBUG   batch 17, loss 0.393004
+2019-01-30 09:17:59,160 DEBUG   batch 18, loss 0.471832
+2019-01-30 09:18:01,738 DEBUG   batch 19, loss 0.436062
+2019-01-30 09:18:04,511 DEBUG   batch 20, loss 0.439399
+2019-01-30 09:18:05,475 DEBUG   batch 21, loss 0.531162
+2019-01-30 09:18:08,214 DEBUG   batch 22, loss 0.437507
+2019-01-30 09:18:10,409 DEBUG   batch 23, loss 0.450927
+2019-01-30 09:18:10,440 DEBUG  Processed 24 batches
+2019-01-30 09:18:10,440 INFO   Training loss: 0.423
+2019-01-30 09:18:11,643 DEBUG  batch 0
+2019-01-30 09:18:13,604 DEBUG  batch 1
+2019-01-30 09:18:15,456 DEBUG  batch 2
+2019-01-30 09:18:16,001 DEBUG  batch 3
+2019-01-30 09:18:16,875 DEBUG  Processed 4 samples in 4 batches
+2019-01-30 09:18:16,875 INFO   Validation loss: 0.381 acc: 0.922
+2019-01-30 09:18:16,942 INFO Epoch 3
+2019-01-30 09:18:20,412 DEBUG   batch 0, loss 0.435900
+2019-01-30 09:18:22,408 DEBUG   batch 1, loss 0.456891
+2019-01-30 09:18:26,983 DEBUG   batch 2, loss 0.389625
+2019-01-30 09:18:31,410 DEBUG   batch 3, loss 0.401476
+2019-01-30 09:18:37,307 DEBUG   batch 4, loss 0.376733
+2019-01-30 09:18:45,629 DEBUG   batch 5, loss 0.351350
+2019-01-30 09:18:49,935 DEBUG   batch 6, loss 0.406416
+2019-01-30 09:18:54,968 DEBUG   batch 7, loss 0.391475
+2019-01-30 09:18:59,671 DEBUG   batch 8, loss 0.399871
+2019-01-30 09:19:01,649 DEBUG   batch 9, loss 0.467379
+2019-01-30 09:19:03,830 DEBUG   batch 10, loss 0.453210
+2019-01-30 09:19:08,274 DEBUG   batch 11, loss 0.397542
+2019-01-30 09:19:10,686 DEBUG   batch 12, loss 0.449687
+2019-01-30 09:19:17,890 DEBUG   batch 13, loss 0.363264
+2019-01-30 09:19:25,350 DEBUG   batch 14, loss 0.357552
+2019-01-30 09:19:27,036 DEBUG   batch 15, loss 0.483731
+2019-01-30 09:19:32,344 DEBUG   batch 16, loss 0.380135
+2019-01-30 09:19:36,834 DEBUG   batch 17, loss 0.392440
+2019-01-30 09:19:38,693 DEBUG   batch 18, loss 0.470146
+2019-01-30 09:19:41,288 DEBUG   batch 19, loss 0.434876
+2019-01-30 09:19:44,122 DEBUG   batch 20, loss 0.437683
+2019-01-30 09:19:45,064 DEBUG   batch 21, loss 0.528998
+2019-01-30 09:19:47,795 DEBUG   batch 22, loss 0.436802
+2019-01-30 09:19:50,017 DEBUG   batch 23, loss 0.450213
+2019-01-30 09:19:50,060 DEBUG  Processed 24 batches
+2019-01-30 09:19:50,061 INFO   Training loss: 0.421
+2019-01-30 09:19:51,237 DEBUG  batch 0
+2019-01-30 09:19:53,187 DEBUG  batch 1
+2019-01-30 09:19:55,044 DEBUG  batch 2
+2019-01-30 09:19:55,586 DEBUG  batch 3
+2019-01-30 09:19:56,699 DEBUG  Processed 4 samples in 4 batches
+2019-01-30 09:19:56,700 INFO   Validation loss: 0.373 acc: 0.920
+2019-01-30 09:19:56,778 INFO Epoch 4
+2019-01-30 09:20:00,168 DEBUG   batch 0, loss 0.435034
+2019-01-30 09:20:02,234 DEBUG   batch 1, loss 0.455554
+2019-01-30 09:20:06,866 DEBUG   batch 2, loss 0.388025
+2019-01-30 09:20:11,304 DEBUG   batch 3, loss 0.400511
+2019-01-30 09:20:17,276 DEBUG   batch 4, loss 0.376106
+2019-01-30 09:20:25,621 DEBUG   batch 5, loss 0.350532
+2019-01-30 09:20:29,959 DEBUG   batch 6, loss 0.405883
+2019-01-30 09:20:35,017 DEBUG   batch 7, loss 0.390785
+2019-01-30 09:20:39,620 DEBUG   batch 8, loss 0.399018
+2019-01-30 09:20:41,653 DEBUG   batch 9, loss 0.464928
+2019-01-30 09:20:43,865 DEBUG   batch 10, loss 0.451577
+2019-01-30 09:20:48,302 DEBUG   batch 11, loss 0.397161
+2019-01-30 09:20:50,716 DEBUG   batch 12, loss 0.449376
+2019-01-30 09:20:57,898 DEBUG   batch 13, loss 0.362297
+2019-01-30 09:21:05,353 DEBUG   batch 14, loss 0.355560
+2019-01-30 09:21:07,052 DEBUG   batch 15, loss 0.482153
+2019-01-30 09:21:12,372 DEBUG   batch 16, loss 0.379210
+2019-01-30 09:21:16,881 DEBUG   batch 17, loss 0.392139
+2019-01-30 09:21:18,689 DEBUG   batch 18, loss 0.469475
+2019-01-30 09:21:21,301 DEBUG   batch 19, loss 0.434216
+2019-01-30 09:21:24,080 DEBUG   batch 20, loss 0.436632
+2019-01-30 09:21:25,072 DEBUG   batch 21, loss 0.527985
+2019-01-30 09:21:27,818 DEBUG   batch 22, loss 0.436084
+2019-01-30 09:21:30,051 DEBUG   batch 23, loss 0.449646
+2019-01-30 09:21:30,075 DEBUG  Processed 24 batches
+2019-01-30 09:21:30,075 INFO   Training loss: 0.420
+2019-01-30 09:21:31,219 DEBUG  batch 0
+2019-01-30 09:21:33,134 DEBUG  batch 1
+2019-01-30 09:21:34,968 DEBUG  batch 2
+2019-01-30 09:21:35,503 DEBUG  batch 3
+2019-01-30 09:21:36,613 DEBUG  Processed 4 samples in 4 batches
+2019-01-30 09:21:36,613 INFO   Validation loss: 0.368 acc: 0.919
+2019-01-30 09:21:36,678 INFO Epoch 5
+2019-01-30 09:21:40,116 DEBUG   batch 0, loss 0.434534
+2019-01-30 09:21:42,181 DEBUG   batch 1, loss 0.454762
+2019-01-30 09:21:46,803 DEBUG   batch 2, loss 0.387377
+2019-01-30 09:21:51,243 DEBUG   batch 3, loss 0.400046
+2019-01-30 09:21:57,175 DEBUG   batch 4, loss 0.375811
+2019-01-30 09:22:05,445 DEBUG   batch 5, loss 0.350272
+2019-01-30 09:22:09,773 DEBUG   batch 6, loss 0.405448
+2019-01-30 09:22:14,771 DEBUG   batch 7, loss 0.390230
+2019-01-30 09:22:19,488 DEBUG   batch 8, loss 0.398588
+2019-01-30 09:22:21,451 DEBUG   batch 9, loss 0.464252
+2019-01-30 09:22:23,602 DEBUG   batch 10, loss 0.451150
+2019-01-30 09:22:28,037 DEBUG   batch 11, loss 0.396863
+2019-01-30 09:22:30,478 DEBUG   batch 12, loss 0.448796
+2019-01-30 09:22:37,596 DEBUG   batch 13, loss 0.361930
+2019-01-30 09:22:45,046 DEBUG   batch 14, loss 0.355095
+2019-01-30 09:22:46,707 DEBUG   batch 15, loss 0.481529
+2019-01-30 09:22:52,010 DEBUG   batch 16, loss 0.378969
+2019-01-30 09:22:56,439 DEBUG   batch 17, loss 0.391717
+2019-01-30 09:22:58,255 DEBUG   batch 18, loss 0.468811
+2019-01-30 09:23:00,802 DEBUG   batch 19, loss 0.433788
+2019-01-30 09:23:03,579 DEBUG   batch 20, loss 0.436263
+2019-01-30 09:23:04,470 DEBUG   batch 21, loss 0.527014
+2019-01-30 09:23:07,214 DEBUG   batch 22, loss 0.435766
+2019-01-30 09:23:09,445 DEBUG   batch 23, loss 0.449266
+2019-01-30 09:23:09,475 DEBUG  Processed 24 batches
+2019-01-30 09:23:09,475 INFO   Training loss: 0.420
+2019-01-30 09:23:10,666 DEBUG  batch 0
+2019-01-30 09:23:12,231 DEBUG  batch 1
+2019-01-30 09:23:13,627 DEBUG  batch 2
+2019-01-30 09:23:13,975 DEBUG  batch 3
+2019-01-30 09:23:14,806 DEBUG  Processed 4 samples in 4 batches
+2019-01-30 09:23:14,806 INFO   Validation loss: 0.365 acc: 0.918
+2019-01-30 09:23:14,899 INFO Epoch 6
+2019-01-30 09:23:18,301 DEBUG   batch 0, loss 0.434221
+2019-01-30 09:23:20,357 DEBUG   batch 1, loss 0.454314
+2019-01-30 09:23:24,972 DEBUG   batch 2, loss 0.387236
+2019-01-30 09:23:29,420 DEBUG   batch 3, loss 0.399815
+2019-01-30 09:23:35,294 DEBUG   batch 4, loss 0.375634
+2019-01-30 09:23:43,520 DEBUG   batch 5, loss 0.350052
+2019-01-30 09:23:47,794 DEBUG   batch 6, loss 0.405287
+2019-01-30 09:23:52,784 DEBUG   batch 7, loss 0.390103
+2019-01-30 09:23:57,483 DEBUG   batch 8, loss 0.398396
+2019-01-30 09:23:59,460 DEBUG   batch 9, loss 0.463820
+2019-01-30 09:24:01,683 DEBUG   batch 10, loss 0.450858
+2019-01-30 09:24:06,037 DEBUG   batch 11, loss 0.396674
+2019-01-30 09:24:08,467 DEBUG   batch 12, loss 0.448446
+2019-01-30 09:24:15,550 DEBUG   batch 13, loss 0.361736
+2019-01-30 09:24:22,983 DEBUG   batch 14, loss 0.354843
+2019-01-30 09:24:24,628 DEBUG   batch 15, loss 0.481092
+2019-01-30 09:24:29,965 DEBUG   batch 16, loss 0.378750
+2019-01-30 09:24:34,416 DEBUG   batch 17, loss 0.391428
+2019-01-30 09:24:36,228 DEBUG   batch 18, loss 0.468412
+2019-01-30 09:24:38,772 DEBUG   batch 19, loss 0.433538
+2019-01-30 09:24:41,495 DEBUG   batch 20, loss 0.435973
+2019-01-30 09:24:42,413 DEBUG   batch 21, loss 0.526316
+2019-01-30 09:24:45,149 DEBUG   batch 22, loss 0.435554
+2019-01-30 09:24:47,335 DEBUG   batch 23, loss 0.448932
+2019-01-30 09:24:47,363 DEBUG  Processed 24 batches
+2019-01-30 09:24:47,363 INFO   Training loss: 0.420
+2019-01-30 09:24:48,481 DEBUG  batch 0
+2019-01-30 09:24:50,438 DEBUG  batch 1
+2019-01-30 09:24:52,293 DEBUG  batch 2
+2019-01-30 09:24:52,959 DEBUG  batch 3
+2019-01-30 09:24:54,074 DEBUG  Processed 4 samples in 4 batches
+2019-01-30 09:24:54,074 INFO   Validation loss: 0.368 acc: 0.917
+2019-01-30 09:24:54,138 INFO Epoch 7
+2019-01-30 09:24:57,506 DEBUG   batch 0, loss 0.433901
+2019-01-30 09:24:59,566 DEBUG   batch 1, loss 0.453984
+2019-01-30 09:25:04,183 DEBUG   batch 2, loss 0.387114
+2019-01-30 09:25:08,560 DEBUG   batch 3, loss 0.399535
+2019-01-30 09:25:14,514 DEBUG   batch 4, loss 0.375509
+2019-01-30 09:25:22,770 DEBUG   batch 5, loss 0.349936
+2019-01-30 09:25:27,030 DEBUG   batch 6, loss 0.405143
+2019-01-30 09:25:32,019 DEBUG   batch 7, loss 0.389847
+2019-01-30 09:25:36,736 DEBUG   batch 8, loss 0.398323
+2019-01-30 09:25:38,744 DEBUG   batch 9, loss 0.463483
+2019-01-30 09:25:40,932 DEBUG   batch 10, loss 0.450562
+2019-01-30 09:25:45,390 DEBUG   batch 11, loss 0.396465
+2019-01-30 09:25:47,821 DEBUG   batch 12, loss 0.448199
+2019-01-30 09:25:54,905 DEBUG   batch 13, loss 0.361584
+2019-01-30 09:26:02,365 DEBUG   batch 14, loss 0.354716
+2019-01-30 09:26:04,047 DEBUG   batch 15, loss 0.480692
+2019-01-30 09:26:09,363 DEBUG   batch 16, loss 0.378573
+2019-01-30 09:26:13,814 DEBUG   batch 17, loss 0.391217
+2019-01-30 09:26:15,631 DEBUG   batch 18, loss 0.468040
+2019-01-30 09:26:18,181 DEBUG   batch 19, loss 0.433257
+2019-01-30 09:26:20,901 DEBUG   batch 20, loss 0.435717
+2019-01-30 09:26:21,815 DEBUG   batch 21, loss 0.525824
+2019-01-30 09:26:24,566 DEBUG   batch 22, loss 0.435171
+2019-01-30 09:26:26,799 DEBUG   batch 23, loss 0.448566
+2019-01-30 09:26:26,824 DEBUG  Processed 24 batches
+2019-01-30 09:26:26,825 INFO   Training loss: 0.419
+2019-01-30 09:26:27,944 DEBUG  batch 0
+2019-01-30 09:26:29,861 DEBUG  batch 1
+2019-01-30 09:26:31,693 DEBUG  batch 2
+2019-01-30 09:26:32,351 DEBUG  batch 3
+2019-01-30 09:26:33,437 DEBUG  Processed 4 samples in 4 batches
+2019-01-30 09:26:33,437 INFO   Validation loss: 0.366 acc: 0.917
+2019-01-30 09:26:33,502 INFO Epoch 8
+2019-01-30 09:26:36,879 DEBUG   batch 0, loss 0.433644
+2019-01-30 09:26:38,934 DEBUG   batch 1, loss 0.453600
+2019-01-30 09:26:43,568 DEBUG   batch 2, loss 0.386956
+2019-01-30 09:26:48,001 DEBUG   batch 3, loss 0.399311
+2019-01-30 09:26:53,930 DEBUG   batch 4, loss 0.375361
+2019-01-30 09:27:02,189 DEBUG   batch 5, loss 0.349781
+2019-01-30 09:27:06,437 DEBUG   batch 6, loss 0.404922
+2019-01-30 09:27:11,422 DEBUG   batch 7, loss 0.389670
+2019-01-30 09:27:16,144 DEBUG   batch 8, loss 0.398184
+2019-01-30 09:27:18,141 DEBUG   batch 9, loss 0.463048
+2019-01-30 09:27:20,297 DEBUG   batch 10, loss 0.450340
+2019-01-30 09:27:24,660 DEBUG   batch 11, loss 0.396318
+2019-01-30 09:27:27,091 DEBUG   batch 12, loss 0.447829
+2019-01-30 09:27:34,305 DEBUG   batch 13, loss 0.361456
+2019-01-30 09:27:41,725 DEBUG   batch 14, loss 0.354544
+2019-01-30 09:27:43,388 DEBUG   batch 15, loss 0.480307
+2019-01-30 09:27:48,708 DEBUG   batch 16, loss 0.378395
+2019-01-30 09:27:53,224 DEBUG   batch 17, loss 0.391012
+2019-01-30 09:27:55,089 DEBUG   batch 18, loss 0.467700
+2019-01-30 09:27:57,667 DEBUG   batch 19, loss 0.433032
+2019-01-30 09:28:00,448 DEBUG   batch 20, loss 0.435479
+2019-01-30 09:28:01,423 DEBUG   batch 21, loss 0.525362
+2019-01-30 09:28:04,170 DEBUG   batch 22, loss 0.434969
+2019-01-30 09:28:06,374 DEBUG   batch 23, loss 0.448298
+2019-01-30 09:28:06,400 DEBUG  Processed 24 batches
+2019-01-30 09:28:06,400 INFO   Training loss: 0.419
+2019-01-30 09:28:07,544 DEBUG  batch 0
+2019-01-30 09:28:09,501 DEBUG  batch 1
+2019-01-30 09:28:11,349 DEBUG  batch 2
+2019-01-30 09:28:12,021 DEBUG  batch 3
+2019-01-30 09:28:13,134 DEBUG  Processed 4 samples in 4 batches
+2019-01-30 09:28:13,134 INFO   Validation loss: 0.368 acc: 0.916
+2019-01-30 09:28:13,225 INFO Epoch 9
+2019-01-30 09:28:16,627 DEBUG   batch 0, loss 0.433381
+2019-01-30 09:28:18,676 DEBUG   batch 1, loss 0.453373
+2019-01-30 09:28:23,217 DEBUG   batch 2, loss 0.386780
+2019-01-30 09:28:27,655 DEBUG   batch 3, loss 0.399227
+2019-01-30 09:28:33,477 DEBUG   batch 4, loss 0.375266
+2019-01-30 09:28:41,700 DEBUG   batch 5, loss 0.349647
+2019-01-30 09:28:45,948 DEBUG   batch 6, loss 0.404708
+2019-01-30 09:28:51,020 DEBUG   batch 7, loss 0.389531
+2019-01-30 09:28:55,665 DEBUG   batch 8, loss 0.397916
+2019-01-30 09:28:57,623 DEBUG   batch 9, loss 0.462754
+2019-01-30 09:28:59,811 DEBUG   batch 10, loss 0.450063
+2019-01-30 09:29:04,238 DEBUG   batch 11, loss 0.396179
+2019-01-30 09:29:06,602 DEBUG   batch 12, loss 0.447539
+2019-01-30 09:29:13,756 DEBUG   batch 13, loss 0.361321
+2019-01-30 09:29:21,177 DEBUG   batch 14, loss 0.354360
+2019-01-30 09:29:22,829 DEBUG   batch 15, loss 0.479961
+2019-01-30 09:29:28,059 DEBUG   batch 16, loss 0.378273
+2019-01-30 09:29:32,518 DEBUG   batch 17, loss 0.390844
+2019-01-30 09:29:34,383 DEBUG   batch 18, loss 0.467422
+2019-01-30 09:29:36,992 DEBUG   batch 19, loss 0.432856
+2019-01-30 09:29:39,716 DEBUG   batch 20, loss 0.435256
+2019-01-30 09:29:40,675 DEBUG   batch 21, loss 0.525028
+2019-01-30 09:29:43,424 DEBUG   batch 22, loss 0.434799
+2019-01-30 09:29:45,656 DEBUG   batch 23, loss 0.448044
+2019-01-30 09:29:45,684 DEBUG  Processed 24 batches
+2019-01-30 09:29:45,684 INFO   Training loss: 0.419
+2019-01-30 09:29:47,159 DEBUG  batch 0
+2019-01-30 09:29:49,120 DEBUG  batch 1
+2019-01-30 09:29:50,975 DEBUG  batch 2
+2019-01-30 09:29:51,646 DEBUG  batch 3
+2019-01-30 09:29:52,752 DEBUG  Processed 4 samples in 4 batches
+2019-01-30 09:29:52,752 INFO   Validation loss: 0.371 acc: 0.916
+2019-01-30 09:29:52,871 INFO Epoch 10
+2019-01-30 09:29:56,325 DEBUG   batch 0, loss 0.433207
+2019-01-30 09:29:58,376 DEBUG   batch 1, loss 0.453093
+2019-01-30 09:30:02,991 DEBUG   batch 2, loss 0.386618
+2019-01-30 09:30:07,369 DEBUG   batch 3, loss 0.399175
+2019-01-30 09:30:13,220 DEBUG   batch 4, loss 0.375118
+2019-01-30 09:30:21,454 DEBUG   batch 5, loss 0.349654
+2019-01-30 09:30:25,782 DEBUG   batch 6, loss 0.404569
+2019-01-30 09:30:30,800 DEBUG   batch 7, loss 0.389458
+2019-01-30 09:30:35,493 DEBUG   batch 8, loss 0.397794
+2019-01-30 09:30:37,471 DEBUG   batch 9, loss 0.462463
+2019-01-30 09:30:39,691 DEBUG   batch 10, loss 0.449848
+2019-01-30 09:30:44,153 DEBUG   batch 11, loss 0.395980
+2019-01-30 09:30:46,566 DEBUG   batch 12, loss 0.447347
+2019-01-30 09:30:53,661 DEBUG   batch 13, loss 0.361192
+2019-01-30 09:31:01,083 DEBUG   batch 14, loss 0.354323
+2019-01-30 09:31:02,795 DEBUG   batch 15, loss 0.479751
+2019-01-30 09:31:08,087 DEBUG   batch 16, loss 0.378096
+2019-01-30 09:31:12,534 DEBUG   batch 17, loss 0.390689
+2019-01-30 09:31:14,344 DEBUG   batch 18, loss 0.467188
+2019-01-30 09:31:16,956 DEBUG   batch 19, loss 0.432719
+2019-01-30 09:31:19,744 DEBUG   batch 20, loss 0.435206
+2019-01-30 09:31:20,725 DEBUG   batch 21, loss 0.524839
+2019-01-30 09:31:23,473 DEBUG   batch 22, loss 0.434534
+2019-01-30 09:31:25,706 DEBUG   batch 23, loss 0.447823
+2019-01-30 09:31:25,734 DEBUG  Processed 24 batches
+2019-01-30 09:31:25,734 INFO   Training loss: 0.419
+2019-01-30 09:31:26,851 DEBUG  batch 0
+2019-01-30 09:31:28,799 DEBUG  batch 1
+2019-01-30 09:31:30,672 DEBUG  batch 2
+2019-01-30 09:31:31,337 DEBUG  batch 3
+2019-01-30 09:31:32,444 DEBUG  Processed 4 samples in 4 batches
+2019-01-30 09:31:32,515 INFO   Validation loss: 0.371 acc: 0.916
+2019-01-30 09:31:32,594 INFO Epoch 11
+2019-01-30 09:31:36,186 DEBUG   batch 0, loss 0.433047
+2019-01-30 09:31:38,250 DEBUG   batch 1, loss 0.452868
+2019-01-30 09:31:42,869 DEBUG   batch 2, loss 0.386479
+2019-01-30 09:31:47,365 DEBUG   batch 3, loss 0.398814
+2019-01-30 09:31:53,245 DEBUG   batch 4, loss 0.375019
+2019-01-30 09:32:01,574 DEBUG   batch 5, loss 0.349366
+2019-01-30 09:32:05,944 DEBUG   batch 6, loss 0.404478
+2019-01-30 09:32:11,068 DEBUG   batch 7, loss 0.389282
+2019-01-30 09:32:15,801 DEBUG   batch 8, loss 0.397717
+2019-01-30 09:32:17,753 DEBUG   batch 9, loss 0.462390
+2019-01-30 09:32:19,950 DEBUG   batch 10, loss 0.449668
+2019-01-30 09:32:24,407 DEBUG   batch 11, loss 0.395924
+2019-01-30 09:32:26,838 DEBUG   batch 12, loss 0.447152
+2019-01-30 09:32:33,926 DEBUG   batch 13, loss 0.361064
+2019-01-30 09:32:41,478 DEBUG   batch 14, loss 0.354098
+2019-01-30 09:32:43,302 DEBUG   batch 15, loss 0.479386
+2019-01-30 09:32:48,668 DEBUG   batch 16, loss 0.378001
+2019-01-30 09:32:53,129 DEBUG   batch 17, loss 0.390514
+2019-01-30 09:32:54,967 DEBUG   batch 18, loss 0.467099
+2019-01-30 09:32:57,587 DEBUG   batch 19, loss 0.432555
+2019-01-30 09:33:00,435 DEBUG   batch 20, loss 0.435261
+2019-01-30 09:33:01,396 DEBUG   batch 21, loss 0.524491
+2019-01-30 09:33:04,151 DEBUG   batch 22, loss 0.434637
+2019-01-30 09:33:06,416 DEBUG   batch 23, loss 0.447978
+2019-01-30 09:33:06,443 DEBUG  Processed 24 batches
+2019-01-30 09:33:06,443 INFO   Training loss: 0.419
+2019-01-30 09:33:07,565 DEBUG  batch 0
+2019-01-30 09:33:09,523 DEBUG  batch 1
+2019-01-30 09:33:11,442 DEBUG  batch 2
+2019-01-30 09:33:12,118 DEBUG  batch 3
+2019-01-30 09:33:13,227 DEBUG  Processed 4 samples in 4 batches
+2019-01-30 09:33:13,227 INFO   Validation loss: 0.369 acc: 0.915
+2019-01-30 09:33:13,292 INFO Epoch 12
+2019-01-30 09:33:16,656 DEBUG   batch 0, loss 0.432831
+2019-01-30 09:33:18,728 DEBUG   batch 1, loss 0.452830
+2019-01-30 09:33:23,353 DEBUG   batch 2, loss 0.386378
+2019-01-30 09:33:27,806 DEBUG   batch 3, loss 0.398732
+2019-01-30 09:33:33,706 DEBUG   batch 4, loss 0.374905
+2019-01-30 09:33:42,072 DEBUG   batch 5, loss 0.349309
+2019-01-30 09:33:46,378 DEBUG   batch 6, loss 0.404261
+2019-01-30 09:33:51,333 DEBUG   batch 7, loss 0.389249
+2019-01-30 09:33:56,057 DEBUG   batch 8, loss 0.397479
+2019-01-30 09:33:58,020 DEBUG   batch 9, loss 0.462300
+2019-01-30 09:34:00,134 DEBUG   batch 10, loss 0.449587
+2019-01-30 09:34:04,441 DEBUG   batch 11, loss 0.395823
+2019-01-30 09:34:06,775 DEBUG   batch 12, loss 0.447183
+2019-01-30 09:34:13,852 DEBUG   batch 13, loss 0.360968
+2019-01-30 09:34:21,245 DEBUG   batch 14, loss 0.354038
+2019-01-30 09:34:22,949 DEBUG   batch 15, loss 0.479185
+2019-01-30 09:34:28,267 DEBUG   batch 16, loss 0.377921
+2019-01-30 09:34:32,777 DEBUG   batch 17, loss 0.390406
+2019-01-30 09:34:34,577 DEBUG   batch 18, loss 0.466792
+2019-01-30 09:34:37,130 DEBUG   batch 19, loss 0.432503
+2019-01-30 09:34:39,844 DEBUG   batch 20, loss 0.434778
+2019-01-30 09:34:40,750 DEBUG   batch 21, loss 0.524117
+2019-01-30 09:34:43,478 DEBUG   batch 22, loss 0.434292
+2019-01-30 09:34:45,719 DEBUG   batch 23, loss 0.447469
+2019-01-30 09:34:45,744 DEBUG  Processed 24 batches
+2019-01-30 09:34:45,745 INFO   Training loss: 0.418
+2019-01-30 09:34:46,935 DEBUG  batch 0
+2019-01-30 09:34:48,511 DEBUG  batch 1
+2019-01-30 09:34:49,911 DEBUG  batch 2
+2019-01-30 09:34:50,253 DEBUG  batch 3
+2019-01-30 09:34:50,826 DEBUG  Processed 4 samples in 4 batches
+2019-01-30 09:34:50,827 INFO   Validation loss: 0.371 acc: 0.915
+2019-01-30 09:34:50,931 INFO Epoch 13
+2019-01-30 09:34:54,287 DEBUG   batch 0, loss 0.432716
+2019-01-30 09:34:56,352 DEBUG   batch 1, loss 0.452627
+2019-01-30 09:35:00,968 DEBUG   batch 2, loss 0.386249
+2019-01-30 09:35:05,451 DEBUG   batch 3, loss 0.398527
+2019-01-30 09:35:11,395 DEBUG   batch 4, loss 0.374793
+2019-01-30 09:35:19,673 DEBUG   batch 5, loss 0.349194
+2019-01-30 09:35:24,004 DEBUG   batch 6, loss 0.404173
+2019-01-30 09:35:29,076 DEBUG   batch 7, loss 0.389117
+2019-01-30 09:35:33,796 DEBUG   batch 8, loss 0.397336
+2019-01-30 09:35:35,789 DEBUG   batch 9, loss 0.462133
+2019-01-30 09:35:37,944 DEBUG   batch 10, loss 0.449492
+2019-01-30 09:35:42,381 DEBUG   batch 11, loss 0.395650
+2019-01-30 09:35:44,810 DEBUG   batch 12, loss 0.447194
+2019-01-30 09:35:51,899 DEBUG   batch 13, loss 0.360990
+2019-01-30 09:35:59,343 DEBUG   batch 14, loss 0.353960
+2019-01-30 09:36:01,045 DEBUG   batch 15, loss 0.479072
+2019-01-30 09:36:06,372 DEBUG   batch 16, loss 0.377756
+2019-01-30 09:36:10,815 DEBUG   batch 17, loss 0.390475
+2019-01-30 09:36:12,680 DEBUG   batch 18, loss 0.466626
+2019-01-30 09:36:15,294 DEBUG   batch 19, loss 0.432541
+2019-01-30 09:36:18,078 DEBUG   batch 20, loss 0.434582
+2019-01-30 09:36:18,988 DEBUG   batch 21, loss 0.524387
+2019-01-30 09:36:21,737 DEBUG   batch 22, loss 0.435676
+2019-01-30 09:36:23,969 DEBUG   batch 23, loss 0.447340
+2019-01-30 09:36:23,996 DEBUG  Processed 24 batches
+2019-01-30 09:36:23,997 INFO   Training loss: 0.418
+2019-01-30 09:36:25,112 DEBUG  batch 0
+2019-01-30 09:36:27,085 DEBUG  batch 1
+2019-01-30 09:36:28,952 DEBUG  batch 2
+2019-01-30 09:36:29,627 DEBUG  batch 3
+2019-01-30 09:36:30,740 DEBUG  Processed 4 samples in 4 batches
+2019-01-30 09:36:30,740 INFO   Validation loss: 0.389 acc: 0.913
+2019-01-30 09:36:30,805 INFO Epoch 14
+2019-01-30 09:36:34,343 DEBUG   batch 0, loss 0.433977
+2019-01-30 09:36:36,405 DEBUG   batch 1, loss 0.453019
+2019-01-30 09:36:41,034 DEBUG   batch 2, loss 0.386590
+2019-01-30 09:36:45,474 DEBUG   batch 3, loss 0.398462
+2019-01-30 09:36:51,360 DEBUG   batch 4, loss 0.376095
+2019-01-30 09:36:59,720 DEBUG   batch 5, loss 0.349251
+2019-01-30 09:37:04,062 DEBUG   batch 6, loss 0.406500
+2019-01-30 09:37:09,134 DEBUG   batch 7, loss 0.389122
+2019-01-30 09:37:13,858 DEBUG   batch 8, loss 0.399305
+2019-01-30 09:37:15,818 DEBUG   batch 9, loss 0.462250
+2019-01-30 09:37:18,028 DEBUG   batch 10, loss 0.449772
+2019-01-30 09:37:22,457 DEBUG   batch 11, loss 0.396819
+2019-01-30 09:37:24,838 DEBUG   batch 12, loss 0.446987
+2019-01-30 09:37:32,020 DEBUG   batch 13, loss 0.361783
+2019-01-30 09:37:39,422 DEBUG   batch 14, loss 0.354332
+2019-01-30 09:37:41,136 DEBUG   batch 15, loss 0.479157
+2019-01-30 09:37:46,447 DEBUG   batch 16, loss 0.377852
+2019-01-30 09:37:50,904 DEBUG   batch 17, loss 0.390267
+2019-01-30 09:37:52,672 DEBUG   batch 18, loss 0.466613
+2019-01-30 09:37:55,284 DEBUG   batch 19, loss 0.432378
+2019-01-30 09:37:58,066 DEBUG   batch 20, loss 0.434668
+2019-01-30 09:37:58,977 DEBUG   batch 21, loss 0.524041
+2019-01-30 09:38:01,723 DEBUG   batch 22, loss 0.434073
+2019-01-30 09:38:03,911 DEBUG   batch 23, loss 0.447323
+2019-01-30 09:38:03,936 DEBUG  Processed 24 batches
+2019-01-30 09:38:03,937 INFO   Training loss: 0.419
+2019-01-30 09:38:05,125 DEBUG  batch 0
+2019-01-30 09:38:07,065 DEBUG  batch 1
+2019-01-30 09:38:08,936 DEBUG  batch 2
+2019-01-30 09:38:09,326 DEBUG  batch 3
+2019-01-30 09:38:10,154 DEBUG  Processed 4 samples in 4 batches
+2019-01-30 09:38:10,154 INFO   Validation loss: 0.361 acc: 0.916
+2019-01-30 09:38:10,238 INFO Epoch 15
+2019-01-30 09:38:13,590 DEBUG   batch 0, loss 0.432767
+2019-01-30 09:38:15,660 DEBUG   batch 1, loss 0.452417
+2019-01-30 09:38:20,265 DEBUG   batch 2, loss 0.386303
+2019-01-30 09:38:24,705 DEBUG   batch 3, loss 0.398380
+2019-01-30 09:38:30,567 DEBUG   batch 4, loss 0.374741
+2019-01-30 09:38:38,926 DEBUG   batch 5, loss 0.349194
+2019-01-30 09:38:43,203 DEBUG   batch 6, loss 0.404012
+2019-01-30 09:38:48,258 DEBUG   batch 7, loss 0.388926
+2019-01-30 09:38:52,900 DEBUG   batch 8, loss 0.397347
+2019-01-30 09:38:54,941 DEBUG   batch 9, loss 0.461782
+2019-01-30 09:38:57,137 DEBUG   batch 10, loss 0.449263
+2019-01-30 09:39:01,580 DEBUG   batch 11, loss 0.395552
+2019-01-30 09:39:03,984 DEBUG   batch 12, loss 0.446708
+2019-01-30 09:39:11,175 DEBUG   batch 13, loss 0.360781
+2019-01-30 09:39:18,639 DEBUG   batch 14, loss 0.353961
+2019-01-30 09:39:20,339 DEBUG   batch 15, loss 0.478804
+2019-01-30 09:39:25,690 DEBUG   batch 16, loss 0.377631
+2019-01-30 09:39:30,201 DEBUG   batch 17, loss 0.390071
+2019-01-30 09:39:32,010 DEBUG   batch 18, loss 0.466304
+2019-01-30 09:39:34,562 DEBUG   batch 19, loss 0.432130
+2019-01-30 09:39:37,273 DEBUG   batch 20, loss 0.434206
+2019-01-30 09:39:38,173 DEBUG   batch 21, loss 0.523713
+2019-01-30 09:39:40,923 DEBUG   batch 22, loss 0.433806
+2019-01-30 09:39:43,110 DEBUG   batch 23, loss 0.447036
+2019-01-30 09:39:43,137 DEBUG  Processed 24 batches
+2019-01-30 09:39:43,137 INFO   Training loss: 0.418
+2019-01-30 09:39:44,267 DEBUG  batch 0
+2019-01-30 09:39:46,220 DEBUG  batch 1
+2019-01-30 09:39:48,076 DEBUG  batch 2
+2019-01-30 09:39:48,759 DEBUG  batch 3
+2019-01-30 09:39:49,864 DEBUG  Processed 4 samples in 4 batches
+2019-01-30 09:39:49,864 INFO   Validation loss: 0.364 acc: 0.916
+2019-01-30 09:39:55,559 INFO Saving summaries to /global/cscratch1/sd/esaliya/heptrkx/results/gnnsegclf_med_000/summaries.npz
+2019-01-30 09:40:01,978 INFO Finished training
+2019-01-30 09:40:01,979 INFO Train samples 24 time 92.8942 s rate 0.258358 samples/s
+2019-01-30 09:40:01,979 INFO Valid samples 4 time 6.42695 s rate 0.62238 samples/s
+2019-01-30 09:40:01,979 INFO All done!
+Running your script with the autograd profiler...
+Traceback (most recent call last):
+  File "/usr/common/software/pytorch/v1.0.0-intel/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/usr/common/software/pytorch/v1.0.0-intel/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/usr/common/software/pytorch/v1.0.0-intel/lib/python3.7/site-packages/torch/utils/bottleneck/__main__.py", line 234, in <module>
+    main()
+  File "/usr/common/software/pytorch/v1.0.0-intel/lib/python3.7/site-packages/torch/utils/bottleneck/__main__.py", line 213, in main
+    autograd_prof_cpu, autograd_prof_cuda = run_autograd_prof(code, globs)
+  File "/usr/common/software/pytorch/v1.0.0-intel/lib/python3.7/site-packages/torch/utils/bottleneck/__main__.py", line 105, in run_autograd_prof
+    result = [run_prof(use_cuda=False)]
+  File "/usr/common/software/pytorch/v1.0.0-intel/lib/python3.7/site-packages/torch/utils/bottleneck/__main__.py", line 101, in run_prof
+    exec(code, globs, None)
+  File "./train.py", line 128, in <module>
+    main()
+  File "./train.py", line 65, in main
+    rank, n_ranks = init_workers(args.distributed)
+  File "./train.py", line 50, in init_workers
+    dist.init_process_group(backend='mpi')
+  File "/usr/common/software/pytorch/v1.0.0-intel/lib/python3.7/site-packages/torch/distributed/distributed_c10d.py", line 326, in init_process_group
+    raise RuntimeError("trying to initialize the default process group "
+RuntimeError: trying to initialize the default process group twice!
+srun: error: nid00185: task 0: Exited with exit code 1
+srun: Terminating job step 18354622.2
