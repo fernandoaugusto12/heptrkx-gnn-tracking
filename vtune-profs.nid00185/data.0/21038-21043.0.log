@@ -1,0 +1,1 @@
+21043 : ERROR : Stack size provided to sigaltstack is too small. Please increase the stack size to 64K minimum. 

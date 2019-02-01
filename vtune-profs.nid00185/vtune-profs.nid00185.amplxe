@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <rdmgr>
+  <timestamp type="u64_t">1548879596</timestamp>
+  <hostname type="string">nid00185</hostname>
+  <os type="string">linux</os>
+  <product type="string">Intel® VTune™ Amplifier 2018 Update 2</product>
+  <buildNumber type="s32_t">551022</buildNumber>
+  <logicalCPUCount type="s32_t">64</logicalCPUCount>
+  <CPUFrequency type="s64_t">2300000000</CPUFrequency>
+  <CPUFamily type="s32_t">6</CPUFamily>
+  <CPUModel type="s32_t">63</CPUModel>
+  <CPUStepping type="s32_t">2</CPUStepping>
+  <CPUBrandName type="string">Intel(R) Xeon(R) CPU E5-2698 v3 @ 2.30GHz</CPUBrandName>
+  <isa type="string">avx2</isa>
+  <collectionTimeBegin type="u64_t">1548879596</collectionTimeBegin>
+  <collectionTimeEnd type="u64_t">1548879711</collectionTimeEnd>
+  <variables>
+   <at type="string">hs</at>
+  </variables>
+ </rdmgr>
+</root>

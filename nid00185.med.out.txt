@@ -1,0 +1,96 @@
+amplxe: Analyzing data in the node-wide mode. The hostname (nid00185) will be added to the result path/name.
+amplxe: Collection started. To stop the collection, either press CTRL-C or enter from another console window: amplxe-cl -r /global/u2/e/esaliya/sali/git/github/esaliya/python/heptrkx-gnn-tracking/vtune-profs.nid00185 -command stop.
+amplxe: Error: Stack size provided to sigaltstack is too small. Please increase the stack size to 64K minimum.
+amplxe: Error: Stack size provided to sigaltstack is too small. Please increase the stack size to 64K minimum.
+amplxe: Error: Stack size provided to sigaltstack is too small. Please increase the stack size to 64K minimum.
+2019-01-30 12:20:04,799 INFO Initialized rank 0 out of 1
+2019-01-30 12:20:04,799 INFO Configuration: {'output_dir': '${SCRATCH}/heptrkx/results/gnnsegclf_med_000', 'trainer': {'name': 'gnn', 'real_weight': 2.5, 'fake_weight': 0.625}, 'data': {'name': 'hitgraphs', 'input_dir': '${SCRATCH}/heptrkx/hitgraphs_med_000', 'n_train': 24, 'n_valid': 4, 'batch_size': 1, 'n_workers': 4}, 'model': {'name': 'gnn_segment_classifier', 'input_dim': 3, 'hidden_dim': 64, 'n_iters': 4, 'loss_func': 'binary_cross_entropy', 'optimizer': 'Adam', 'learning_rate': 0.001}, 'training': {'n_epochs': 1}}
+2019-01-30 12:20:04,799 INFO Saving job outputs to /global/cscratch1/sd/esaliya/heptrkx/results/gnnsegclf_med_000
+2019-01-30 12:20:04,823 INFO Loaded 24 training samples
+2019-01-30 12:20:04,823 INFO Loaded 4 validation samples
+2019-01-30 12:20:04,873 INFO Model: 
+DistributedDataParallelCPU(
+  (module): GNNSegmentClassifier(
+    (input_network): Sequential(
+      (0): Linear(in_features=3, out_features=64, bias=True)
+      (1): Tanh()
+    )
+    (edge_network): EdgeNetwork(
+      (network): Sequential(
+        (0): Linear(in_features=134, out_features=64, bias=True)
+        (1): Tanh()
+        (2): Linear(in_features=64, out_features=1, bias=True)
+        (3): Sigmoid()
+      )
+    )
+    (node_network): NodeNetwork(
+      (network): Sequential(
+        (0): Linear(in_features=201, out_features=64, bias=True)
+        (1): Tanh()
+        (2): Linear(in_features=64, out_features=64, bias=True)
+        (3): Tanh()
+      )
+    )
+  )
+)
+Parameters: 26049
+2019-01-30 12:20:04,873 INFO Epoch 0
+amplxe: Error: Stack size provided to sigaltstack is too small. Please increase the stack size to 64K minimum.
+amplxe: Error: Stack size provided to sigaltstack is too small. Please increase the stack size to 64K minimum.
+amplxe: Error: Stack size provided to sigaltstack is too small. Please increase the stack size to 64K minimum.
+amplxe: Error: Stack size provided to sigaltstack is too small. Please increase the stack size to 64K minimum.
+amplxe: Error: Stack size provided to sigaltstack is too small. Please increase the stack size to 64K minimum.
+amplxe: Error: Stack size provided to sigaltstack is too small. Please increase the stack size to 64K minimum.
+amplxe: Error: Stack size provided to sigaltstack is too small. Please increase the stack size to 64K minimum.
+amplxe: Error: Stack size provided to sigaltstack is too small. Please increase the stack size to 64K minimum.
+2019-01-30 12:20:08,855 DEBUG   batch 0, loss 0.552068
+2019-01-30 12:20:16,074 DEBUG   batch 1, loss 0.470505
+2019-01-30 12:20:20,635 DEBUG   batch 2, loss 0.454680
+2019-01-30 12:20:22,349 DEBUG   batch 3, loss 0.494253
+2019-01-30 12:20:25,170 DEBUG   batch 4, loss 0.447391
+2019-01-30 12:20:27,474 DEBUG   batch 5, loss 0.459639
+2019-01-30 12:20:29,560 DEBUG   batch 6, loss 0.465997
+2019-01-30 12:20:33,669 DEBUG   batch 7, loss 0.413427
+2019-01-30 12:20:35,611 DEBUG   batch 8, loss 0.487805
+2019-01-30 12:20:40,430 DEBUG   batch 9, loss 0.402026
+2019-01-30 12:20:45,928 DEBUG   batch 10, loss 0.385686
+2019-01-30 12:20:53,315 DEBUG   batch 11, loss 0.360004
+2019-01-30 12:20:55,768 DEBUG   batch 12, loss 0.458762
+2019-01-30 12:21:00,435 DEBUG   batch 13, loss 0.395937
+2019-01-30 12:21:02,880 DEBUG   batch 14, loss 0.453466
+2019-01-30 12:21:03,872 DEBUG   batch 15, loss 0.538512
+2019-01-30 12:21:08,429 DEBUG   batch 16, loss 0.407416
+2019-01-30 12:21:12,953 DEBUG   batch 17, loss 0.408224
+2019-01-30 12:21:17,601 DEBUG   batch 18, loss 0.397921
+2019-01-30 12:21:20,147 DEBUG   batch 19, loss 0.439869
+2019-01-30 12:21:28,227 DEBUG   batch 20, loss 0.353986
+2019-01-30 12:21:31,274 DEBUG   batch 21, loss 0.430906
+2019-01-30 12:21:33,238 DEBUG   batch 22, loss 0.477722
+2019-01-30 12:21:39,122 DEBUG   batch 23, loss 0.378521
+2019-01-30 12:21:39,152 DEBUG  Processed 24 batches
+2019-01-30 12:21:39,153 INFO   Training loss: 0.439
+amplxe: Error: Stack size provided to sigaltstack is too small. Please increase the stack size to 64K minimum.
+amplxe: Error: Stack size provided to sigaltstack is too small. Please increase the stack size to 64K minimum.
+amplxe: Error: Stack size provided to sigaltstack is too small. Please increase the stack size to 64K minimum.
+amplxe: Error: Stack size provided to sigaltstack is too small. Please increase the stack size to 64K minimum.
+amplxe: Error: Stack size provided to sigaltstack is too small. Please increase the stack size to 64K minimum.
+amplxe: Error: Stack size provided to sigaltstack is too small. Please increase the stack size to 64K minimum.
+amplxe: Error: Stack size provided to sigaltstack is too small. Please increase the stack size to 64K minimum.
+amplxe: Error: Stack size provided to sigaltstack is too small. Please increase the stack size to 64K minimum.
+2019-01-30 12:21:40,480 DEBUG  batch 0
+2019-01-30 12:21:42,326 DEBUG  batch 1
+2019-01-30 12:21:42,975 DEBUG  batch 2
+2019-01-30 12:21:44,994 DEBUG  batch 3
+2019-01-30 12:21:46,096 DEBUG  Processed 4 samples in 4 batches
+2019-01-30 12:21:46,096 INFO   Validation loss: 0.339 acc: 0.923
+2019-01-30 12:21:47,473 INFO Saving summaries to /global/cscratch1/sd/esaliya/heptrkx/results/gnnsegclf_med_000/summaries.npz
+2019-01-30 12:21:47,498 INFO Finished training
+2019-01-30 12:21:47,499 INFO Train samples 24 time 94.2793 s rate 0.254563 samples/s
+2019-01-30 12:21:47,499 INFO Valid samples 4 time 6.79418 s rate 0.588739 samples/s
+2019-01-30 12:21:47,499 INFO All done!
+amplxe: Collection stopped.
+amplxe: Using result path `/global/u2/e/esaliya/sali/git/github/esaliya/python/heptrkx-gnn-tracking/vtune-profs.nid00185'
+amplxe: Executing actions  0 %                                                 amplxe: Executing actions  0 % Finalizing results                              amplxe: Executing actions  0 % Finalizing the result                           amplxe: Executing actions  0 % Clearing the database                           amplxe: Executing actions  7 % Clearing the database                           amplxe: Executing actions 50 % Clearing the database                           amplxe: Executing actions 50 % done                                            
+amplxe: Error: 0x40000003 (Unexpected internal error / invalid state) -- The result cannot be finalized in the file system that does not support file memory mapping. You can copy the result to a file system with file memory mapping support and use "amplxe-cl -finalize -r <result_directory>" to proceed with finalization, or re-run the analysis using the "-r" option to specify the result directory on a file system with file memory mapping support.
+srun: error: nid00185: task 0: Exited with exit code 2
+srun: Terminating job step 18354622.4

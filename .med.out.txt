@@ -1,0 +1,2 @@
+srun: error: No hardware architecture specified (-C)!
+srun: error: Unable to allocate resources: Unspecified error

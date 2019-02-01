@@ -1,0 +1,2 @@
+21102 : ERROR : Stack size provided to sigaltstack is too small. Please increase the stack size to 64K minimum. 
+21102 : ERROR : Stack size provided to sigaltstack is too small. Please increase the stack size to 64K minimum. 
