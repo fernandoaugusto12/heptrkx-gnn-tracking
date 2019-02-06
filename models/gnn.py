@@ -20,6 +20,8 @@ class EdgeNetwork(nn.Module):
             hidden_activation(),
             nn.Linear(hidden_dim, 1),
             nn.Sigmoid())
+
+    # @profile
     def forward(self, X, Ri, Ro):
         # Select the features of the associated nodes
         bo = torch.bmm(Ro.transpose(1, 2), X)
@@ -43,6 +45,8 @@ class NodeNetwork(nn.Module):
             hidden_activation(),
             nn.Linear(output_dim, output_dim),
             hidden_activation())
+
+    # @profile
     def forward(self, X, e, Ri, Ro):
         bo = torch.bmm(Ro.transpose(1, 2), X)
         bi = torch.bmm(Ri.transpose(1, 2), X)
@@ -71,7 +75,7 @@ class GNNSegmentClassifier(nn.Module):
         # Setup the node layers
         self.node_network = NodeNetwork(input_dim+hidden_dim, hidden_dim,
                                         hidden_activation)
-
+    # @profile
     def forward(self, inputs):
         """Apply forward pass of the model"""
         X, Ri, Ro = inputs

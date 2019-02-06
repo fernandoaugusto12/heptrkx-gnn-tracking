@@ -24,24 +24,19 @@ class GNNTrainer(BaseTrainer):
 
     def build_model(self, name='gnn_segment_classifier',
                     loss_func='binary_cross_entropy',
-                    optimizer='Adam', learning_rate=0.001,
-                    n_ranks=1, lr_scaling=None, lr_warmup_epochs=0,
+                    optimizer='Adam', learning_rate=0.001, lr_scaling=None, lr_warmup_epochs=0,
                     **model_args):
         """Instantiate our model"""
 
         # Construct the model
         self.model = get_model(name=name, **model_args).to(self.device)
-        if self.distributed:
-            # Wrap in the PyTorch distributed wrapper
-            self.model = nn.parallel.DistributedDataParallelCPU(self.model)
 
         # Construct the loss function
         self.loss_func = getattr(nn.functional, loss_func)
 
         # Construct the optimizer
         if lr_scaling == 'linear':
-            learning_rate = learning_rate * n_ranks
-            warmup_factor = 1. / n_ranks
+            warmup_factor = 1.
         self.optimizer = getattr(torch.optim, optimizer)(
             self.model.parameters(), lr=learning_rate)
 
