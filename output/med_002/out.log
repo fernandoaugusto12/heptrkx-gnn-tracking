@@ -1,0 +1,31 @@
+2019-02-20 13:45:28,622 INFO Initialized rank 0
+2019-02-20 13:45:28,623 INFO Command line config: Namespace(config='configs/segclf_med.yaml', device='cpu', interactive=False, show_config=False, verbose=False)
+2019-02-20 13:45:28,623 INFO Configuration: {'output_dir': '/Users/esaliya/sali/git/github/esaliya/python/heptrkx-gnn-tracking/output/med_002', 'trainer': {'name': 'gnn', 'real_weight': 2.5, 'fake_weight': 0.625}, 'data': {'name': 'hitgraphs', 'input_dir': '/Users/esaliya/sali/data/heptrkx/hitgraphs_med_002', 'n_train': 7, 'n_valid': 1, 'batch_size': 1}, 'model': {'name': 'gnn_segment_classifier', 'input_dim': 3, 'hidden_dim': 64, 'n_iters': 4, 'loss_func': 'binary_cross_entropy', 'optimizer': 'Adam', 'learning_rate': 0.001, 'lr_scaling': 'linear', 'lr_warmup_epochs': 2}, 'training': {'n_epochs': 4}}
+2019-02-20 13:45:28,624 INFO Saving job outputs to /Users/esaliya/sali/git/github/esaliya/python/heptrkx-gnn-tracking/output/med_002
+2019-02-20 13:45:31,224 INFO Loaded 7 training samples
+2019-02-20 13:45:31,230 INFO Loaded 1 validation samples
+2019-02-20 13:45:31,295 INFO Model: 
+GNNSegmentClassifier(
+  (input_network): Sequential(
+    (0): Linear(in_features=3, out_features=64, bias=True)
+    (1): Tanh()
+  )
+  (edge_network): EdgeNetwork(
+    (network): Sequential(
+      (0): Linear(in_features=134, out_features=64, bias=True)
+      (1): Tanh()
+      (2): Linear(in_features=64, out_features=1, bias=True)
+      (3): Sigmoid()
+    )
+  )
+  (node_network): NodeNetwork(
+    (network): Sequential(
+      (0): Linear(in_features=201, out_features=64, bias=True)
+      (1): Tanh()
+      (2): Linear(in_features=64, out_features=64, bias=True)
+      (3): Tanh()
+    )
+  )
+)
+Parameters: 26049
+2019-02-20 13:45:31,295 INFO Epoch 0

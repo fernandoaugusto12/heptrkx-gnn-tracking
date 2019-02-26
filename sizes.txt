@@ -1,0 +1,640 @@
+X:torch.Size([1, 2319, 67]), e:torch.Size([1, 7729]), Ri:torch.Size([1, 2319, 7729]), Ro:torch.Size([1, 2319, 7729])
+nnz(X):155373, nnz(e):7729, nnz(Ri):7729, nnz(Ro):7729
+X:torch.Size([1, 2319, 67]), e:torch.Size([1, 7729]), Ri:torch.Size([1, 2319, 7729]), Ro:torch.Size([1, 2319, 7729])
+nnz(X):155373, nnz(e):7729, nnz(Ri):7729, nnz(Ro):7729
+X:torch.Size([1, 2319, 67]), e:torch.Size([1, 7729]), Ri:torch.Size([1, 2319, 7729]), Ro:torch.Size([1, 2319, 7729])
+nnz(X):155373, nnz(e):7729, nnz(Ri):7729, nnz(Ro):7729
+X:torch.Size([1, 2319, 67]), e:torch.Size([1, 7729]), Ri:torch.Size([1, 2319, 7729]), Ro:torch.Size([1, 2319, 7729])
+nnz(X):155373, nnz(e):7729, nnz(Ri):7729, nnz(Ro):7729
+X:torch.Size([1, 2493, 67]), e:torch.Size([1, 9165]), Ri:torch.Size([1, 2493, 9165]), Ro:torch.Size([1, 2493, 9165])
+nnz(X):167031, nnz(e):9165, nnz(Ri):9165, nnz(Ro):9165
+X:torch.Size([1, 2493, 67]), e:torch.Size([1, 9165]), Ri:torch.Size([1, 2493, 9165]), Ro:torch.Size([1, 2493, 9165])
+nnz(X):167031, nnz(e):9165, nnz(Ri):9165, nnz(Ro):9165
+X:torch.Size([1, 2493, 67]), e:torch.Size([1, 9165]), Ri:torch.Size([1, 2493, 9165]), Ro:torch.Size([1, 2493, 9165])
+nnz(X):167031, nnz(e):9165, nnz(Ri):9165, nnz(Ro):9165
+X:torch.Size([1, 2493, 67]), e:torch.Size([1, 9165]), Ri:torch.Size([1, 2493, 9165]), Ro:torch.Size([1, 2493, 9165])
+nnz(X):167031, nnz(e):9165, nnz(Ri):9165, nnz(Ro):9165
+X:torch.Size([1, 2312, 67]), e:torch.Size([1, 7973]), Ri:torch.Size([1, 2312, 7973]), Ro:torch.Size([1, 2312, 7973])
+nnz(X):154904, nnz(e):7973, nnz(Ri):7973, nnz(Ro):7973
+X:torch.Size([1, 2312, 67]), e:torch.Size([1, 7973]), Ri:torch.Size([1, 2312, 7973]), Ro:torch.Size([1, 2312, 7973])
+nnz(X):154904, nnz(e):7973, nnz(Ri):7973, nnz(Ro):7973
+X:torch.Size([1, 2312, 67]), e:torch.Size([1, 7973]), Ri:torch.Size([1, 2312, 7973]), Ro:torch.Size([1, 2312, 7973])
+nnz(X):154904, nnz(e):7973, nnz(Ri):7973, nnz(Ro):7973
+X:torch.Size([1, 2312, 67]), e:torch.Size([1, 7973]), Ri:torch.Size([1, 2312, 7973]), Ro:torch.Size([1, 2312, 7973])
+nnz(X):154904, nnz(e):7973, nnz(Ri):7973, nnz(Ro):7973
+X:torch.Size([1, 2263, 67]), e:torch.Size([1, 7868]), Ri:torch.Size([1, 2263, 7868]), Ro:torch.Size([1, 2263, 7868])
+nnz(X):151621, nnz(e):7868, nnz(Ri):7868, nnz(Ro):7868
+X:torch.Size([1, 2263, 67]), e:torch.Size([1, 7868]), Ri:torch.Size([1, 2263, 7868]), Ro:torch.Size([1, 2263, 7868])
+nnz(X):151621, nnz(e):7868, nnz(Ri):7868, nnz(Ro):7868
+X:torch.Size([1, 2263, 67]), e:torch.Size([1, 7868]), Ri:torch.Size([1, 2263, 7868]), Ro:torch.Size([1, 2263, 7868])
+nnz(X):151621, nnz(e):7868, nnz(Ri):7868, nnz(Ro):7868
+X:torch.Size([1, 2263, 67]), e:torch.Size([1, 7868]), Ri:torch.Size([1, 2263, 7868]), Ro:torch.Size([1, 2263, 7868])
+nnz(X):151621, nnz(e):7868, nnz(Ri):7868, nnz(Ro):7868
+X:torch.Size([1, 1886, 67]), e:torch.Size([1, 5614]), Ri:torch.Size([1, 1886, 5614]), Ro:torch.Size([1, 1886, 5614])
+nnz(X):126362, nnz(e):5614, nnz(Ri):5614, nnz(Ro):5614
+X:torch.Size([1, 1886, 67]), e:torch.Size([1, 5614]), Ri:torch.Size([1, 1886, 5614]), Ro:torch.Size([1, 1886, 5614])
+nnz(X):126362, nnz(e):5614, nnz(Ri):5614, nnz(Ro):5614
+X:torch.Size([1, 1886, 67]), e:torch.Size([1, 5614]), Ri:torch.Size([1, 1886, 5614]), Ro:torch.Size([1, 1886, 5614])
+nnz(X):126362, nnz(e):5614, nnz(Ri):5614, nnz(Ro):5614
+X:torch.Size([1, 1886, 67]), e:torch.Size([1, 5614]), Ri:torch.Size([1, 1886, 5614]), Ro:torch.Size([1, 1886, 5614])
+nnz(X):126362, nnz(e):5614, nnz(Ri):5614, nnz(Ro):5614
+X:torch.Size([1, 2264, 67]), e:torch.Size([1, 7981]), Ri:torch.Size([1, 2264, 7981]), Ro:torch.Size([1, 2264, 7981])
+nnz(X):151688, nnz(e):7981, nnz(Ri):7981, nnz(Ro):7981
+X:torch.Size([1, 2264, 67]), e:torch.Size([1, 7981]), Ri:torch.Size([1, 2264, 7981]), Ro:torch.Size([1, 2264, 7981])
+nnz(X):151688, nnz(e):7981, nnz(Ri):7981, nnz(Ro):7981
+X:torch.Size([1, 2264, 67]), e:torch.Size([1, 7981]), Ri:torch.Size([1, 2264, 7981]), Ro:torch.Size([1, 2264, 7981])
+nnz(X):151688, nnz(e):7981, nnz(Ri):7981, nnz(Ro):7981
+X:torch.Size([1, 2264, 67]), e:torch.Size([1, 7981]), Ri:torch.Size([1, 2264, 7981]), Ro:torch.Size([1, 2264, 7981])
+nnz(X):151688, nnz(e):7981, nnz(Ri):7981, nnz(Ro):7981
+X:torch.Size([1, 1805, 67]), e:torch.Size([1, 4938]), Ri:torch.Size([1, 1805, 4938]), Ro:torch.Size([1, 1805, 4938])
+nnz(X):120935, nnz(e):4938, nnz(Ri):4938, nnz(Ro):4938
+X:torch.Size([1, 1805, 67]), e:torch.Size([1, 4938]), Ri:torch.Size([1, 1805, 4938]), Ro:torch.Size([1, 1805, 4938])
+nnz(X):120935, nnz(e):4938, nnz(Ri):4938, nnz(Ro):4938
+X:torch.Size([1, 1805, 67]), e:torch.Size([1, 4938]), Ri:torch.Size([1, 1805, 4938]), Ro:torch.Size([1, 1805, 4938])
+nnz(X):120935, nnz(e):4938, nnz(Ri):4938, nnz(Ro):4938
+X:torch.Size([1, 1805, 67]), e:torch.Size([1, 4938]), Ri:torch.Size([1, 1805, 4938]), Ro:torch.Size([1, 1805, 4938])
+nnz(X):120935, nnz(e):4938, nnz(Ri):4938, nnz(Ro):4938
+X:torch.Size([1, 1955, 67]), e:torch.Size([1, 5624]), Ri:torch.Size([1, 1955, 5624]), Ro:torch.Size([1, 1955, 5624])
+nnz(X):130985, nnz(e):5624, nnz(Ri):5624, nnz(Ro):5624
+X:torch.Size([1, 1955, 67]), e:torch.Size([1, 5624]), Ri:torch.Size([1, 1955, 5624]), Ro:torch.Size([1, 1955, 5624])
+nnz(X):130985, nnz(e):5624, nnz(Ri):5624, nnz(Ro):5624
+X:torch.Size([1, 1955, 67]), e:torch.Size([1, 5624]), Ri:torch.Size([1, 1955, 5624]), Ro:torch.Size([1, 1955, 5624])
+nnz(X):130985, nnz(e):5624, nnz(Ri):5624, nnz(Ro):5624
+X:torch.Size([1, 1955, 67]), e:torch.Size([1, 5624]), Ri:torch.Size([1, 1955, 5624]), Ro:torch.Size([1, 1955, 5624])
+nnz(X):130985, nnz(e):5624, nnz(Ri):5624, nnz(Ro):5624
+X:torch.Size([1, 2515, 67]), e:torch.Size([1, 9428]), Ri:torch.Size([1, 2515, 9428]), Ro:torch.Size([1, 2515, 9428])
+nnz(X):168505, nnz(e):9428, nnz(Ri):9428, nnz(Ro):9428
+X:torch.Size([1, 2515, 67]), e:torch.Size([1, 9428]), Ri:torch.Size([1, 2515, 9428]), Ro:torch.Size([1, 2515, 9428])
+nnz(X):168505, nnz(e):9428, nnz(Ri):9428, nnz(Ro):9428
+X:torch.Size([1, 2515, 67]), e:torch.Size([1, 9428]), Ri:torch.Size([1, 2515, 9428]), Ro:torch.Size([1, 2515, 9428])
+nnz(X):168505, nnz(e):9428, nnz(Ri):9428, nnz(Ro):9428
+X:torch.Size([1, 2515, 67]), e:torch.Size([1, 9428]), Ri:torch.Size([1, 2515, 9428]), Ro:torch.Size([1, 2515, 9428])
+nnz(X):168505, nnz(e):9428, nnz(Ri):9428, nnz(Ro):9428
+X:torch.Size([1, 1755, 67]), e:torch.Size([1, 4965]), Ri:torch.Size([1, 1755, 4965]), Ro:torch.Size([1, 1755, 4965])
+nnz(X):117585, nnz(e):4965, nnz(Ri):4965, nnz(Ro):4965
+X:torch.Size([1, 1755, 67]), e:torch.Size([1, 4965]), Ri:torch.Size([1, 1755, 4965]), Ro:torch.Size([1, 1755, 4965])
+nnz(X):117585, nnz(e):4965, nnz(Ri):4965, nnz(Ro):4965
+X:torch.Size([1, 1755, 67]), e:torch.Size([1, 4965]), Ri:torch.Size([1, 1755, 4965]), Ro:torch.Size([1, 1755, 4965])
+nnz(X):117585, nnz(e):4965, nnz(Ri):4965, nnz(Ro):4965
+X:torch.Size([1, 1755, 67]), e:torch.Size([1, 4965]), Ri:torch.Size([1, 1755, 4965]), Ro:torch.Size([1, 1755, 4965])
+nnz(X):117585, nnz(e):4965, nnz(Ri):4965, nnz(Ro):4965
+X:torch.Size([1, 1758, 67]), e:torch.Size([1, 5080]), Ri:torch.Size([1, 1758, 5080]), Ro:torch.Size([1, 1758, 5080])
+nnz(X):117786, nnz(e):5080, nnz(Ri):5080, nnz(Ro):5080
+X:torch.Size([1, 1758, 67]), e:torch.Size([1, 5080]), Ri:torch.Size([1, 1758, 5080]), Ro:torch.Size([1, 1758, 5080])
+nnz(X):117786, nnz(e):5080, nnz(Ri):5080, nnz(Ro):5080
+X:torch.Size([1, 1758, 67]), e:torch.Size([1, 5080]), Ri:torch.Size([1, 1758, 5080]), Ro:torch.Size([1, 1758, 5080])
+nnz(X):117786, nnz(e):5080, nnz(Ri):5080, nnz(Ro):5080
+X:torch.Size([1, 1758, 67]), e:torch.Size([1, 5080]), Ri:torch.Size([1, 1758, 5080]), Ro:torch.Size([1, 1758, 5080])
+nnz(X):117786, nnz(e):5080, nnz(Ri):5080, nnz(Ro):5080
+X:torch.Size([1, 2276, 67]), e:torch.Size([1, 7624]), Ri:torch.Size([1, 2276, 7624]), Ro:torch.Size([1, 2276, 7624])
+nnz(X):152492, nnz(e):7624, nnz(Ri):7624, nnz(Ro):7624
+X:torch.Size([1, 2276, 67]), e:torch.Size([1, 7624]), Ri:torch.Size([1, 2276, 7624]), Ro:torch.Size([1, 2276, 7624])
+nnz(X):152492, nnz(e):7624, nnz(Ri):7624, nnz(Ro):7624
+X:torch.Size([1, 2276, 67]), e:torch.Size([1, 7624]), Ri:torch.Size([1, 2276, 7624]), Ro:torch.Size([1, 2276, 7624])
+nnz(X):152492, nnz(e):7624, nnz(Ri):7624, nnz(Ro):7624
+X:torch.Size([1, 2276, 67]), e:torch.Size([1, 7624]), Ri:torch.Size([1, 2276, 7624]), Ro:torch.Size([1, 2276, 7624])
+nnz(X):152492, nnz(e):7624, nnz(Ri):7624, nnz(Ro):7624
+X:torch.Size([1, 1539, 67]), e:torch.Size([1, 3939]), Ri:torch.Size([1, 1539, 3939]), Ro:torch.Size([1, 1539, 3939])
+nnz(X):103113, nnz(e):3939, nnz(Ri):3939, nnz(Ro):3939
+X:torch.Size([1, 1539, 67]), e:torch.Size([1, 3939]), Ri:torch.Size([1, 1539, 3939]), Ro:torch.Size([1, 1539, 3939])
+nnz(X):103113, nnz(e):3939, nnz(Ri):3939, nnz(Ro):3939
+X:torch.Size([1, 1539, 67]), e:torch.Size([1, 3939]), Ri:torch.Size([1, 1539, 3939]), Ro:torch.Size([1, 1539, 3939])
+nnz(X):103113, nnz(e):3939, nnz(Ri):3939, nnz(Ro):3939
+X:torch.Size([1, 1539, 67]), e:torch.Size([1, 3939]), Ri:torch.Size([1, 1539, 3939]), Ro:torch.Size([1, 1539, 3939])
+nnz(X):103113, nnz(e):3939, nnz(Ri):3939, nnz(Ro):3939
+X:torch.Size([1, 2217, 67]), e:torch.Size([1, 7293]), Ri:torch.Size([1, 2217, 7293]), Ro:torch.Size([1, 2217, 7293])
+nnz(X):148539, nnz(e):7293, nnz(Ri):7293, nnz(Ro):7293
+X:torch.Size([1, 2217, 67]), e:torch.Size([1, 7293]), Ri:torch.Size([1, 2217, 7293]), Ro:torch.Size([1, 2217, 7293])
+nnz(X):148539, nnz(e):7293, nnz(Ri):7293, nnz(Ro):7293
+X:torch.Size([1, 2217, 67]), e:torch.Size([1, 7293]), Ri:torch.Size([1, 2217, 7293]), Ro:torch.Size([1, 2217, 7293])
+nnz(X):148539, nnz(e):7293, nnz(Ri):7293, nnz(Ro):7293
+X:torch.Size([1, 2217, 67]), e:torch.Size([1, 7293]), Ri:torch.Size([1, 2217, 7293]), Ro:torch.Size([1, 2217, 7293])
+nnz(X):148539, nnz(e):7293, nnz(Ri):7293, nnz(Ro):7293
+X:torch.Size([1, 2421, 67]), e:torch.Size([1, 8803]), Ri:torch.Size([1, 2421, 8803]), Ro:torch.Size([1, 2421, 8803])
+nnz(X):162207, nnz(e):8803, nnz(Ri):8803, nnz(Ro):8803
+X:torch.Size([1, 2421, 67]), e:torch.Size([1, 8803]), Ri:torch.Size([1, 2421, 8803]), Ro:torch.Size([1, 2421, 8803])
+nnz(X):162207, nnz(e):8803, nnz(Ri):8803, nnz(Ro):8803
+X:torch.Size([1, 2421, 67]), e:torch.Size([1, 8803]), Ri:torch.Size([1, 2421, 8803]), Ro:torch.Size([1, 2421, 8803])
+nnz(X):162207, nnz(e):8803, nnz(Ri):8803, nnz(Ro):8803
+X:torch.Size([1, 2421, 67]), e:torch.Size([1, 8803]), Ri:torch.Size([1, 2421, 8803]), Ro:torch.Size([1, 2421, 8803])
+nnz(X):162207, nnz(e):8803, nnz(Ri):8803, nnz(Ro):8803
+X:torch.Size([1, 2657, 67]), e:torch.Size([1, 10219]), Ri:torch.Size([1, 2657, 10219]), Ro:torch.Size([1, 2657, 10219])
+nnz(X):178019, nnz(e):10219, nnz(Ri):10219, nnz(Ro):10219
+X:torch.Size([1, 2657, 67]), e:torch.Size([1, 10219]), Ri:torch.Size([1, 2657, 10219]), Ro:torch.Size([1, 2657, 10219])
+nnz(X):178019, nnz(e):10219, nnz(Ri):10219, nnz(Ro):10219
+X:torch.Size([1, 2657, 67]), e:torch.Size([1, 10219]), Ri:torch.Size([1, 2657, 10219]), Ro:torch.Size([1, 2657, 10219])
+nnz(X):178019, nnz(e):10219, nnz(Ri):10219, nnz(Ro):10219
+X:torch.Size([1, 2657, 67]), e:torch.Size([1, 10219]), Ri:torch.Size([1, 2657, 10219]), Ro:torch.Size([1, 2657, 10219])
+nnz(X):178019, nnz(e):10219, nnz(Ri):10219, nnz(Ro):10219
+X:torch.Size([1, 2433, 67]), e:torch.Size([1, 8821]), Ri:torch.Size([1, 2433, 8821]), Ro:torch.Size([1, 2433, 8821])
+nnz(X):163011, nnz(e):8821, nnz(Ri):8821, nnz(Ro):8821
+X:torch.Size([1, 2433, 67]), e:torch.Size([1, 8821]), Ri:torch.Size([1, 2433, 8821]), Ro:torch.Size([1, 2433, 8821])
+nnz(X):163011, nnz(e):8821, nnz(Ri):8821, nnz(Ro):8821
+X:torch.Size([1, 2433, 67]), e:torch.Size([1, 8821]), Ri:torch.Size([1, 2433, 8821]), Ro:torch.Size([1, 2433, 8821])
+nnz(X):163011, nnz(e):8821, nnz(Ri):8821, nnz(Ro):8821
+X:torch.Size([1, 2433, 67]), e:torch.Size([1, 8821]), Ri:torch.Size([1, 2433, 8821]), Ro:torch.Size([1, 2433, 8821])
+nnz(X):163011, nnz(e):8821, nnz(Ri):8821, nnz(Ro):8821
+X:torch.Size([1, 2488, 67]), e:torch.Size([1, 9212]), Ri:torch.Size([1, 2488, 9212]), Ro:torch.Size([1, 2488, 9212])
+nnz(X):166696, nnz(e):9212, nnz(Ri):9212, nnz(Ro):9212
+X:torch.Size([1, 2488, 67]), e:torch.Size([1, 9212]), Ri:torch.Size([1, 2488, 9212]), Ro:torch.Size([1, 2488, 9212])
+nnz(X):166696, nnz(e):9212, nnz(Ri):9212, nnz(Ro):9212
+X:torch.Size([1, 2488, 67]), e:torch.Size([1, 9212]), Ri:torch.Size([1, 2488, 9212]), Ro:torch.Size([1, 2488, 9212])
+nnz(X):166696, nnz(e):9212, nnz(Ri):9212, nnz(Ro):9212
+X:torch.Size([1, 2488, 67]), e:torch.Size([1, 9212]), Ri:torch.Size([1, 2488, 9212]), Ro:torch.Size([1, 2488, 9212])
+nnz(X):166696, nnz(e):9212, nnz(Ri):9212, nnz(Ro):9212
+X:torch.Size([1, 2381, 67]), e:torch.Size([1, 8590]), Ri:torch.Size([1, 2381, 8590]), Ro:torch.Size([1, 2381, 8590])
+nnz(X):159527, nnz(e):8590, nnz(Ri):8590, nnz(Ro):8590
+X:torch.Size([1, 2381, 67]), e:torch.Size([1, 8590]), Ri:torch.Size([1, 2381, 8590]), Ro:torch.Size([1, 2381, 8590])
+nnz(X):159527, nnz(e):8590, nnz(Ri):8590, nnz(Ro):8590
+X:torch.Size([1, 2381, 67]), e:torch.Size([1, 8590]), Ri:torch.Size([1, 2381, 8590]), Ro:torch.Size([1, 2381, 8590])
+nnz(X):159527, nnz(e):8590, nnz(Ri):8590, nnz(Ro):8590
+X:torch.Size([1, 2381, 67]), e:torch.Size([1, 8590]), Ri:torch.Size([1, 2381, 8590]), Ro:torch.Size([1, 2381, 8590])
+nnz(X):159527, nnz(e):8590, nnz(Ri):8590, nnz(Ro):8590
+X:torch.Size([1, 1946, 67]), e:torch.Size([1, 6135]), Ri:torch.Size([1, 1946, 6135]), Ro:torch.Size([1, 1946, 6135])
+nnz(X):130382, nnz(e):6135, nnz(Ri):6135, nnz(Ro):6135
+X:torch.Size([1, 1946, 67]), e:torch.Size([1, 6135]), Ri:torch.Size([1, 1946, 6135]), Ro:torch.Size([1, 1946, 6135])
+nnz(X):130382, nnz(e):6135, nnz(Ri):6135, nnz(Ro):6135
+X:torch.Size([1, 1946, 67]), e:torch.Size([1, 6135]), Ri:torch.Size([1, 1946, 6135]), Ro:torch.Size([1, 1946, 6135])
+nnz(X):130382, nnz(e):6135, nnz(Ri):6135, nnz(Ro):6135
+X:torch.Size([1, 1946, 67]), e:torch.Size([1, 6135]), Ri:torch.Size([1, 1946, 6135]), Ro:torch.Size([1, 1946, 6135])
+nnz(X):130382, nnz(e):6135, nnz(Ri):6135, nnz(Ro):6135
+X:torch.Size([1, 2601, 67]), e:torch.Size([1, 9678]), Ri:torch.Size([1, 2601, 9678]), Ro:torch.Size([1, 2601, 9678])
+nnz(X):174267, nnz(e):9678, nnz(Ri):9678, nnz(Ro):9678
+X:torch.Size([1, 2601, 67]), e:torch.Size([1, 9678]), Ri:torch.Size([1, 2601, 9678]), Ro:torch.Size([1, 2601, 9678])
+nnz(X):174267, nnz(e):9678, nnz(Ri):9678, nnz(Ro):9678
+X:torch.Size([1, 2601, 67]), e:torch.Size([1, 9678]), Ri:torch.Size([1, 2601, 9678]), Ro:torch.Size([1, 2601, 9678])
+nnz(X):174267, nnz(e):9678, nnz(Ri):9678, nnz(Ro):9678
+X:torch.Size([1, 2601, 67]), e:torch.Size([1, 9678]), Ri:torch.Size([1, 2601, 9678]), Ro:torch.Size([1, 2601, 9678])
+nnz(X):174267, nnz(e):9678, nnz(Ri):9678, nnz(Ro):9678
+X:torch.Size([1, 2693, 67]), e:torch.Size([1, 10779]), Ri:torch.Size([1, 2693, 10779]), Ro:torch.Size([1, 2693, 10779])
+nnz(X):180431, nnz(e):10779, nnz(Ri):10779, nnz(Ro):10779
+X:torch.Size([1, 2693, 67]), e:torch.Size([1, 10779]), Ri:torch.Size([1, 2693, 10779]), Ro:torch.Size([1, 2693, 10779])
+nnz(X):180431, nnz(e):10779, nnz(Ri):10779, nnz(Ro):10779
+X:torch.Size([1, 2693, 67]), e:torch.Size([1, 10779]), Ri:torch.Size([1, 2693, 10779]), Ro:torch.Size([1, 2693, 10779])
+nnz(X):180431, nnz(e):10779, nnz(Ri):10779, nnz(Ro):10779
+X:torch.Size([1, 2693, 67]), e:torch.Size([1, 10779]), Ri:torch.Size([1, 2693, 10779]), Ro:torch.Size([1, 2693, 10779])
+nnz(X):180431, nnz(e):10779, nnz(Ri):10779, nnz(Ro):10779
+X:torch.Size([1, 2360, 67]), e:torch.Size([1, 8033]), Ri:torch.Size([1, 2360, 8033]), Ro:torch.Size([1, 2360, 8033])
+nnz(X):158120, nnz(e):8033, nnz(Ri):8033, nnz(Ro):8033
+X:torch.Size([1, 2360, 67]), e:torch.Size([1, 8033]), Ri:torch.Size([1, 2360, 8033]), Ro:torch.Size([1, 2360, 8033])
+nnz(X):158120, nnz(e):8033, nnz(Ri):8033, nnz(Ro):8033
+X:torch.Size([1, 2360, 67]), e:torch.Size([1, 8033]), Ri:torch.Size([1, 2360, 8033]), Ro:torch.Size([1, 2360, 8033])
+nnz(X):158120, nnz(e):8033, nnz(Ri):8033, nnz(Ro):8033
+X:torch.Size([1, 2360, 67]), e:torch.Size([1, 8033]), Ri:torch.Size([1, 2360, 8033]), Ro:torch.Size([1, 2360, 8033])
+nnz(X):158120, nnz(e):8033, nnz(Ri):8033, nnz(Ro):8033
+X:torch.Size([1, 2478, 67]), e:torch.Size([1, 9058]), Ri:torch.Size([1, 2478, 9058]), Ro:torch.Size([1, 2478, 9058])
+nnz(X):166026, nnz(e):9058, nnz(Ri):9058, nnz(Ro):9058
+X:torch.Size([1, 2478, 67]), e:torch.Size([1, 9058]), Ri:torch.Size([1, 2478, 9058]), Ro:torch.Size([1, 2478, 9058])
+nnz(X):166026, nnz(e):9058, nnz(Ri):9058, nnz(Ro):9058
+X:torch.Size([1, 2478, 67]), e:torch.Size([1, 9058]), Ri:torch.Size([1, 2478, 9058]), Ro:torch.Size([1, 2478, 9058])
+nnz(X):166026, nnz(e):9058, nnz(Ri):9058, nnz(Ro):9058
+X:torch.Size([1, 2478, 67]), e:torch.Size([1, 9058]), Ri:torch.Size([1, 2478, 9058]), Ro:torch.Size([1, 2478, 9058])
+nnz(X):166026, nnz(e):9058, nnz(Ri):9058, nnz(Ro):9058
+X:torch.Size([1, 3035, 67]), e:torch.Size([1, 13949]), Ri:torch.Size([1, 3035, 13949]), Ro:torch.Size([1, 3035, 13949])
+nnz(X):203345, nnz(e):13949, nnz(Ri):13949, nnz(Ro):13949
+X:torch.Size([1, 3035, 67]), e:torch.Size([1, 13949]), Ri:torch.Size([1, 3035, 13949]), Ro:torch.Size([1, 3035, 13949])
+nnz(X):203345, nnz(e):13949, nnz(Ri):13949, nnz(Ro):13949
+X:torch.Size([1, 3035, 67]), e:torch.Size([1, 13949]), Ri:torch.Size([1, 3035, 13949]), Ro:torch.Size([1, 3035, 13949])
+nnz(X):203345, nnz(e):13949, nnz(Ri):13949, nnz(Ro):13949
+X:torch.Size([1, 3035, 67]), e:torch.Size([1, 13949]), Ri:torch.Size([1, 3035, 13949]), Ro:torch.Size([1, 3035, 13949])
+nnz(X):203345, nnz(e):13949, nnz(Ri):13949, nnz(Ro):13949
+X:torch.Size([1, 1935, 67]), e:torch.Size([1, 6074]), Ri:torch.Size([1, 1935, 6074]), Ro:torch.Size([1, 1935, 6074])
+nnz(X):129645, nnz(e):6074, nnz(Ri):6074, nnz(Ro):6074
+X:torch.Size([1, 1935, 67]), e:torch.Size([1, 6074]), Ri:torch.Size([1, 1935, 6074]), Ro:torch.Size([1, 1935, 6074])
+nnz(X):129645, nnz(e):6074, nnz(Ri):6074, nnz(Ro):6074
+X:torch.Size([1, 1935, 67]), e:torch.Size([1, 6074]), Ri:torch.Size([1, 1935, 6074]), Ro:torch.Size([1, 1935, 6074])
+nnz(X):129645, nnz(e):6074, nnz(Ri):6074, nnz(Ro):6074
+X:torch.Size([1, 1935, 67]), e:torch.Size([1, 6074]), Ri:torch.Size([1, 1935, 6074]), Ro:torch.Size([1, 1935, 6074])
+nnz(X):129645, nnz(e):6074, nnz(Ri):6074, nnz(Ro):6074
+X:torch.Size([1, 1610, 67]), e:torch.Size([1, 4146]), Ri:torch.Size([1, 1610, 4146]), Ro:torch.Size([1, 1610, 4146])
+nnz(X):107870, nnz(e):4146, nnz(Ri):4146, nnz(Ro):4146
+X:torch.Size([1, 1610, 67]), e:torch.Size([1, 4146]), Ri:torch.Size([1, 1610, 4146]), Ro:torch.Size([1, 1610, 4146])
+nnz(X):107870, nnz(e):4146, nnz(Ri):4146, nnz(Ro):4146
+X:torch.Size([1, 1610, 67]), e:torch.Size([1, 4146]), Ri:torch.Size([1, 1610, 4146]), Ro:torch.Size([1, 1610, 4146])
+nnz(X):107870, nnz(e):4146, nnz(Ri):4146, nnz(Ro):4146
+X:torch.Size([1, 1610, 67]), e:torch.Size([1, 4146]), Ri:torch.Size([1, 1610, 4146]), Ro:torch.Size([1, 1610, 4146])
+nnz(X):107870, nnz(e):4146, nnz(Ri):4146, nnz(Ro):4146
+X:torch.Size([1, 1665, 67]), e:torch.Size([1, 4481]), Ri:torch.Size([1, 1665, 4481]), Ro:torch.Size([1, 1665, 4481])
+nnz(X):111555, nnz(e):4481, nnz(Ri):4481, nnz(Ro):4481
+X:torch.Size([1, 1665, 67]), e:torch.Size([1, 4481]), Ri:torch.Size([1, 1665, 4481]), Ro:torch.Size([1, 1665, 4481])
+nnz(X):111555, nnz(e):4481, nnz(Ri):4481, nnz(Ro):4481
+X:torch.Size([1, 1665, 67]), e:torch.Size([1, 4481]), Ri:torch.Size([1, 1665, 4481]), Ro:torch.Size([1, 1665, 4481])
+nnz(X):111555, nnz(e):4481, nnz(Ri):4481, nnz(Ro):4481
+X:torch.Size([1, 1665, 67]), e:torch.Size([1, 4481]), Ri:torch.Size([1, 1665, 4481]), Ro:torch.Size([1, 1665, 4481])
+nnz(X):111555, nnz(e):4481, nnz(Ri):4481, nnz(Ro):4481
+X:torch.Size([1, 1942, 67]), e:torch.Size([1, 5701]), Ri:torch.Size([1, 1942, 5701]), Ro:torch.Size([1, 1942, 5701])
+nnz(X):130114, nnz(e):5701, nnz(Ri):5701, nnz(Ro):5701
+X:torch.Size([1, 1942, 67]), e:torch.Size([1, 5701]), Ri:torch.Size([1, 1942, 5701]), Ro:torch.Size([1, 1942, 5701])
+nnz(X):130114, nnz(e):5701, nnz(Ri):5701, nnz(Ro):5701
+X:torch.Size([1, 1942, 67]), e:torch.Size([1, 5701]), Ri:torch.Size([1, 1942, 5701]), Ro:torch.Size([1, 1942, 5701])
+nnz(X):130114, nnz(e):5701, nnz(Ri):5701, nnz(Ro):5701
+X:torch.Size([1, 1942, 67]), e:torch.Size([1, 5701]), Ri:torch.Size([1, 1942, 5701]), Ro:torch.Size([1, 1942, 5701])
+nnz(X):130114, nnz(e):5701, nnz(Ri):5701, nnz(Ro):5701
+X:torch.Size([1, 1806, 67]), e:torch.Size([1, 5773]), Ri:torch.Size([1, 1806, 5773]), Ro:torch.Size([1, 1806, 5773])
+nnz(X):121002, nnz(e):5773, nnz(Ri):5773, nnz(Ro):5773
+X:torch.Size([1, 1806, 67]), e:torch.Size([1, 5773]), Ri:torch.Size([1, 1806, 5773]), Ro:torch.Size([1, 1806, 5773])
+nnz(X):121002, nnz(e):5773, nnz(Ri):5773, nnz(Ro):5773
+X:torch.Size([1, 1806, 67]), e:torch.Size([1, 5773]), Ri:torch.Size([1, 1806, 5773]), Ro:torch.Size([1, 1806, 5773])
+nnz(X):121002, nnz(e):5773, nnz(Ri):5773, nnz(Ro):5773
+X:torch.Size([1, 1806, 67]), e:torch.Size([1, 5773]), Ri:torch.Size([1, 1806, 5773]), Ro:torch.Size([1, 1806, 5773])
+nnz(X):121002, nnz(e):5773, nnz(Ri):5773, nnz(Ro):5773
+X:torch.Size([1, 1697, 67]), e:torch.Size([1, 4896]), Ri:torch.Size([1, 1697, 4896]), Ro:torch.Size([1, 1697, 4896])
+nnz(X):113699, nnz(e):4896, nnz(Ri):4896, nnz(Ro):4896
+X:torch.Size([1, 1697, 67]), e:torch.Size([1, 4896]), Ri:torch.Size([1, 1697, 4896]), Ro:torch.Size([1, 1697, 4896])
+nnz(X):113699, nnz(e):4896, nnz(Ri):4896, nnz(Ro):4896
+X:torch.Size([1, 1697, 67]), e:torch.Size([1, 4896]), Ri:torch.Size([1, 1697, 4896]), Ro:torch.Size([1, 1697, 4896])
+nnz(X):113699, nnz(e):4896, nnz(Ri):4896, nnz(Ro):4896
+X:torch.Size([1, 1697, 67]), e:torch.Size([1, 4896]), Ri:torch.Size([1, 1697, 4896]), Ro:torch.Size([1, 1697, 4896])
+nnz(X):113699, nnz(e):4896, nnz(Ri):4896, nnz(Ro):4896
+X:torch.Size([1, 2820, 67]), e:torch.Size([1, 11438]), Ri:torch.Size([1, 2820, 11438]), Ro:torch.Size([1, 2820, 11438])
+nnz(X):188939, nnz(e):11438, nnz(Ri):11438, nnz(Ro):11438
+X:torch.Size([1, 2820, 67]), e:torch.Size([1, 11438]), Ri:torch.Size([1, 2820, 11438]), Ro:torch.Size([1, 2820, 11438])
+nnz(X):188940, nnz(e):11438, nnz(Ri):11438, nnz(Ro):11438
+X:torch.Size([1, 2820, 67]), e:torch.Size([1, 11438]), Ri:torch.Size([1, 2820, 11438]), Ro:torch.Size([1, 2820, 11438])
+nnz(X):188940, nnz(e):11438, nnz(Ri):11438, nnz(Ro):11438
+X:torch.Size([1, 2820, 67]), e:torch.Size([1, 11438]), Ri:torch.Size([1, 2820, 11438]), Ro:torch.Size([1, 2820, 11438])
+nnz(X):188940, nnz(e):11438, nnz(Ri):11438, nnz(Ro):11438
+X:torch.Size([1, 1328, 67]), e:torch.Size([1, 2950]), Ri:torch.Size([1, 1328, 2950]), Ro:torch.Size([1, 1328, 2950])
+nnz(X):88976, nnz(e):2950, nnz(Ri):2950, nnz(Ro):2950
+X:torch.Size([1, 1328, 67]), e:torch.Size([1, 2950]), Ri:torch.Size([1, 1328, 2950]), Ro:torch.Size([1, 1328, 2950])
+nnz(X):88976, nnz(e):2950, nnz(Ri):2950, nnz(Ro):2950
+X:torch.Size([1, 1328, 67]), e:torch.Size([1, 2950]), Ri:torch.Size([1, 1328, 2950]), Ro:torch.Size([1, 1328, 2950])
+nnz(X):88976, nnz(e):2950, nnz(Ri):2950, nnz(Ro):2950
+X:torch.Size([1, 1328, 67]), e:torch.Size([1, 2950]), Ri:torch.Size([1, 1328, 2950]), Ro:torch.Size([1, 1328, 2950])
+nnz(X):88976, nnz(e):2950, nnz(Ri):2950, nnz(Ro):2950
+X:torch.Size([1, 2290, 67]), e:torch.Size([1, 7818]), Ri:torch.Size([1, 2290, 7818]), Ro:torch.Size([1, 2290, 7818])
+nnz(X):153430, nnz(e):7818, nnz(Ri):7818, nnz(Ro):7818
+X:torch.Size([1, 2290, 67]), e:torch.Size([1, 7818]), Ri:torch.Size([1, 2290, 7818]), Ro:torch.Size([1, 2290, 7818])
+nnz(X):153430, nnz(e):7818, nnz(Ri):7818, nnz(Ro):7818
+X:torch.Size([1, 2290, 67]), e:torch.Size([1, 7818]), Ri:torch.Size([1, 2290, 7818]), Ro:torch.Size([1, 2290, 7818])
+nnz(X):153430, nnz(e):7818, nnz(Ri):7818, nnz(Ro):7818
+X:torch.Size([1, 2290, 67]), e:torch.Size([1, 7818]), Ri:torch.Size([1, 2290, 7818]), Ro:torch.Size([1, 2290, 7818])
+nnz(X):153430, nnz(e):7818, nnz(Ri):7818, nnz(Ro):7818
+X:torch.Size([1, 1664, 67]), e:torch.Size([1, 4390]), Ri:torch.Size([1, 1664, 4390]), Ro:torch.Size([1, 1664, 4390])
+nnz(X):111488, nnz(e):4390, nnz(Ri):4390, nnz(Ro):4390
+X:torch.Size([1, 1664, 67]), e:torch.Size([1, 4390]), Ri:torch.Size([1, 1664, 4390]), Ro:torch.Size([1, 1664, 4390])
+nnz(X):111488, nnz(e):4390, nnz(Ri):4390, nnz(Ro):4390
+X:torch.Size([1, 1664, 67]), e:torch.Size([1, 4390]), Ri:torch.Size([1, 1664, 4390]), Ro:torch.Size([1, 1664, 4390])
+nnz(X):111488, nnz(e):4390, nnz(Ri):4390, nnz(Ro):4390
+X:torch.Size([1, 1664, 67]), e:torch.Size([1, 4390]), Ri:torch.Size([1, 1664, 4390]), Ro:torch.Size([1, 1664, 4390])
+nnz(X):111488, nnz(e):4390, nnz(Ri):4390, nnz(Ro):4390
+X:torch.Size([1, 2685, 67]), e:torch.Size([1, 11178]), Ri:torch.Size([1, 2685, 11178]), Ro:torch.Size([1, 2685, 11178])
+nnz(X):179895, nnz(e):11178, nnz(Ri):11178, nnz(Ro):11178
+X:torch.Size([1, 2685, 67]), e:torch.Size([1, 11178]), Ri:torch.Size([1, 2685, 11178]), Ro:torch.Size([1, 2685, 11178])
+nnz(X):179895, nnz(e):11178, nnz(Ri):11178, nnz(Ro):11178
+X:torch.Size([1, 2685, 67]), e:torch.Size([1, 11178]), Ri:torch.Size([1, 2685, 11178]), Ro:torch.Size([1, 2685, 11178])
+nnz(X):179895, nnz(e):11178, nnz(Ri):11178, nnz(Ro):11178
+X:torch.Size([1, 2685, 67]), e:torch.Size([1, 11178]), Ri:torch.Size([1, 2685, 11178]), Ro:torch.Size([1, 2685, 11178])
+nnz(X):179895, nnz(e):11178, nnz(Ri):11178, nnz(Ro):11178
+X:torch.Size([1, 2645, 67]), e:torch.Size([1, 10158]), Ri:torch.Size([1, 2645, 10158]), Ro:torch.Size([1, 2645, 10158])
+nnz(X):177215, nnz(e):10158, nnz(Ri):10158, nnz(Ro):10158
+X:torch.Size([1, 2645, 67]), e:torch.Size([1, 10158]), Ri:torch.Size([1, 2645, 10158]), Ro:torch.Size([1, 2645, 10158])
+nnz(X):177215, nnz(e):10158, nnz(Ri):10158, nnz(Ro):10158
+X:torch.Size([1, 2645, 67]), e:torch.Size([1, 10158]), Ri:torch.Size([1, 2645, 10158]), Ro:torch.Size([1, 2645, 10158])
+nnz(X):177215, nnz(e):10158, nnz(Ri):10158, nnz(Ro):10158
+X:torch.Size([1, 2645, 67]), e:torch.Size([1, 10158]), Ri:torch.Size([1, 2645, 10158]), Ro:torch.Size([1, 2645, 10158])
+nnz(X):177215, nnz(e):10158, nnz(Ri):10158, nnz(Ro):10158
+X:torch.Size([1, 3030, 67]), e:torch.Size([1, 13283]), Ri:torch.Size([1, 3030, 13283]), Ro:torch.Size([1, 3030, 13283])
+nnz(X):203010, nnz(e):13283, nnz(Ri):13283, nnz(Ro):13283
+X:torch.Size([1, 3030, 67]), e:torch.Size([1, 13283]), Ri:torch.Size([1, 3030, 13283]), Ro:torch.Size([1, 3030, 13283])
+nnz(X):203010, nnz(e):13283, nnz(Ri):13283, nnz(Ro):13283
+X:torch.Size([1, 3030, 67]), e:torch.Size([1, 13283]), Ri:torch.Size([1, 3030, 13283]), Ro:torch.Size([1, 3030, 13283])
+nnz(X):203010, nnz(e):13283, nnz(Ri):13283, nnz(Ro):13283
+X:torch.Size([1, 3030, 67]), e:torch.Size([1, 13283]), Ri:torch.Size([1, 3030, 13283]), Ro:torch.Size([1, 3030, 13283])
+nnz(X):203010, nnz(e):13283, nnz(Ri):13283, nnz(Ro):13283
+X:torch.Size([1, 2591, 67]), e:torch.Size([1, 9941]), Ri:torch.Size([1, 2591, 9941]), Ro:torch.Size([1, 2591, 9941])
+nnz(X):173597, nnz(e):9941, nnz(Ri):9941, nnz(Ro):9941
+X:torch.Size([1, 2591, 67]), e:torch.Size([1, 9941]), Ri:torch.Size([1, 2591, 9941]), Ro:torch.Size([1, 2591, 9941])
+nnz(X):173597, nnz(e):9941, nnz(Ri):9941, nnz(Ro):9941
+X:torch.Size([1, 2591, 67]), e:torch.Size([1, 9941]), Ri:torch.Size([1, 2591, 9941]), Ro:torch.Size([1, 2591, 9941])
+nnz(X):173597, nnz(e):9941, nnz(Ri):9941, nnz(Ro):9941
+X:torch.Size([1, 2591, 67]), e:torch.Size([1, 9941]), Ri:torch.Size([1, 2591, 9941]), Ro:torch.Size([1, 2591, 9941])
+nnz(X):173597, nnz(e):9941, nnz(Ri):9941, nnz(Ro):9941
+X:torch.Size([1, 1660, 67]), e:torch.Size([1, 4556]), Ri:torch.Size([1, 1660, 4556]), Ro:torch.Size([1, 1660, 4556])
+nnz(X):111220, nnz(e):4556, nnz(Ri):4556, nnz(Ro):4556
+X:torch.Size([1, 1660, 67]), e:torch.Size([1, 4556]), Ri:torch.Size([1, 1660, 4556]), Ro:torch.Size([1, 1660, 4556])
+nnz(X):111220, nnz(e):4556, nnz(Ri):4556, nnz(Ro):4556
+X:torch.Size([1, 1660, 67]), e:torch.Size([1, 4556]), Ri:torch.Size([1, 1660, 4556]), Ro:torch.Size([1, 1660, 4556])
+nnz(X):111220, nnz(e):4556, nnz(Ri):4556, nnz(Ro):4556
+X:torch.Size([1, 1660, 67]), e:torch.Size([1, 4556]), Ri:torch.Size([1, 1660, 4556]), Ro:torch.Size([1, 1660, 4556])
+nnz(X):111220, nnz(e):4556, nnz(Ri):4556, nnz(Ro):4556
+X:torch.Size([1, 2319, 67]), e:torch.Size([1, 7729]), Ri:torch.Size([1, 2319, 7729]), Ro:torch.Size([1, 2319, 7729])
+nnz(X):155373, nnz(e):7729, nnz(Ri):7729, nnz(Ro):7729
+X:torch.Size([1, 2319, 67]), e:torch.Size([1, 7729]), Ri:torch.Size([1, 2319, 7729]), Ro:torch.Size([1, 2319, 7729])
+nnz(X):155373, nnz(e):7729, nnz(Ri):7729, nnz(Ro):7729
+X:torch.Size([1, 2319, 67]), e:torch.Size([1, 7729]), Ri:torch.Size([1, 2319, 7729]), Ro:torch.Size([1, 2319, 7729])
+nnz(X):155373, nnz(e):7729, nnz(Ri):7729, nnz(Ro):7729
+X:torch.Size([1, 2319, 67]), e:torch.Size([1, 7729]), Ri:torch.Size([1, 2319, 7729]), Ro:torch.Size([1, 2319, 7729])
+nnz(X):155373, nnz(e):7729, nnz(Ri):7729, nnz(Ro):7729
+X:torch.Size([1, 2493, 67]), e:torch.Size([1, 9165]), Ri:torch.Size([1, 2493, 9165]), Ro:torch.Size([1, 2493, 9165])
+nnz(X):167031, nnz(e):9165, nnz(Ri):9165, nnz(Ro):9165
+X:torch.Size([1, 2493, 67]), e:torch.Size([1, 9165]), Ri:torch.Size([1, 2493, 9165]), Ro:torch.Size([1, 2493, 9165])
+nnz(X):167031, nnz(e):9165, nnz(Ri):9165, nnz(Ro):9165
+X:torch.Size([1, 2493, 67]), e:torch.Size([1, 9165]), Ri:torch.Size([1, 2493, 9165]), Ro:torch.Size([1, 2493, 9165])
+nnz(X):167031, nnz(e):9165, nnz(Ri):9165, nnz(Ro):9165
+X:torch.Size([1, 2493, 67]), e:torch.Size([1, 9165]), Ri:torch.Size([1, 2493, 9165]), Ro:torch.Size([1, 2493, 9165])
+nnz(X):167031, nnz(e):9165, nnz(Ri):9165, nnz(Ro):9165
+X:torch.Size([1, 2312, 67]), e:torch.Size([1, 7973]), Ri:torch.Size([1, 2312, 7973]), Ro:torch.Size([1, 2312, 7973])
+nnz(X):154904, nnz(e):7973, nnz(Ri):7973, nnz(Ro):7973
+X:torch.Size([1, 2312, 67]), e:torch.Size([1, 7973]), Ri:torch.Size([1, 2312, 7973]), Ro:torch.Size([1, 2312, 7973])
+nnz(X):154904, nnz(e):7973, nnz(Ri):7973, nnz(Ro):7973
+X:torch.Size([1, 2312, 67]), e:torch.Size([1, 7973]), Ri:torch.Size([1, 2312, 7973]), Ro:torch.Size([1, 2312, 7973])
+nnz(X):154904, nnz(e):7973, nnz(Ri):7973, nnz(Ro):7973
+X:torch.Size([1, 2312, 67]), e:torch.Size([1, 7973]), Ri:torch.Size([1, 2312, 7973]), Ro:torch.Size([1, 2312, 7973])
+nnz(X):154904, nnz(e):7973, nnz(Ri):7973, nnz(Ro):7973
+X:torch.Size([1, 2263, 67]), e:torch.Size([1, 7868]), Ri:torch.Size([1, 2263, 7868]), Ro:torch.Size([1, 2263, 7868])
+nnz(X):151621, nnz(e):7868, nnz(Ri):7868, nnz(Ro):7868
+X:torch.Size([1, 2263, 67]), e:torch.Size([1, 7868]), Ri:torch.Size([1, 2263, 7868]), Ro:torch.Size([1, 2263, 7868])
+nnz(X):151621, nnz(e):7868, nnz(Ri):7868, nnz(Ro):7868
+X:torch.Size([1, 2263, 67]), e:torch.Size([1, 7868]), Ri:torch.Size([1, 2263, 7868]), Ro:torch.Size([1, 2263, 7868])
+nnz(X):151621, nnz(e):7868, nnz(Ri):7868, nnz(Ro):7868
+X:torch.Size([1, 2263, 67]), e:torch.Size([1, 7868]), Ri:torch.Size([1, 2263, 7868]), Ro:torch.Size([1, 2263, 7868])
+nnz(X):151621, nnz(e):7868, nnz(Ri):7868, nnz(Ro):7868
+X:torch.Size([1, 1886, 67]), e:torch.Size([1, 5614]), Ri:torch.Size([1, 1886, 5614]), Ro:torch.Size([1, 1886, 5614])
+nnz(X):126362, nnz(e):5614, nnz(Ri):5614, nnz(Ro):5614
+X:torch.Size([1, 1886, 67]), e:torch.Size([1, 5614]), Ri:torch.Size([1, 1886, 5614]), Ro:torch.Size([1, 1886, 5614])
+nnz(X):126362, nnz(e):5614, nnz(Ri):5614, nnz(Ro):5614
+X:torch.Size([1, 1886, 67]), e:torch.Size([1, 5614]), Ri:torch.Size([1, 1886, 5614]), Ro:torch.Size([1, 1886, 5614])
+nnz(X):126362, nnz(e):5614, nnz(Ri):5614, nnz(Ro):5614
+X:torch.Size([1, 1886, 67]), e:torch.Size([1, 5614]), Ri:torch.Size([1, 1886, 5614]), Ro:torch.Size([1, 1886, 5614])
+nnz(X):126362, nnz(e):5614, nnz(Ri):5614, nnz(Ro):5614
+X:torch.Size([1, 2264, 67]), e:torch.Size([1, 7981]), Ri:torch.Size([1, 2264, 7981]), Ro:torch.Size([1, 2264, 7981])
+nnz(X):151688, nnz(e):7981, nnz(Ri):7981, nnz(Ro):7981
+X:torch.Size([1, 2264, 67]), e:torch.Size([1, 7981]), Ri:torch.Size([1, 2264, 7981]), Ro:torch.Size([1, 2264, 7981])
+nnz(X):151688, nnz(e):7981, nnz(Ri):7981, nnz(Ro):7981
+X:torch.Size([1, 2264, 67]), e:torch.Size([1, 7981]), Ri:torch.Size([1, 2264, 7981]), Ro:torch.Size([1, 2264, 7981])
+nnz(X):151688, nnz(e):7981, nnz(Ri):7981, nnz(Ro):7981
+X:torch.Size([1, 2264, 67]), e:torch.Size([1, 7981]), Ri:torch.Size([1, 2264, 7981]), Ro:torch.Size([1, 2264, 7981])
+nnz(X):151688, nnz(e):7981, nnz(Ri):7981, nnz(Ro):7981
+X:torch.Size([1, 1805, 67]), e:torch.Size([1, 4938]), Ri:torch.Size([1, 1805, 4938]), Ro:torch.Size([1, 1805, 4938])
+nnz(X):120935, nnz(e):4938, nnz(Ri):4938, nnz(Ro):4938
+X:torch.Size([1, 1805, 67]), e:torch.Size([1, 4938]), Ri:torch.Size([1, 1805, 4938]), Ro:torch.Size([1, 1805, 4938])
+nnz(X):120935, nnz(e):4938, nnz(Ri):4938, nnz(Ro):4938
+X:torch.Size([1, 1805, 67]), e:torch.Size([1, 4938]), Ri:torch.Size([1, 1805, 4938]), Ro:torch.Size([1, 1805, 4938])
+nnz(X):120935, nnz(e):4938, nnz(Ri):4938, nnz(Ro):4938
+X:torch.Size([1, 1805, 67]), e:torch.Size([1, 4938]), Ri:torch.Size([1, 1805, 4938]), Ro:torch.Size([1, 1805, 4938])
+nnz(X):120935, nnz(e):4938, nnz(Ri):4938, nnz(Ro):4938
+X:torch.Size([1, 1955, 67]), e:torch.Size([1, 5624]), Ri:torch.Size([1, 1955, 5624]), Ro:torch.Size([1, 1955, 5624])
+nnz(X):130985, nnz(e):5624, nnz(Ri):5624, nnz(Ro):5624
+X:torch.Size([1, 1955, 67]), e:torch.Size([1, 5624]), Ri:torch.Size([1, 1955, 5624]), Ro:torch.Size([1, 1955, 5624])
+nnz(X):130985, nnz(e):5624, nnz(Ri):5624, nnz(Ro):5624
+X:torch.Size([1, 1955, 67]), e:torch.Size([1, 5624]), Ri:torch.Size([1, 1955, 5624]), Ro:torch.Size([1, 1955, 5624])
+nnz(X):130985, nnz(e):5624, nnz(Ri):5624, nnz(Ro):5624
+X:torch.Size([1, 1955, 67]), e:torch.Size([1, 5624]), Ri:torch.Size([1, 1955, 5624]), Ro:torch.Size([1, 1955, 5624])
+nnz(X):130985, nnz(e):5624, nnz(Ri):5624, nnz(Ro):5624
+X:torch.Size([1, 2515, 67]), e:torch.Size([1, 9428]), Ri:torch.Size([1, 2515, 9428]), Ro:torch.Size([1, 2515, 9428])
+nnz(X):168505, nnz(e):9428, nnz(Ri):9428, nnz(Ro):9428
+X:torch.Size([1, 2515, 67]), e:torch.Size([1, 9428]), Ri:torch.Size([1, 2515, 9428]), Ro:torch.Size([1, 2515, 9428])
+nnz(X):168505, nnz(e):9428, nnz(Ri):9428, nnz(Ro):9428
+X:torch.Size([1, 2515, 67]), e:torch.Size([1, 9428]), Ri:torch.Size([1, 2515, 9428]), Ro:torch.Size([1, 2515, 9428])
+nnz(X):168505, nnz(e):9428, nnz(Ri):9428, nnz(Ro):9428
+X:torch.Size([1, 2515, 67]), e:torch.Size([1, 9428]), Ri:torch.Size([1, 2515, 9428]), Ro:torch.Size([1, 2515, 9428])
+nnz(X):168505, nnz(e):9428, nnz(Ri):9428, nnz(Ro):9428
+X:torch.Size([1, 1755, 67]), e:torch.Size([1, 4965]), Ri:torch.Size([1, 1755, 4965]), Ro:torch.Size([1, 1755, 4965])
+nnz(X):117585, nnz(e):4965, nnz(Ri):4965, nnz(Ro):4965
+X:torch.Size([1, 1755, 67]), e:torch.Size([1, 4965]), Ri:torch.Size([1, 1755, 4965]), Ro:torch.Size([1, 1755, 4965])
+nnz(X):117585, nnz(e):4965, nnz(Ri):4965, nnz(Ro):4965
+X:torch.Size([1, 1755, 67]), e:torch.Size([1, 4965]), Ri:torch.Size([1, 1755, 4965]), Ro:torch.Size([1, 1755, 4965])
+nnz(X):117585, nnz(e):4965, nnz(Ri):4965, nnz(Ro):4965
+X:torch.Size([1, 1755, 67]), e:torch.Size([1, 4965]), Ri:torch.Size([1, 1755, 4965]), Ro:torch.Size([1, 1755, 4965])
+nnz(X):117585, nnz(e):4965, nnz(Ri):4965, nnz(Ro):4965
+X:torch.Size([1, 1758, 67]), e:torch.Size([1, 5080]), Ri:torch.Size([1, 1758, 5080]), Ro:torch.Size([1, 1758, 5080])
+nnz(X):117786, nnz(e):5080, nnz(Ri):5080, nnz(Ro):5080
+X:torch.Size([1, 1758, 67]), e:torch.Size([1, 5080]), Ri:torch.Size([1, 1758, 5080]), Ro:torch.Size([1, 1758, 5080])
+nnz(X):117786, nnz(e):5080, nnz(Ri):5080, nnz(Ro):5080
+X:torch.Size([1, 1758, 67]), e:torch.Size([1, 5080]), Ri:torch.Size([1, 1758, 5080]), Ro:torch.Size([1, 1758, 5080])
+nnz(X):117786, nnz(e):5080, nnz(Ri):5080, nnz(Ro):5080
+X:torch.Size([1, 1758, 67]), e:torch.Size([1, 5080]), Ri:torch.Size([1, 1758, 5080]), Ro:torch.Size([1, 1758, 5080])
+nnz(X):117786, nnz(e):5080, nnz(Ri):5080, nnz(Ro):5080
+X:torch.Size([1, 2276, 67]), e:torch.Size([1, 7624]), Ri:torch.Size([1, 2276, 7624]), Ro:torch.Size([1, 2276, 7624])
+nnz(X):152492, nnz(e):7624, nnz(Ri):7624, nnz(Ro):7624
+X:torch.Size([1, 2276, 67]), e:torch.Size([1, 7624]), Ri:torch.Size([1, 2276, 7624]), Ro:torch.Size([1, 2276, 7624])
+nnz(X):152492, nnz(e):7624, nnz(Ri):7624, nnz(Ro):7624
+X:torch.Size([1, 2276, 67]), e:torch.Size([1, 7624]), Ri:torch.Size([1, 2276, 7624]), Ro:torch.Size([1, 2276, 7624])
+nnz(X):152492, nnz(e):7624, nnz(Ri):7624, nnz(Ro):7624
+X:torch.Size([1, 2276, 67]), e:torch.Size([1, 7624]), Ri:torch.Size([1, 2276, 7624]), Ro:torch.Size([1, 2276, 7624])
+nnz(X):152492, nnz(e):7624, nnz(Ri):7624, nnz(Ro):7624
+X:torch.Size([1, 1539, 67]), e:torch.Size([1, 3939]), Ri:torch.Size([1, 1539, 3939]), Ro:torch.Size([1, 1539, 3939])
+nnz(X):103113, nnz(e):3939, nnz(Ri):3939, nnz(Ro):3939
+X:torch.Size([1, 1539, 67]), e:torch.Size([1, 3939]), Ri:torch.Size([1, 1539, 3939]), Ro:torch.Size([1, 1539, 3939])
+nnz(X):103113, nnz(e):3939, nnz(Ri):3939, nnz(Ro):3939
+X:torch.Size([1, 1539, 67]), e:torch.Size([1, 3939]), Ri:torch.Size([1, 1539, 3939]), Ro:torch.Size([1, 1539, 3939])
+nnz(X):103113, nnz(e):3939, nnz(Ri):3939, nnz(Ro):3939
+X:torch.Size([1, 1539, 67]), e:torch.Size([1, 3939]), Ri:torch.Size([1, 1539, 3939]), Ro:torch.Size([1, 1539, 3939])
+nnz(X):103113, nnz(e):3939, nnz(Ri):3939, nnz(Ro):3939
+X:torch.Size([1, 2217, 67]), e:torch.Size([1, 7293]), Ri:torch.Size([1, 2217, 7293]), Ro:torch.Size([1, 2217, 7293])
+nnz(X):148539, nnz(e):7293, nnz(Ri):7293, nnz(Ro):7293
+X:torch.Size([1, 2217, 67]), e:torch.Size([1, 7293]), Ri:torch.Size([1, 2217, 7293]), Ro:torch.Size([1, 2217, 7293])
+nnz(X):148539, nnz(e):7293, nnz(Ri):7293, nnz(Ro):7293
+X:torch.Size([1, 2217, 67]), e:torch.Size([1, 7293]), Ri:torch.Size([1, 2217, 7293]), Ro:torch.Size([1, 2217, 7293])
+nnz(X):148539, nnz(e):7293, nnz(Ri):7293, nnz(Ro):7293
+X:torch.Size([1, 2217, 67]), e:torch.Size([1, 7293]), Ri:torch.Size([1, 2217, 7293]), Ro:torch.Size([1, 2217, 7293])
+nnz(X):148539, nnz(e):7293, nnz(Ri):7293, nnz(Ro):7293
+X:torch.Size([1, 2421, 67]), e:torch.Size([1, 8803]), Ri:torch.Size([1, 2421, 8803]), Ro:torch.Size([1, 2421, 8803])
+nnz(X):162207, nnz(e):8803, nnz(Ri):8803, nnz(Ro):8803
+X:torch.Size([1, 2421, 67]), e:torch.Size([1, 8803]), Ri:torch.Size([1, 2421, 8803]), Ro:torch.Size([1, 2421, 8803])
+nnz(X):162207, nnz(e):8803, nnz(Ri):8803, nnz(Ro):8803
+X:torch.Size([1, 2421, 67]), e:torch.Size([1, 8803]), Ri:torch.Size([1, 2421, 8803]), Ro:torch.Size([1, 2421, 8803])
+nnz(X):162207, nnz(e):8803, nnz(Ri):8803, nnz(Ro):8803
+X:torch.Size([1, 2421, 67]), e:torch.Size([1, 8803]), Ri:torch.Size([1, 2421, 8803]), Ro:torch.Size([1, 2421, 8803])
+nnz(X):162207, nnz(e):8803, nnz(Ri):8803, nnz(Ro):8803
+X:torch.Size([1, 2657, 67]), e:torch.Size([1, 10219]), Ri:torch.Size([1, 2657, 10219]), Ro:torch.Size([1, 2657, 10219])
+nnz(X):178019, nnz(e):10219, nnz(Ri):10219, nnz(Ro):10219
+X:torch.Size([1, 2657, 67]), e:torch.Size([1, 10219]), Ri:torch.Size([1, 2657, 10219]), Ro:torch.Size([1, 2657, 10219])
+nnz(X):178019, nnz(e):10219, nnz(Ri):10219, nnz(Ro):10219
+X:torch.Size([1, 2657, 67]), e:torch.Size([1, 10219]), Ri:torch.Size([1, 2657, 10219]), Ro:torch.Size([1, 2657, 10219])
+nnz(X):178019, nnz(e):10219, nnz(Ri):10219, nnz(Ro):10219
+X:torch.Size([1, 2657, 67]), e:torch.Size([1, 10219]), Ri:torch.Size([1, 2657, 10219]), Ro:torch.Size([1, 2657, 10219])
+nnz(X):178019, nnz(e):10219, nnz(Ri):10219, nnz(Ro):10219
+X:torch.Size([1, 2433, 67]), e:torch.Size([1, 8821]), Ri:torch.Size([1, 2433, 8821]), Ro:torch.Size([1, 2433, 8821])
+nnz(X):163011, nnz(e):8821, nnz(Ri):8821, nnz(Ro):8821
+X:torch.Size([1, 2433, 67]), e:torch.Size([1, 8821]), Ri:torch.Size([1, 2433, 8821]), Ro:torch.Size([1, 2433, 8821])
+nnz(X):163011, nnz(e):8821, nnz(Ri):8821, nnz(Ro):8821
+X:torch.Size([1, 2433, 67]), e:torch.Size([1, 8821]), Ri:torch.Size([1, 2433, 8821]), Ro:torch.Size([1, 2433, 8821])
+nnz(X):163011, nnz(e):8821, nnz(Ri):8821, nnz(Ro):8821
+X:torch.Size([1, 2433, 67]), e:torch.Size([1, 8821]), Ri:torch.Size([1, 2433, 8821]), Ro:torch.Size([1, 2433, 8821])
+nnz(X):163011, nnz(e):8821, nnz(Ri):8821, nnz(Ro):8821
+X:torch.Size([1, 2488, 67]), e:torch.Size([1, 9212]), Ri:torch.Size([1, 2488, 9212]), Ro:torch.Size([1, 2488, 9212])
+nnz(X):166696, nnz(e):9212, nnz(Ri):9212, nnz(Ro):9212
+X:torch.Size([1, 2488, 67]), e:torch.Size([1, 9212]), Ri:torch.Size([1, 2488, 9212]), Ro:torch.Size([1, 2488, 9212])
+nnz(X):166696, nnz(e):9212, nnz(Ri):9212, nnz(Ro):9212
+X:torch.Size([1, 2488, 67]), e:torch.Size([1, 9212]), Ri:torch.Size([1, 2488, 9212]), Ro:torch.Size([1, 2488, 9212])
+nnz(X):166696, nnz(e):9212, nnz(Ri):9212, nnz(Ro):9212
+X:torch.Size([1, 2488, 67]), e:torch.Size([1, 9212]), Ri:torch.Size([1, 2488, 9212]), Ro:torch.Size([1, 2488, 9212])
+nnz(X):166696, nnz(e):9212, nnz(Ri):9212, nnz(Ro):9212
+X:torch.Size([1, 2381, 67]), e:torch.Size([1, 8590]), Ri:torch.Size([1, 2381, 8590]), Ro:torch.Size([1, 2381, 8590])
+nnz(X):159527, nnz(e):8590, nnz(Ri):8590, nnz(Ro):8590
+X:torch.Size([1, 2381, 67]), e:torch.Size([1, 8590]), Ri:torch.Size([1, 2381, 8590]), Ro:torch.Size([1, 2381, 8590])
+nnz(X):159527, nnz(e):8590, nnz(Ri):8590, nnz(Ro):8590
+X:torch.Size([1, 2381, 67]), e:torch.Size([1, 8590]), Ri:torch.Size([1, 2381, 8590]), Ro:torch.Size([1, 2381, 8590])
+nnz(X):159527, nnz(e):8590, nnz(Ri):8590, nnz(Ro):8590
+X:torch.Size([1, 2381, 67]), e:torch.Size([1, 8590]), Ri:torch.Size([1, 2381, 8590]), Ro:torch.Size([1, 2381, 8590])
+nnz(X):159527, nnz(e):8590, nnz(Ri):8590, nnz(Ro):8590
+X:torch.Size([1, 1946, 67]), e:torch.Size([1, 6135]), Ri:torch.Size([1, 1946, 6135]), Ro:torch.Size([1, 1946, 6135])
+nnz(X):130382, nnz(e):6135, nnz(Ri):6135, nnz(Ro):6135
+X:torch.Size([1, 1946, 67]), e:torch.Size([1, 6135]), Ri:torch.Size([1, 1946, 6135]), Ro:torch.Size([1, 1946, 6135])
+nnz(X):130382, nnz(e):6135, nnz(Ri):6135, nnz(Ro):6135
+X:torch.Size([1, 1946, 67]), e:torch.Size([1, 6135]), Ri:torch.Size([1, 1946, 6135]), Ro:torch.Size([1, 1946, 6135])
+nnz(X):130382, nnz(e):6135, nnz(Ri):6135, nnz(Ro):6135
+X:torch.Size([1, 1946, 67]), e:torch.Size([1, 6135]), Ri:torch.Size([1, 1946, 6135]), Ro:torch.Size([1, 1946, 6135])
+nnz(X):130382, nnz(e):6135, nnz(Ri):6135, nnz(Ro):6135
+X:torch.Size([1, 2601, 67]), e:torch.Size([1, 9678]), Ri:torch.Size([1, 2601, 9678]), Ro:torch.Size([1, 2601, 9678])
+nnz(X):174267, nnz(e):9678, nnz(Ri):9678, nnz(Ro):9678
+X:torch.Size([1, 2601, 67]), e:torch.Size([1, 9678]), Ri:torch.Size([1, 2601, 9678]), Ro:torch.Size([1, 2601, 9678])
+nnz(X):174267, nnz(e):9678, nnz(Ri):9678, nnz(Ro):9678
+X:torch.Size([1, 2601, 67]), e:torch.Size([1, 9678]), Ri:torch.Size([1, 2601, 9678]), Ro:torch.Size([1, 2601, 9678])
+nnz(X):174267, nnz(e):9678, nnz(Ri):9678, nnz(Ro):9678
+X:torch.Size([1, 2601, 67]), e:torch.Size([1, 9678]), Ri:torch.Size([1, 2601, 9678]), Ro:torch.Size([1, 2601, 9678])
+nnz(X):174267, nnz(e):9678, nnz(Ri):9678, nnz(Ro):9678
+X:torch.Size([1, 2693, 67]), e:torch.Size([1, 10779]), Ri:torch.Size([1, 2693, 10779]), Ro:torch.Size([1, 2693, 10779])
+nnz(X):180431, nnz(e):10779, nnz(Ri):10779, nnz(Ro):10779
+X:torch.Size([1, 2693, 67]), e:torch.Size([1, 10779]), Ri:torch.Size([1, 2693, 10779]), Ro:torch.Size([1, 2693, 10779])
+nnz(X):180431, nnz(e):10779, nnz(Ri):10779, nnz(Ro):10779
+X:torch.Size([1, 2693, 67]), e:torch.Size([1, 10779]), Ri:torch.Size([1, 2693, 10779]), Ro:torch.Size([1, 2693, 10779])
+nnz(X):180431, nnz(e):10779, nnz(Ri):10779, nnz(Ro):10779
+X:torch.Size([1, 2693, 67]), e:torch.Size([1, 10779]), Ri:torch.Size([1, 2693, 10779]), Ro:torch.Size([1, 2693, 10779])
+nnz(X):180431, nnz(e):10779, nnz(Ri):10779, nnz(Ro):10779
+X:torch.Size([1, 2360, 67]), e:torch.Size([1, 8033]), Ri:torch.Size([1, 2360, 8033]), Ro:torch.Size([1, 2360, 8033])
+nnz(X):158120, nnz(e):8033, nnz(Ri):8033, nnz(Ro):8033
+X:torch.Size([1, 2360, 67]), e:torch.Size([1, 8033]), Ri:torch.Size([1, 2360, 8033]), Ro:torch.Size([1, 2360, 8033])
+nnz(X):158120, nnz(e):8033, nnz(Ri):8033, nnz(Ro):8033
+X:torch.Size([1, 2360, 67]), e:torch.Size([1, 8033]), Ri:torch.Size([1, 2360, 8033]), Ro:torch.Size([1, 2360, 8033])
+nnz(X):158120, nnz(e):8033, nnz(Ri):8033, nnz(Ro):8033
+X:torch.Size([1, 2360, 67]), e:torch.Size([1, 8033]), Ri:torch.Size([1, 2360, 8033]), Ro:torch.Size([1, 2360, 8033])
+nnz(X):158120, nnz(e):8033, nnz(Ri):8033, nnz(Ro):8033
+X:torch.Size([1, 2478, 67]), e:torch.Size([1, 9058]), Ri:torch.Size([1, 2478, 9058]), Ro:torch.Size([1, 2478, 9058])
+nnz(X):166026, nnz(e):9058, nnz(Ri):9058, nnz(Ro):9058
+X:torch.Size([1, 2478, 67]), e:torch.Size([1, 9058]), Ri:torch.Size([1, 2478, 9058]), Ro:torch.Size([1, 2478, 9058])
+nnz(X):166026, nnz(e):9058, nnz(Ri):9058, nnz(Ro):9058
+X:torch.Size([1, 2478, 67]), e:torch.Size([1, 9058]), Ri:torch.Size([1, 2478, 9058]), Ro:torch.Size([1, 2478, 9058])
+nnz(X):166026, nnz(e):9058, nnz(Ri):9058, nnz(Ro):9058
+X:torch.Size([1, 2478, 67]), e:torch.Size([1, 9058]), Ri:torch.Size([1, 2478, 9058]), Ro:torch.Size([1, 2478, 9058])
+nnz(X):166026, nnz(e):9058, nnz(Ri):9058, nnz(Ro):9058
+X:torch.Size([1, 3035, 67]), e:torch.Size([1, 13949]), Ri:torch.Size([1, 3035, 13949]), Ro:torch.Size([1, 3035, 13949])
+nnz(X):203345, nnz(e):13949, nnz(Ri):13949, nnz(Ro):13949
+X:torch.Size([1, 3035, 67]), e:torch.Size([1, 13949]), Ri:torch.Size([1, 3035, 13949]), Ro:torch.Size([1, 3035, 13949])
+nnz(X):203345, nnz(e):13949, nnz(Ri):13949, nnz(Ro):13949
+X:torch.Size([1, 3035, 67]), e:torch.Size([1, 13949]), Ri:torch.Size([1, 3035, 13949]), Ro:torch.Size([1, 3035, 13949])
+nnz(X):203345, nnz(e):13949, nnz(Ri):13949, nnz(Ro):13949
+X:torch.Size([1, 3035, 67]), e:torch.Size([1, 13949]), Ri:torch.Size([1, 3035, 13949]), Ro:torch.Size([1, 3035, 13949])
+nnz(X):203345, nnz(e):13949, nnz(Ri):13949, nnz(Ro):13949
+X:torch.Size([1, 1935, 67]), e:torch.Size([1, 6074]), Ri:torch.Size([1, 1935, 6074]), Ro:torch.Size([1, 1935, 6074])
+nnz(X):129645, nnz(e):6074, nnz(Ri):6074, nnz(Ro):6074
+X:torch.Size([1, 1935, 67]), e:torch.Size([1, 6074]), Ri:torch.Size([1, 1935, 6074]), Ro:torch.Size([1, 1935, 6074])
+nnz(X):129645, nnz(e):6074, nnz(Ri):6074, nnz(Ro):6074
+X:torch.Size([1, 1935, 67]), e:torch.Size([1, 6074]), Ri:torch.Size([1, 1935, 6074]), Ro:torch.Size([1, 1935, 6074])
+nnz(X):129645, nnz(e):6074, nnz(Ri):6074, nnz(Ro):6074
+X:torch.Size([1, 1935, 67]), e:torch.Size([1, 6074]), Ri:torch.Size([1, 1935, 6074]), Ro:torch.Size([1, 1935, 6074])
+nnz(X):129645, nnz(e):6074, nnz(Ri):6074, nnz(Ro):6074
+X:torch.Size([1, 1610, 67]), e:torch.Size([1, 4146]), Ri:torch.Size([1, 1610, 4146]), Ro:torch.Size([1, 1610, 4146])
+nnz(X):107870, nnz(e):4146, nnz(Ri):4146, nnz(Ro):4146
+X:torch.Size([1, 1610, 67]), e:torch.Size([1, 4146]), Ri:torch.Size([1, 1610, 4146]), Ro:torch.Size([1, 1610, 4146])
+nnz(X):107870, nnz(e):4146, nnz(Ri):4146, nnz(Ro):4146
+X:torch.Size([1, 1610, 67]), e:torch.Size([1, 4146]), Ri:torch.Size([1, 1610, 4146]), Ro:torch.Size([1, 1610, 4146])
+nnz(X):107870, nnz(e):4146, nnz(Ri):4146, nnz(Ro):4146
+X:torch.Size([1, 1610, 67]), e:torch.Size([1, 4146]), Ri:torch.Size([1, 1610, 4146]), Ro:torch.Size([1, 1610, 4146])
+nnz(X):107870, nnz(e):4146, nnz(Ri):4146, nnz(Ro):4146
+X:torch.Size([1, 1665, 67]), e:torch.Size([1, 4481]), Ri:torch.Size([1, 1665, 4481]), Ro:torch.Size([1, 1665, 4481])
+nnz(X):111555, nnz(e):4481, nnz(Ri):4481, nnz(Ro):4481
+X:torch.Size([1, 1665, 67]), e:torch.Size([1, 4481]), Ri:torch.Size([1, 1665, 4481]), Ro:torch.Size([1, 1665, 4481])
+nnz(X):111555, nnz(e):4481, nnz(Ri):4481, nnz(Ro):4481
+X:torch.Size([1, 1665, 67]), e:torch.Size([1, 4481]), Ri:torch.Size([1, 1665, 4481]), Ro:torch.Size([1, 1665, 4481])
+nnz(X):111555, nnz(e):4481, nnz(Ri):4481, nnz(Ro):4481
+X:torch.Size([1, 1665, 67]), e:torch.Size([1, 4481]), Ri:torch.Size([1, 1665, 4481]), Ro:torch.Size([1, 1665, 4481])
+nnz(X):111555, nnz(e):4481, nnz(Ri):4481, nnz(Ro):4481
+X:torch.Size([1, 1942, 67]), e:torch.Size([1, 5701]), Ri:torch.Size([1, 1942, 5701]), Ro:torch.Size([1, 1942, 5701])
+nnz(X):130114, nnz(e):5701, nnz(Ri):5701, nnz(Ro):5701
+X:torch.Size([1, 1942, 67]), e:torch.Size([1, 5701]), Ri:torch.Size([1, 1942, 5701]), Ro:torch.Size([1, 1942, 5701])
+nnz(X):130114, nnz(e):5701, nnz(Ri):5701, nnz(Ro):5701
+X:torch.Size([1, 1942, 67]), e:torch.Size([1, 5701]), Ri:torch.Size([1, 1942, 5701]), Ro:torch.Size([1, 1942, 5701])
+nnz(X):130114, nnz(e):5701, nnz(Ri):5701, nnz(Ro):5701
+X:torch.Size([1, 1942, 67]), e:torch.Size([1, 5701]), Ri:torch.Size([1, 1942, 5701]), Ro:torch.Size([1, 1942, 5701])
+nnz(X):130114, nnz(e):5701, nnz(Ri):5701, nnz(Ro):5701
+X:torch.Size([1, 1806, 67]), e:torch.Size([1, 5773]), Ri:torch.Size([1, 1806, 5773]), Ro:torch.Size([1, 1806, 5773])
+nnz(X):121002, nnz(e):5773, nnz(Ri):5773, nnz(Ro):5773
+X:torch.Size([1, 1806, 67]), e:torch.Size([1, 5773]), Ri:torch.Size([1, 1806, 5773]), Ro:torch.Size([1, 1806, 5773])
+nnz(X):121002, nnz(e):5773, nnz(Ri):5773, nnz(Ro):5773
+X:torch.Size([1, 1806, 67]), e:torch.Size([1, 5773]), Ri:torch.Size([1, 1806, 5773]), Ro:torch.Size([1, 1806, 5773])
+nnz(X):121002, nnz(e):5773, nnz(Ri):5773, nnz(Ro):5773
+X:torch.Size([1, 1806, 67]), e:torch.Size([1, 5773]), Ri:torch.Size([1, 1806, 5773]), Ro:torch.Size([1, 1806, 5773])
+nnz(X):121002, nnz(e):5773, nnz(Ri):5773, nnz(Ro):5773
+X:torch.Size([1, 1697, 67]), e:torch.Size([1, 4896]), Ri:torch.Size([1, 1697, 4896]), Ro:torch.Size([1, 1697, 4896])
+nnz(X):113699, nnz(e):4896, nnz(Ri):4896, nnz(Ro):4896
+X:torch.Size([1, 1697, 67]), e:torch.Size([1, 4896]), Ri:torch.Size([1, 1697, 4896]), Ro:torch.Size([1, 1697, 4896])
+nnz(X):113699, nnz(e):4896, nnz(Ri):4896, nnz(Ro):4896
+X:torch.Size([1, 1697, 67]), e:torch.Size([1, 4896]), Ri:torch.Size([1, 1697, 4896]), Ro:torch.Size([1, 1697, 4896])
+nnz(X):113699, nnz(e):4896, nnz(Ri):4896, nnz(Ro):4896
+X:torch.Size([1, 1697, 67]), e:torch.Size([1, 4896]), Ri:torch.Size([1, 1697, 4896]), Ro:torch.Size([1, 1697, 4896])
+nnz(X):113699, nnz(e):4896, nnz(Ri):4896, nnz(Ro):4896
+X:torch.Size([1, 2820, 67]), e:torch.Size([1, 11438]), Ri:torch.Size([1, 2820, 11438]), Ro:torch.Size([1, 2820, 11438])
+nnz(X):188939, nnz(e):11438, nnz(Ri):11438, nnz(Ro):11438
+X:torch.Size([1, 2820, 67]), e:torch.Size([1, 11438]), Ri:torch.Size([1, 2820, 11438]), Ro:torch.Size([1, 2820, 11438])
+nnz(X):188940, nnz(e):11438, nnz(Ri):11438, nnz(Ro):11438
+X:torch.Size([1, 2820, 67]), e:torch.Size([1, 11438]), Ri:torch.Size([1, 2820, 11438]), Ro:torch.Size([1, 2820, 11438])
+nnz(X):188940, nnz(e):11438, nnz(Ri):11438, nnz(Ro):11438
+X:torch.Size([1, 2820, 67]), e:torch.Size([1, 11438]), Ri:torch.Size([1, 2820, 11438]), Ro:torch.Size([1, 2820, 11438])
+nnz(X):188940, nnz(e):11438, nnz(Ri):11438, nnz(Ro):11438
+X:torch.Size([1, 1328, 67]), e:torch.Size([1, 2950]), Ri:torch.Size([1, 1328, 2950]), Ro:torch.Size([1, 1328, 2950])
+nnz(X):88976, nnz(e):2950, nnz(Ri):2950, nnz(Ro):2950
+X:torch.Size([1, 1328, 67]), e:torch.Size([1, 2950]), Ri:torch.Size([1, 1328, 2950]), Ro:torch.Size([1, 1328, 2950])
+nnz(X):88976, nnz(e):2950, nnz(Ri):2950, nnz(Ro):2950
+X:torch.Size([1, 1328, 67]), e:torch.Size([1, 2950]), Ri:torch.Size([1, 1328, 2950]), Ro:torch.Size([1, 1328, 2950])
+nnz(X):88976, nnz(e):2950, nnz(Ri):2950, nnz(Ro):2950
+X:torch.Size([1, 1328, 67]), e:torch.Size([1, 2950]), Ri:torch.Size([1, 1328, 2950]), Ro:torch.Size([1, 1328, 2950])
+nnz(X):88976, nnz(e):2950, nnz(Ri):2950, nnz(Ro):2950
+X:torch.Size([1, 2290, 67]), e:torch.Size([1, 7818]), Ri:torch.Size([1, 2290, 7818]), Ro:torch.Size([1, 2290, 7818])
+nnz(X):153430, nnz(e):7818, nnz(Ri):7818, nnz(Ro):7818
+X:torch.Size([1, 2290, 67]), e:torch.Size([1, 7818]), Ri:torch.Size([1, 2290, 7818]), Ro:torch.Size([1, 2290, 7818])
+nnz(X):153430, nnz(e):7818, nnz(Ri):7818, nnz(Ro):7818
+X:torch.Size([1, 2290, 67]), e:torch.Size([1, 7818]), Ri:torch.Size([1, 2290, 7818]), Ro:torch.Size([1, 2290, 7818])
+nnz(X):153430, nnz(e):7818, nnz(Ri):7818, nnz(Ro):7818
+X:torch.Size([1, 2290, 67]), e:torch.Size([1, 7818]), Ri:torch.Size([1, 2290, 7818]), Ro:torch.Size([1, 2290, 7818])
+nnz(X):153430, nnz(e):7818, nnz(Ri):7818, nnz(Ro):7818
+X:torch.Size([1, 1664, 67]), e:torch.Size([1, 4390]), Ri:torch.Size([1, 1664, 4390]), Ro:torch.Size([1, 1664, 4390])
+nnz(X):111488, nnz(e):4390, nnz(Ri):4390, nnz(Ro):4390
+X:torch.Size([1, 1664, 67]), e:torch.Size([1, 4390]), Ri:torch.Size([1, 1664, 4390]), Ro:torch.Size([1, 1664, 4390])
+nnz(X):111488, nnz(e):4390, nnz(Ri):4390, nnz(Ro):4390
+X:torch.Size([1, 1664, 67]), e:torch.Size([1, 4390]), Ri:torch.Size([1, 1664, 4390]), Ro:torch.Size([1, 1664, 4390])
+nnz(X):111488, nnz(e):4390, nnz(Ri):4390, nnz(Ro):4390
+X:torch.Size([1, 1664, 67]), e:torch.Size([1, 4390]), Ri:torch.Size([1, 1664, 4390]), Ro:torch.Size([1, 1664, 4390])
+nnz(X):111488, nnz(e):4390, nnz(Ri):4390, nnz(Ro):4390
+X:torch.Size([1, 2685, 67]), e:torch.Size([1, 11178]), Ri:torch.Size([1, 2685, 11178]), Ro:torch.Size([1, 2685, 11178])
+nnz(X):179895, nnz(e):11178, nnz(Ri):11178, nnz(Ro):11178
+X:torch.Size([1, 2685, 67]), e:torch.Size([1, 11178]), Ri:torch.Size([1, 2685, 11178]), Ro:torch.Size([1, 2685, 11178])
+nnz(X):179895, nnz(e):11178, nnz(Ri):11178, nnz(Ro):11178
+X:torch.Size([1, 2685, 67]), e:torch.Size([1, 11178]), Ri:torch.Size([1, 2685, 11178]), Ro:torch.Size([1, 2685, 11178])
+nnz(X):179895, nnz(e):11178, nnz(Ri):11178, nnz(Ro):11178
+X:torch.Size([1, 2685, 67]), e:torch.Size([1, 11178]), Ri:torch.Size([1, 2685, 11178]), Ro:torch.Size([1, 2685, 11178])
+nnz(X):179895, nnz(e):11178, nnz(Ri):11178, nnz(Ro):11178
+X:torch.Size([1, 2645, 67]), e:torch.Size([1, 10158]), Ri:torch.Size([1, 2645, 10158]), Ro:torch.Size([1, 2645, 10158])
+nnz(X):177215, nnz(e):10158, nnz(Ri):10158, nnz(Ro):10158
+X:torch.Size([1, 2645, 67]), e:torch.Size([1, 10158]), Ri:torch.Size([1, 2645, 10158]), Ro:torch.Size([1, 2645, 10158])
+nnz(X):177215, nnz(e):10158, nnz(Ri):10158, nnz(Ro):10158
+X:torch.Size([1, 2645, 67]), e:torch.Size([1, 10158]), Ri:torch.Size([1, 2645, 10158]), Ro:torch.Size([1, 2645, 10158])
+nnz(X):177215, nnz(e):10158, nnz(Ri):10158, nnz(Ro):10158
+X:torch.Size([1, 2645, 67]), e:torch.Size([1, 10158]), Ri:torch.Size([1, 2645, 10158]), Ro:torch.Size([1, 2645, 10158])
+nnz(X):177215, nnz(e):10158, nnz(Ri):10158, nnz(Ro):10158
+X:torch.Size([1, 3030, 67]), e:torch.Size([1, 13283]), Ri:torch.Size([1, 3030, 13283]), Ro:torch.Size([1, 3030, 13283])
+nnz(X):203010, nnz(e):13283, nnz(Ri):13283, nnz(Ro):13283
+X:torch.Size([1, 3030, 67]), e:torch.Size([1, 13283]), Ri:torch.Size([1, 3030, 13283]), Ro:torch.Size([1, 3030, 13283])
+nnz(X):203010, nnz(e):13283, nnz(Ri):13283, nnz(Ro):13283
+X:torch.Size([1, 3030, 67]), e:torch.Size([1, 13283]), Ri:torch.Size([1, 3030, 13283]), Ro:torch.Size([1, 3030, 13283])
+nnz(X):203010, nnz(e):13283, nnz(Ri):13283, nnz(Ro):13283
+X:torch.Size([1, 3030, 67]), e:torch.Size([1, 13283]), Ri:torch.Size([1, 3030, 13283]), Ro:torch.Size([1, 3030, 13283])
+nnz(X):203010, nnz(e):13283, nnz(Ri):13283, nnz(Ro):13283
+X:torch.Size([1, 2591, 67]), e:torch.Size([1, 9941]), Ri:torch.Size([1, 2591, 9941]), Ro:torch.Size([1, 2591, 9941])
+nnz(X):173597, nnz(e):9941, nnz(Ri):9941, nnz(Ro):9941
+X:torch.Size([1, 2591, 67]), e:torch.Size([1, 9941]), Ri:torch.Size([1, 2591, 9941]), Ro:torch.Size([1, 2591, 9941])
+nnz(X):173597, nnz(e):9941, nnz(Ri):9941, nnz(Ro):9941
+X:torch.Size([1, 2591, 67]), e:torch.Size([1, 9941]), Ri:torch.Size([1, 2591, 9941]), Ro:torch.Size([1, 2591, 9941])
+nnz(X):173597, nnz(e):9941, nnz(Ri):9941, nnz(Ro):9941
+X:torch.Size([1, 2591, 67]), e:torch.Size([1, 9941]), Ri:torch.Size([1, 2591, 9941]), Ro:torch.Size([1, 2591, 9941])
+nnz(X):173597, nnz(e):9941, nnz(Ri):9941, nnz(Ro):9941
+X:torch.Size([1, 1660, 67]), e:torch.Size([1, 4556]), Ri:torch.Size([1, 1660, 4556]), Ro:torch.Size([1, 1660, 4556])
+nnz(X):111220, nnz(e):4556, nnz(Ri):4556, nnz(Ro):4556
+X:torch.Size([1, 1660, 67]), e:torch.Size([1, 4556]), Ri:torch.Size([1, 1660, 4556]), Ro:torch.Size([1, 1660, 4556])
+nnz(X):111220, nnz(e):4556, nnz(Ri):4556, nnz(Ro):4556
+X:torch.Size([1, 1660, 67]), e:torch.Size([1, 4556]), Ri:torch.Size([1, 1660, 4556]), Ro:torch.Size([1, 1660, 4556])
+nnz(X):111220, nnz(e):4556, nnz(Ri):4556, nnz(Ro):4556
+X:torch.Size([1, 1660, 67]), e:torch.Size([1, 4556]), Ri:torch.Size([1, 1660, 4556]), Ro:torch.Size([1, 1660, 4556])
+nnz(X):111220, nnz(e):4556, nnz(Ri):4556, nnz(Ro):4556
