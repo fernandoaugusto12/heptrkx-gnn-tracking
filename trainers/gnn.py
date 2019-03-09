@@ -10,9 +10,10 @@ import torch
 from torch import nn
 from torch.optim.lr_scheduler import LambdaLR
 
+from models import get_model
 # Locals
 from .base_trainer import BaseTrainer
-from models import get_model
+
 
 class GNNTrainer(BaseTrainer):
     """Trainer code for basic classification problems."""
@@ -82,7 +83,7 @@ class GNNTrainer(BaseTrainer):
         summary['train_loss'] = sum_loss / (i + 1)
         self.logger.debug(' Processed %i batches', (i + 1))
         self.logger.info('  Training loss: %.3f', summary['train_loss'])
-        #self.logger.info('  Learning rate: %.5f', summary['lr'])
+        # self.logger.info('  Learning rate: %.5f', summary['lr'])
         return summary
 
     @torch.no_grad()
@@ -96,7 +97,7 @@ class GNNTrainer(BaseTrainer):
         start_time = time.time()
         # Loop over batches
         for i, (batch_input, batch_target) in enumerate(data_loader):
-            #self.logger.debug(' batch %i', i)
+            # self.logger.debug(' batch %i', i)
             batch_input = [batch_input[0].to(self.device),
                            [spRi.to(self.device) for spRi in batch_input[1]],
                            [spRo.to(self.device) for spRo in batch_input[2]]]
@@ -119,6 +120,7 @@ class GNNTrainer(BaseTrainer):
         self.logger.info('  Validation loss: %.3f acc: %.3f' %
                          (summary['valid_loss'], summary['valid_acc']))
         return summary
+
 
 def _test():
     t = GNNTrainer(output_dir='./')

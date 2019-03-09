@@ -4,21 +4,22 @@ Data preparation script for GNN tracking.
 This script processes the TrackML dataset and produces graph data on disk.
 """
 
-# System
-import os
 import argparse
 import logging
 import multiprocessing as mp
+# System
+import os
 from functools import partial
 
-# Externals
-import yaml
 import numpy as np
 import pandas as pd
 import trackml.dataset
+# Externals
+import yaml
 
 # Locals
 from datasets.graph import Graph, save_graphs
+
 
 def parse_args():
     """Parse command line arguments."""
@@ -33,16 +34,19 @@ def parse_args():
     add_arg('--interactive', action='store_true')
     return parser.parse_args()
 
+
 def calc_dphi(phi1, phi2):
     """Computes phi2-phi1 given in range [-pi,pi]"""
     dphi = phi2 - phi1
-    dphi[dphi > np.pi] -= 2*np.pi
-    dphi[dphi < -np.pi] += 2*np.pi
+    dphi[dphi > np.pi] -= 2 * np.pi
+    dphi[dphi < -np.pi] += 2 * np.pi
     return dphi
+
 
 def calc_eta(r, z):
     theta = np.arctan2(r, z)
     return -1. * np.log(np.tan(theta / 2.))
+
 
 def select_segments(hits1, hits2, phi_slope_max, z0_max):
     """
@@ -66,6 +70,7 @@ def select_segments(hits1, hits2, phi_slope_max, z0_max):
     # Filter segments according to criteria
     good_seg_mask = (phi_slope.abs() < phi_slope_max) & (z0.abs() < z0_max)
     return hit_pairs[['index_1', 'index_2']][good_seg_mask]
+
 
 def construct_graph(hits, layer_pairs,
                     phi_slope_max, z0_max,
@@ -117,25 +122,26 @@ def construct_graph(hits, layer_pairs,
     # Return a tuple of the results
     return Graph(X, Ri, Ro, y)
 
+
 def select_hits(hits, truth, particles, pt_min=0):
     # Barrel volume and layer ids
-    vlids = [(8,2), (8,4), (8,6), (8,8),
-             (13,2), (13,4), (13,6), (13,8),
-             (17,2), (17,4)]
+    vlids = [(8, 2), (8, 4), (8, 6), (8, 8),
+             (13, 2), (13, 4), (13, 6), (13, 8),
+             (17, 2), (17, 4)]
     n_det_layers = len(vlids)
     # Select barrel layers and assign convenient layer number [0-9]
     vlid_groups = hits.groupby(['volume_id', 'layer_id'])
     hits = pd.concat([vlid_groups.get_group(vlids[i]).assign(layer=i)
                       for i in range(n_det_layers)])
     # Calculate particle transverse momentum
-    pt = np.sqrt(particles.px**2 + particles.py**2)
+    pt = np.sqrt(particles.px ** 2 + particles.py ** 2)
     # True particle selection.
     # Applies pt cut, removes all noise hits.
     particles = particles[pt > pt_min]
     truth = (truth[['hit_id', 'particle_id']]
              .merge(particles[['particle_id']], on='particle_id'))
     # Calculate derived hits variables
-    r = np.sqrt(hits.x**2 + hits.y**2)
+    r = np.sqrt(hits.x ** 2 + hits.y ** 2)
     phi = np.arctan2(hits.y, hits.x)
     # Select the data columns we need
     hits = (hits[['hit_id', 'z', 'layer']]
@@ -147,24 +153,26 @@ def select_hits(hits, truth, particles, pt_min=0):
     ]
     return hits
 
+
 def split_detector_sections(hits, phi_edges, eta_edges):
     """Split hits according to provided phi and eta boundaries."""
     hits_sections = []
     # Loop over sections
     for i in range(len(phi_edges) - 1):
-        phi_min, phi_max = phi_edges[i], phi_edges[i+1]
+        phi_min, phi_max = phi_edges[i], phi_edges[i + 1]
         # Select hits in this phi section
         phi_hits = hits[(hits.phi > phi_min) & (hits.phi < phi_max)]
         # Center these hits on phi=0
         centered_phi = phi_hits.phi - (phi_min + phi_max) / 2
         phi_hits = phi_hits.assign(phi=centered_phi, phi_section=i)
         for j in range(len(eta_edges) - 1):
-            eta_min, eta_max = eta_edges[j], eta_edges[j+1]
+            eta_min, eta_max = eta_edges[j], eta_edges[j + 1]
             # Select hits in this eta section
             eta = calc_eta(phi_hits.r, phi_hits.z)
             sec_hits = phi_hits[(eta > eta_min) & (eta < eta_max)]
             hits_sections.append(sec_hits.assign(eta_section=j))
     return hits_sections
+
 
 def process_event(prefix, output_dir, pt_min, n_eta_sections, n_phi_sections,
                   eta_range, phi_range, phi_slope_max, z0_max):
@@ -179,9 +187,9 @@ def process_event(prefix, output_dir, pt_min, n_eta_sections, n_phi_sections,
     hits = select_hits(hits, truth, particles, pt_min=pt_min).assign(evtid=evtid)
 
     # Divide detector into sections
-    #phi_range = (-np.pi, np.pi)
-    phi_edges = np.linspace(*phi_range, num=n_phi_sections+1)
-    eta_edges = np.linspace(*eta_range, num=n_eta_sections+1)
+    # phi_range = (-np.pi, np.pi)
+    phi_edges = np.linspace(*phi_range, num=n_phi_sections + 1)
+    eta_edges = np.linspace(*eta_range, num=n_eta_sections + 1)
     hits_sections = split_detector_sections(hits, phi_edges, eta_edges)
 
     # Graph features and scale
@@ -210,6 +218,7 @@ def process_event(prefix, output_dir, pt_min, n_eta_sections, n_phi_sections,
         logging.info(e)
     logging.info('Event %i, writing graphs', evtid)
     save_graphs(graphs, filenames)
+
 
 def main():
     """Main function"""
@@ -264,6 +273,7 @@ def main():
         IPython.embed()
 
     logging.info('All done!')
+
 
 if __name__ == '__main__':
     main()

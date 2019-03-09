@@ -3,8 +3,8 @@ PyTorch dataset specifications.
 """
 
 from torch.utils.data import DataLoader
-from torch.utils.data.distributed import DistributedSampler
 from torch.utils.data.dataloader import default_collate
+
 
 def get_datasets(name, **data_args):
     if name == 'dummy':
@@ -15,6 +15,7 @@ def get_datasets(name, **data_args):
         return get_datasets(**data_args)
     else:
         raise Exception('Dataset %s unknown' % name)
+
 
 def get_data_loaders(name, batch_size,
                      n_workers=0, **data_args):

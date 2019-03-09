@@ -2,15 +2,15 @@
 Main training script for NERSC PyTorch examples
 """
 
+import argparse
+import logging
 # System
 import os
 import sys
-import argparse
-import logging
 
+import numpy as np
 # Externals
 import yaml
-import numpy as np
 
 # Locals
 from datasets import get_data_loaders
@@ -103,6 +103,7 @@ def main():
         IPython.embed()
 
     logging.info('All done!')
+
 
 if __name__ == '__main__':
     main()

@@ -4,16 +4,14 @@ PyTorch specification for the hit graph dataset.
 
 # System imports
 import os
-import logging
-from torch_sparse import coalesce
 
 # External imports
-import numpy as np
 import torch
 from torch.utils.data import Dataset, random_split
 
 # Local imports
 from datasets.graph import load_graph
+
 
 class HitGraphDataset(Dataset):
     """PyTorch dataset specification for hit graphs"""
@@ -31,6 +29,7 @@ class HitGraphDataset(Dataset):
     def __len__(self):
         return len(self.filenames)
 
+
 def get_datasets(input_dir, n_train, n_valid):
     data = HitGraphDataset(input_dir, n_train + n_valid)
     # deterministic splitting ensures all workers split the same way
@@ -38,6 +37,7 @@ def get_datasets(input_dir, n_train, n_valid):
     # Split into train and validation
     train_data, valid_data = random_split(data, [n_train, n_valid])
     return train_data, valid_data
+
 
 def collate_fn(graphs):
     """

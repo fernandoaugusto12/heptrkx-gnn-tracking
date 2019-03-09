@@ -19,18 +19,6 @@ def spBmm(listR, X):
     return ret
 
 
-# def ewiseMul(listR, t1d):
-#     ret = list()
-#     for R in listR:
-#         nnzs = R.vals.size(0)
-#         vals = torch.ones(nnzs)
-#
-#         for i, c in enumerate(R.idxs[1]):
-#             vals[i] = vals[i].clone() * t1d[0, c]
-#         ret.append(SpTensor(R.idxs, vals, R.shape))
-#     return ret
-
-
 def scaleCols(listR, sp_diag):
     ret = list()
     for R in listR:
@@ -41,6 +29,7 @@ def scaleCols(listR, sp_diag):
         ret.append(SpTensor(idxs.detach(), vals, (R.shape[0], sp_diag.shape[1])))
     return ret
 
+
 class EdgeNetwork(nn.Module):
     """
     A module which computes weights for edges of the graph.
@@ -48,10 +37,11 @@ class EdgeNetwork(nn.Module):
     and applies some fully-connected network layers with a final
     sigmoid activation.
     """
+
     def __init__(self, input_dim, hidden_dim=8, hidden_activation=nn.Tanh):
         super(EdgeNetwork, self).__init__()
         self.network = nn.Sequential(
-            nn.Linear(input_dim*2, hidden_dim),
+            nn.Linear(input_dim * 2, hidden_dim),
             hidden_activation(),
             nn.Linear(hidden_dim, 1),
             nn.Sigmoid())
@@ -68,6 +58,7 @@ class EdgeNetwork(nn.Module):
         # Apply the network to each edge
         return self.network(B).squeeze(-1)
 
+
 class NodeNetwork(nn.Module):
     """
     A module which computes new node features on the graph.
@@ -76,10 +67,11 @@ class NodeNetwork(nn.Module):
     them with the node's previous features in a fully-connected
     network to compute the new features.
     """
+
     def __init__(self, input_dim, output_dim, hidden_activation=nn.Tanh):
         super(NodeNetwork, self).__init__()
         self.network = nn.Sequential(
-            nn.Linear(input_dim*3, output_dim),
+            nn.Linear(input_dim * 3, output_dim),
             hidden_activation(),
             nn.Linear(output_dim, output_dim),
             hidden_activation())
@@ -95,8 +87,8 @@ class NodeNetwork(nn.Module):
         idxs = torch.stack((torch.arange(e.shape[1]), torch.arange(e.shape[1])))
         e_diag = SpTensor(idxs, torch.squeeze(e, 0), (e.shape[1], e.shape[1]))
 
-        Rwi =scaleCols(Ri, e_diag)
-        Rwo =scaleCols(Ro, e_diag)
+        Rwi = scaleCols(Ri, e_diag)
+        Rwo = scaleCols(Ro, e_diag)
 
         mi = spBmm(Rwi, bo)
         mo = spBmm(Rwo, bi)
@@ -109,6 +101,7 @@ class GNNSegmentClassifier(nn.Module):
     Segment classification graph neural network model.
     Consists of an input network, an edge network, and a node network.
     """
+
     def __init__(self, input_dim=2, hidden_dim=8, n_iters=3, hidden_activation=nn.Tanh):
         super(GNNSegmentClassifier, self).__init__()
         self.n_iters = n_iters
@@ -117,11 +110,12 @@ class GNNSegmentClassifier(nn.Module):
             nn.Linear(input_dim, hidden_dim),
             hidden_activation())
         # Setup the edge network
-        self.edge_network = EdgeNetwork(input_dim+hidden_dim, hidden_dim,
+        self.edge_network = EdgeNetwork(input_dim + hidden_dim, hidden_dim,
                                         hidden_activation)
         # Setup the node layers
-        self.node_network = NodeNetwork(input_dim+hidden_dim, hidden_dim,
+        self.node_network = NodeNetwork(input_dim + hidden_dim, hidden_dim,
                                         hidden_activation)
+
     # @profile
     def forward(self, inputs):
         """Apply forward pass of the model"""

@@ -8,6 +8,7 @@ import time
 # Locals
 from .base_trainer import BaseTrainer
 
+
 class HelloTrainer(BaseTrainer):
     """Hello world trainer object"""
 
@@ -16,8 +17,10 @@ class HelloTrainer(BaseTrainer):
 
     def build_model(self):
         pass
+
     def write_checkpoint(self, checkpoint_id):
         pass
+
     def write_summaries(self):
         pass
 

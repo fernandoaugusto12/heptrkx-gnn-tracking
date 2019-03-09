@@ -2,13 +2,14 @@
 Common PyTorch trainer code.
 """
 
+import logging
 # System
 import os
-import logging
 
 # Externals
 import numpy as np
 import torch
+
 
 class BaseTrainer(object):
     """
@@ -30,7 +31,7 @@ class BaseTrainer(object):
         self.logger.info(
             'Model: \n%s\nParameters: %i' %
             (self.model, sum(p.numel()
-             for p in self.model.parameters()))
+                             for p in self.model.parameters()))
         )
 
     def save_summary(self, summaries):

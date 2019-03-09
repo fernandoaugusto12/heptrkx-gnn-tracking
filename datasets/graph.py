@@ -14,12 +14,14 @@ from sparse_tensor import SpTensor
 
 Graph = namedtuple('Graph', ['X', 'spRi', 'spRo', 'y'])
 
+
 def graph_to_sparse(graph):
     Ri_rows, Ri_cols = graph.Ri.nonzero()
     Ro_rows, Ro_cols = graph.Ro.nonzero()
     return dict(X=graph.X, y=graph.y,
                 Ri_rows=Ri_rows, Ri_cols=Ri_cols,
                 Ro_rows=Ro_rows, Ro_cols=Ro_cols)
+
 
 def sparse_to_graph(X, Ri_rows, Ri_cols, Ro_rows, Ro_cols, y, dtype=np.float32):
     n_nodes, n_edges = X.shape[0], Ri_rows.shape[0]
@@ -35,18 +37,22 @@ def sparse_to_graph(X, Ri_rows, Ri_cols, Ro_rows, Ro_cols, y, dtype=np.float32):
 
     return Graph(X, spRi, spRo, y)
 
+
 def save_graph(graph, filename):
     """Write a single graph to an NPZ file archive"""
     np.savez(filename, **graph_to_sparse(graph))
+
 
 def save_graphs(graphs, filenames):
     for graph, filename in zip(graphs, filenames):
         save_graph(graph, filename)
 
+
 def load_graph(filename):
     """Reade a single graph NPZ"""
     with np.load(filename) as f:
         return sparse_to_graph(**dict(f.items()))
+
 
 def load_graphs(filenames, graph_type=Graph):
     return [load_graph(f, graph_type) for f in filenames]

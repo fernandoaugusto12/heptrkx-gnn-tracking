@@ -1,5 +1,6 @@
 from torch_sparse import transpose
 
+
 class SpTensor:
     def __init__(self, idxs, vals, shape):
         self.idxs = idxs
