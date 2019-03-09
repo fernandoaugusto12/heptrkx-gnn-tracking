@@ -5,6 +5,41 @@ message-passing graph neural networks for hit or segment classification.
 
 import torch
 import torch.nn as nn
+from torch_sparse import spmm
+from torch_sparse import spspmm
+
+from sparse_tensor import SpTensor
+
+
+def spBmm(listR, X):
+    res = list()
+    for i in range(len(listR)):
+        res.append(spmm(listR[i].idxs, listR[i].vals, listR[i].shape[0], X[i]).unsqueeze(0))
+    ret = torch.cat(res)
+    return ret
+
+
+# def ewiseMul(listR, t1d):
+#     ret = list()
+#     for R in listR:
+#         nnzs = R.vals.size(0)
+#         vals = torch.ones(nnzs)
+#
+#         for i, c in enumerate(R.idxs[1]):
+#             vals[i] = vals[i].clone() * t1d[0, c]
+#         ret.append(SpTensor(R.idxs, vals, R.shape))
+#     return ret
+
+
+def scaleCols(listR, sp_diag):
+    ret = list()
+    for R in listR:
+        R.idxs.requires_grad_(False)
+        sp_diag.idxs.requires_grad_(False)
+        (idxs, vals) = spspmm(R.idxs, R.vals, sp_diag.idxs, sp_diag.vals, R.shape[0], R.shape[1], sp_diag.shape[1])
+        # idxs = idxs.clone().detach()
+        ret.append(SpTensor(idxs.detach(), vals, (R.shape[0], sp_diag.shape[1])))
+    return ret
 
 class EdgeNetwork(nn.Module):
     """
@@ -24,8 +59,11 @@ class EdgeNetwork(nn.Module):
     # @profile
     def forward(self, X, Ri, Ro):
         # Select the features of the associated nodes
-        bo = torch.bmm(Ro.transpose(1, 2), X)
-        bi = torch.bmm(Ri.transpose(1, 2), X)
+        Ri = [ri.transpose() for ri in Ri]
+        Ro = [ro.transpose() for ro in Ro]
+        bi = spBmm(Ri, X)
+        bo = spBmm(Ro, X)
+
         B = torch.cat([bo, bi], dim=2)
         # Apply the network to each edge
         return self.network(B).squeeze(-1)
@@ -48,14 +86,23 @@ class NodeNetwork(nn.Module):
 
     # @profile
     def forward(self, X, e, Ri, Ro):
-        bo = torch.bmm(Ro.transpose(1, 2), X)
-        bi = torch.bmm(Ri.transpose(1, 2), X)
-        Rwo = Ro * e[:,None]
-        Rwi = Ri * e[:,None]
-        mi = torch.bmm(Rwi, bo)
-        mo = torch.bmm(Rwo, bi)
+        Ri_t = [ri.transpose() for ri in Ri]
+        Ro_t = [ro.transpose() for ro in Ro]
+        bi = spBmm(Ri_t, X)
+        bo = spBmm(Ro_t, X)
+
+        # Creating diag matrix from e
+        idxs = torch.stack((torch.arange(e.shape[1]), torch.arange(e.shape[1])))
+        e_diag = SpTensor(idxs, torch.squeeze(e, 0), (e.shape[1], e.shape[1]))
+
+        Rwi =scaleCols(Ri, e_diag)
+        Rwo =scaleCols(Ro, e_diag)
+
+        mi = spBmm(Rwi, bo)
+        mo = spBmm(Rwo, bi)
         M = torch.cat([mi, mo, X], dim=2)
         return self.network(M)
+
 
 class GNNSegmentClassifier(nn.Module):
     """

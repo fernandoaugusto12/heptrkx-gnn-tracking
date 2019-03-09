@@ -60,7 +60,10 @@ class GNNTrainer(BaseTrainer):
         self.lr_scheduler.step()
         # Loop over training batches
         for i, (batch_input, batch_target) in enumerate(data_loader):
-            batch_input = [a.to(self.device) for a in batch_input]
+            batch_input = [batch_input[0].to(self.device),
+                           [spRi.to(self.device) for spRi in batch_input[1]],
+                           [spRo.to(self.device) for spRo in batch_input[2]]]
+
             batch_target = batch_target.to(self.device)
             # Compute target weights on-the-fly for loss function
             batch_weights_real = batch_target * self.real_weight
@@ -94,7 +97,9 @@ class GNNTrainer(BaseTrainer):
         # Loop over batches
         for i, (batch_input, batch_target) in enumerate(data_loader):
             #self.logger.debug(' batch %i', i)
-            batch_input = [a.to(self.device) for a in batch_input]
+            batch_input = [batch_input[0].to(self.device),
+                           [spRi.to(self.device) for spRi in batch_input[1]],
+                           [spRo.to(self.device) for spRo in batch_input[2]]]
             batch_target = batch_target.to(self.device)
             batch_output = self.model(batch_input)
             batch_loss = self.loss_func(batch_output, batch_target)

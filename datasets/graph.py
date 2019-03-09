@@ -6,9 +6,13 @@ A Graph is a namedtuple of matrices X, Ri, Ro, y.
 from collections import namedtuple
 
 import numpy as np
+import torch
 
 # A Graph is a namedtuple of matrices (X, Ri, Ro, y)
-Graph = namedtuple('Graph', ['X', 'Ri', 'Ro', 'y'])
+# Graph = namedtuple('Graph', ['X', 'Ri', 'Ro', 'y'])
+from sparse_tensor import SpTensor
+
+Graph = namedtuple('Graph', ['X', 'spRi', 'spRo', 'y'])
 
 def graph_to_sparse(graph):
     Ri_rows, Ri_cols = graph.Ri.nonzero()
@@ -17,13 +21,19 @@ def graph_to_sparse(graph):
                 Ri_rows=Ri_rows, Ri_cols=Ri_cols,
                 Ro_rows=Ro_rows, Ro_cols=Ro_cols)
 
-def sparse_to_graph(X, Ri_rows, Ri_cols, Ro_rows, Ro_cols, y, dtype=np.uint8):
+def sparse_to_graph(X, Ri_rows, Ri_cols, Ro_rows, Ro_cols, y, dtype=np.float32):
     n_nodes, n_edges = X.shape[0], Ri_rows.shape[0]
-    Ri = np.zeros((n_nodes, n_edges), dtype=dtype)
-    Ro = np.zeros((n_nodes, n_edges), dtype=dtype)
-    Ri[Ri_rows, Ri_cols] = 1
-    Ro[Ro_rows, Ro_cols] = 1
-    return Graph(X, Ri, Ro, y)
+    spRi_idxs = torch.tensor([Ri_rows, Ri_cols])
+    # Ri_rows and Ri_cols have the same shape
+    spRi_vals = torch.from_numpy(np.ones((Ri_rows.shape[0],), dtype=dtype))
+    spRi = SpTensor(spRi_idxs, spRi_vals, (n_nodes, n_edges))
+
+    spRo_idxs = torch.tensor([Ro_rows, Ro_cols])
+    # Ro_rows and Ro_cols have the same shape
+    spRo_vals = torch.from_numpy(np.ones((Ro_rows.shape[0],), dtype=dtype))
+    spRo = SpTensor(spRo_idxs, spRo_vals, (n_nodes, n_edges))
+
+    return Graph(X, spRi, spRo, y)
 
 def save_graph(graph, filename):
     """Write a single graph to an NPZ file archive"""
