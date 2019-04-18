@@ -52,6 +52,7 @@ class GNNTrainer(BaseTrainer):
         # LR schedule
         self.lr_scheduler = LambdaLR(self.optimizer, lr_warmup)
 
+    # @profile
     def train_epoch(self, data_loader):
         """Train for one epoch"""
         self.model.train()

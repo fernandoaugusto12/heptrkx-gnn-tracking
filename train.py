@@ -46,7 +46,7 @@ def load_config(config_file):
     with open(config_file) as f:
         return yaml.load(f)
 
-
+# @profile
 def main():
     """Main function"""
 

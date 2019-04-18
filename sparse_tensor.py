@@ -11,5 +11,5 @@ class SpTensor:
         return SpTensor(self.idxs.to(device), self.vals.to(device), self.shape)
 
     def transpose(self):
-        (tidxs, tvals) = transpose(self.idxs, self.vals, self.shape[1], self.shape[0])
+        (tidxs, tvals) = transpose(self.idxs, self.vals, self.shape[0], self.shape[1])
         return SpTensor(tidxs, tvals, (self.shape[1], self.shape[0]))
