@@ -1,4 +1,4 @@
-output_dir: /Users/esaliya/sali/git/github/esaliya/python/heptrkx-gnn-tracking/output/med_002
+output_dir: /uscms/home/lagray/nobackup/hgcal_ai/heptrkx-gnn-tracking/output/med_002
 
 trainer:
     name: gnn
@@ -7,7 +7,7 @@ trainer:
 
 data:
     name: hitgraphs
-    input_dir: /Users/esaliya/sali/data/heptrkx/hitgraphs_med_002
+    input_dir: /uscms/home/lagray/nobackup/hgcal_ai/hgcal_ldrd/notebooks/graph_generation/single_mu
     n_train: 7
     n_valid: 1
     batch_size: 1
@@ -17,7 +17,7 @@ model:
     name: 'gnn_segment_classifier'
     input_dim: 3
     hidden_dim: 64
-    n_iters: 4
+    n_iters: 6
     loss_func: 'binary_cross_entropy'
     optimizer: 'Adam'
     learning_rate: 0.001

@@ -6,10 +6,12 @@ PyTorch specification for the hit graph dataset.
 import os
 
 # External imports
+import numpy as np
 import torch
 from torch.utils.data import Dataset, random_split
 
 # Local imports
+from sparse_tensor import SpTensor
 from datasets.graph import load_graph
 
 
@@ -19,7 +21,7 @@ class HitGraphDataset(Dataset):
     def __init__(self, input_dir, n_samples=None):
         input_dir = os.path.expandvars(input_dir)
         filenames = [os.path.join(input_dir, f) for f in os.listdir(input_dir)
-                     if f.startswith('event') and f.endswith('.npz')]
+                     if f.startswith('partGun') and f.endswith('.npz')]
         self.filenames = (
             filenames[:n_samples] if n_samples is not None else filenames)
 
@@ -49,12 +51,38 @@ def collate_fn(graphs):
     This implementation could probably be optimized further.
     """
     batch_size = len(graphs)
+    
+    n_features = graphs[0].X.shape[1]
+    n_nodes = np.array([g.X.shape[0] for g in graphs])
+    n_edges = np.array([g.y.shape[0] for g in graphs])
+    max_nodes = n_nodes.max()
+    max_edges = n_edges.max()
 
-    batch_X = torch.tensor([g.X for g in graphs])
-    batch_spRi = [g.spRi for g in graphs]
-    batch_spRo = [g.spRo for g in graphs]
-    batch_y = torch.tensor([g.y for g in graphs])
+    batch_X = np.zeros((batch_size, max_nodes, n_features), dtype=np.float32)
+    # spRi_vals = torch.from_numpy(np.ones((Ri_rows.shape[0],), dtype=dtype))
+    # spRi = SpTensor(spRi_idxs, spRi_vals, (n_nodes, n_edges))
+    
+    # spRo_idxs = torch.tensor([Ro_rows.astype(np.int64), Ro_cols.astype(np.int64)])
+    # Ro_rows and Ro_cols have the same shape
+    # spRo_vals = torch.from_numpy(np.ones((Ro_rows.shape[0],), dtype=dtype))
+    # spRo = SpTensor(spRo_idxs, spRo_vals, (n_nodes, n_edges))
+    batch_spRi = []
+    batch_spRo = []
+    batch_y = np.zeros((batch_size, max_edges), dtype=np.float32)
 
+    for i, g in enumerate(graphs):
+        batch_X[i, :n_nodes[i]] = g.X
+
+        ispRi = SpTensor(g.spRi.idxs, g.spRi.vals, (max_nodes, max_edges))
+        ispRo = SpTensor(g.spRo.idxs, g.spRo.vals, (max_nodes, max_edges))        
+        batch_spRi.append(ispRi)
+        batch_spRo.append(ispRo)
+
+        batch_y[i, :n_edges[i]] = g.y
+
+    batch_X = torch.from_numpy(batch_X)
+    batch_y = torch.from_numpy(batch_y)
+    
     batch_inputs = [batch_X, batch_spRi, batch_spRo]
     batch_target = batch_y
 

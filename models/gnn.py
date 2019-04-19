@@ -10,23 +10,46 @@ from torch_sparse import spspmm
 
 from sparse_tensor import SpTensor
 
+import scipy
+
+def to_torch_sparse(index, value, m, n):
+    return torch.sparse_coo_tensor(index.detach(), value, torch.Size([m, n]))
+
+def from_torch_sparse(A):
+    return A.indices().detach(), A.values()
+
+def to_scipy(index, value, m, n):
+    assert not index.is_cuda and not value.is_cuda
+    (row, col), data = index.detach(), value.detach()
+    return scipy.sparse.coo_matrix((data, (row, col)), (m, n))
+
+def from_scipy(A):
+    A = A.tocoo()
+    row, col, value = A.row.astype(np.int64), A.col.astype(np.int64), A.data
+    row, col, value = from_numpy(row), from_numpy(col), from_numpy(value)
+    index = torch.stack([row, col], dim=0)
+    return index, value
 
 def spBmm(listR, X):
     res = list()
     for i in range(len(listR)):
-        res.append(spmm(listR[i].idxs, listR[i].vals, listR[i].shape[0], X[i]).unsqueeze(0))
+         res.append(spmm(listR[i].idxs, listR[i].vals, listR[i].shape[0], X[i]).unsqueeze(0))
     ret = torch.cat(res)
     return ret
 
 
 def scaleCols(listR, sp_diag):
     ret = list()
-    for R in listR:
+    for i, R in enumerate(listR):
         R.idxs.requires_grad_(False)
-        sp_diag.idxs.requires_grad_(False)
-        (idxs, vals) = spspmm(R.idxs, R.vals, sp_diag.idxs, sp_diag.vals, R.shape[0], R.shape[1], sp_diag.shape[1])
+        print('scaleCols R.idxs.requires_grad_(False)')
+        sp_diag[i].idxs.requires_grad_(False)
+        print('scaleCols sp_diag[i].idxs.requires_grad_(False)')
+        print(R.idxs.is_cuda,R.vals.is_cuda,sp_diag[i].idxs.is_cuda,sp_diag[i].vals.is_cuda)
+        (idxs, vals) = spspmm(R.idxs, R.vals, sp_diag[i].idxs, sp_diag[i].vals, R.shape[0], R.shape[1], sp_diag[i].shape[1])
+        print('scaleCols spspmm')
         # idxs = idxs.clone().detach()
-        ret.append(SpTensor(idxs.detach(), vals, (R.shape[0], sp_diag.shape[1])))
+        ret.append(SpTensor(idxs.detach(), vals, (R.shape[0], sp_diag[i].shape[1])))
     return ret
 
 
@@ -80,18 +103,27 @@ class NodeNetwork(nn.Module):
     def forward(self, X, e, Ri, Ro):
         Ri_t = [ri.transpose() for ri in Ri]
         Ro_t = [ro.transpose() for ro in Ro]
+
         bi = spBmm(Ri_t, X)
         bo = spBmm(Ro_t, X)
 
         # Creating diag matrix from e
         idxs = torch.stack((torch.arange(e.shape[1]), torch.arange(e.shape[1])))
-        e_diag = SpTensor(idxs, torch.squeeze(e, 0), (e.shape[1], e.shape[1]))
+        e_diag = []
+        for i in range(len(Ri)):
+            if X.is_cuda:
+                e_diag.append(SpTensor(idxs.to('cuda'), torch.squeeze(e, 0)[i], (e.shape[1], e.shape[1])))
+            else:
+                e_diag.append(SpTensor(idxs, torch.squeeze(e, 0)[i], (e.shape[1], e.shape[1])))
 
+        print('NodeNetwork scaleCols')
         Rwi = scaleCols(Ri, e_diag)
         Rwo = scaleCols(Ro, e_diag)
+        print('NodeNetwork Rwi/Rwo')
 
         mi = spBmm(Rwi, bo)
         mo = spBmm(Rwo, bi)
+        
         M = torch.cat([mi, mo, X], dim=2)
         return self.network(M)
 

@@ -1,18 +1,18 @@
-2019-04-17 22:12:48,256 INFO Initialized rank 0
-2019-04-17 22:12:48,256 INFO Command line config: Namespace(config='configs/segclf_med.yaml', device='cpu', interactive=False, show_config=False, verbose=False)
-2019-04-17 22:12:48,256 INFO Configuration: {'output_dir': '/Users/esaliya/sali/git/github/esaliya/python/heptrkx-gnn-tracking/output/med_002', 'trainer': {'name': 'gnn', 'real_weight': 2.5, 'fake_weight': 0.625}, 'data': {'name': 'hitgraphs', 'input_dir': '/Users/esaliya/sali/data/heptrkx/hitgraphs_med_002', 'n_train': 7, 'n_valid': 1, 'batch_size': 1}, 'model': {'name': 'gnn_segment_classifier', 'input_dim': 3, 'hidden_dim': 64, 'n_iters': 4, 'loss_func': 'binary_cross_entropy', 'optimizer': 'Adam', 'learning_rate': 0.001, 'lr_scaling': 'linear', 'lr_warmup_epochs': 2}, 'training': {'n_epochs': 4}}
-2019-04-17 22:12:48,256 INFO Saving job outputs to /Users/esaliya/sali/git/github/esaliya/python/heptrkx-gnn-tracking/output/med_002
-2019-04-17 22:12:48,329 INFO Loaded 7 training samples
-2019-04-17 22:12:48,330 INFO Loaded 1 validation samples
-2019-04-17 22:12:48,336 INFO Model: 
+2019-04-18 18:17:13,028 INFO Initialized rank 0
+2019-04-18 18:17:13,029 INFO Command line config: Namespace(config='configs/cluclf_med.yaml', device='cuda', interactive=False, show_config=False, verbose=False)
+2019-04-18 18:17:13,029 INFO Configuration: {'output_dir': '/uscms/home/lagray/nobackup/hgcal_ai/heptrkx-gnn-tracking/output/med_002', 'trainer': {'name': 'gnn', 'real_weight': 2.5, 'fake_weight': 0.625}, 'data': {'name': 'hitgraphs', 'input_dir': '/uscms/home/lagray/nobackup/hgcal_ai/hgcal_ldrd/notebooks/graph_generation/single_mu', 'n_train': 800, 'n_valid': 100, 'batch_size': 10}, 'model': {'name': 'gnn_segment_classifier', 'input_dim': 5, 'hidden_dim': 64, 'n_iters': 6, 'loss_func': 'binary_cross_entropy', 'optimizer': 'Adam', 'learning_rate': 0.001, 'lr_scaling': 'linear', 'lr_warmup_epochs': 2}, 'training': {'n_epochs': 4}}
+2019-04-18 18:17:13,029 INFO Saving job outputs to /uscms/home/lagray/nobackup/hgcal_ai/heptrkx-gnn-tracking/output/med_002
+2019-04-18 18:17:13,128 INFO Loaded 800 training samples
+2019-04-18 18:17:13,129 INFO Loaded 100 validation samples
+2019-04-18 18:17:16,920 INFO Model: 
 GNNSegmentClassifier(
   (input_network): Sequential(
-    (0): Linear(in_features=3, out_features=64, bias=True)
+    (0): Linear(in_features=5, out_features=64, bias=True)
     (1): Tanh()
   )
   (edge_network): EdgeNetwork(
     (network): Sequential(
-      (0): Linear(in_features=134, out_features=64, bias=True)
+      (0): Linear(in_features=138, out_features=64, bias=True)
       (1): Tanh()
       (2): Linear(in_features=64, out_features=1, bias=True)
       (3): Sigmoid()
@@ -20,28 +20,12 @@ GNNSegmentClassifier(
   )
   (node_network): NodeNetwork(
     (network): Sequential(
-      (0): Linear(in_features=201, out_features=64, bias=True)
+      (0): Linear(in_features=207, out_features=64, bias=True)
       (1): Tanh()
       (2): Linear(in_features=64, out_features=64, bias=True)
       (3): Tanh()
     )
   )
 )
-Parameters: 26049
-2019-04-17 22:12:48,336 INFO Epoch 0
-2019-04-17 22:12:53,107 INFO   Training loss: 0.684
-2019-04-17 22:12:53,356 INFO   Validation loss: 0.597 acc: 0.685
-2019-04-17 22:12:53,360 INFO Epoch 1
-2019-04-17 22:12:57,914 INFO   Training loss: 0.653
-2019-04-17 22:12:58,154 INFO   Validation loss: 0.607 acc: 0.656
-2019-04-17 22:12:58,156 INFO Epoch 2
-2019-04-17 22:13:02,731 INFO   Training loss: 0.633
-2019-04-17 22:13:02,958 INFO   Validation loss: 0.559 acc: 0.746
-2019-04-17 22:13:02,960 INFO Epoch 3
-2019-04-17 22:13:07,519 INFO   Training loss: 0.622
-2019-04-17 22:13:07,759 INFO   Validation loss: 0.579 acc: 0.736
-2019-04-17 22:13:07,761 INFO Saving summaries to /Users/esaliya/sali/git/github/esaliya/python/heptrkx-gnn-tracking/output/med_002/summaries.npz
-2019-04-17 22:13:07,769 INFO Finished training
-2019-04-17 22:13:07,769 INFO Train samples 7 time 4.61457 s rate 1.51693 samples/s
-2019-04-17 22:13:07,770 INFO Valid samples 1 time 0.238507 s rate 4.19276 samples/s
-2019-04-17 22:13:07,770 INFO All done!
+Parameters: 26817
+2019-04-18 18:17:16,921 INFO Epoch 0

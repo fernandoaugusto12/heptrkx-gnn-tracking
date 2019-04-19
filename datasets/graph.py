@@ -14,7 +14,6 @@ from sparse_tensor import SpTensor
 
 Graph = namedtuple('Graph', ['X', 'spRi', 'spRo', 'y'])
 
-
 def graph_to_sparse(graph):
     Ri_rows, Ri_cols = graph.Ri.nonzero()
     Ro_rows, Ro_cols = graph.Ro.nonzero()
@@ -22,18 +21,20 @@ def graph_to_sparse(graph):
                 Ri_rows=Ri_rows, Ri_cols=Ri_cols,
                 Ro_rows=Ro_rows, Ro_cols=Ro_cols)
 
-
-def sparse_to_graph(X, Ri_rows, Ri_cols, Ro_rows, Ro_cols, y, dtype=np.float32):
+def sparse_to_graph(X, Ri_rows, Ri_cols, Ro_rows, Ro_cols, y, simmatched, dtype=np.float32):
     n_nodes, n_edges = X.shape[0], Ri_rows.shape[0]
-    spRi_idxs = torch.tensor([Ri_rows, Ri_cols])
+    spRi_idxs = torch.tensor([Ri_rows.astype(np.int64), Ri_cols.astype(np.int64)])
     # Ri_rows and Ri_cols have the same shape
     spRi_vals = torch.from_numpy(np.ones((Ri_rows.shape[0],), dtype=dtype))
     spRi = SpTensor(spRi_idxs, spRi_vals, (n_nodes, n_edges))
 
-    spRo_idxs = torch.tensor([Ro_rows, Ro_cols])
+    spRo_idxs = torch.tensor([Ro_rows.astype(np.int64), Ro_cols.astype(np.int64)])
     # Ro_rows and Ro_cols have the same shape
     spRo_vals = torch.from_numpy(np.ones((Ro_rows.shape[0],), dtype=dtype))
     spRo = SpTensor(spRo_idxs, spRo_vals, (n_nodes, n_edges))
+
+    if y.dtype != np.uint8:
+        y = y.astype(np.uint8)
 
     return Graph(X, spRi, spRo, y)
 

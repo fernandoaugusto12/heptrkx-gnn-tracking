@@ -32,14 +32,20 @@ class GNNTrainer(BaseTrainer):
         # Construct the model
         self.model = get_model(name=name, **model_args).to(self.device)
 
+        print('made the model')
+
         # Construct the loss function
         self.loss_func = getattr(nn.functional, loss_func)
+
+        print('made the loss')
 
         # Construct the optimizer
         if lr_scaling == 'linear':
             warmup_factor = 1.
         self.optimizer = getattr(torch.optim, optimizer)(
             self.model.parameters(), lr=learning_rate)
+
+        print('built optimizer')
 
         # LR ramp warmup schedule
         def lr_warmup(epoch, warmup_factor=warmup_factor,
@@ -52,32 +58,52 @@ class GNNTrainer(BaseTrainer):
         # LR schedule
         self.lr_scheduler = LambdaLR(self.optimizer, lr_warmup)
 
+        print('LR scheduler')
+
     # @profile
     def train_epoch(self, data_loader):
         """Train for one epoch"""
+        print('start train')
         self.model.train()
+        print('called train')
         summary = dict()
         sum_loss = 0
         start_time = time.time()
+        print('calling step')
         self.lr_scheduler.step()
+        print('called step')
         # Loop over training batches
         for i, (batch_input, batch_target) in enumerate(data_loader):
+            print('get batch inputs')
             batch_input = [batch_input[0].to(self.device),
                            [spRi.to(self.device) for spRi in batch_input[1]],
                            [spRo.to(self.device) for spRo in batch_input[2]]]
+            print('got batch inputs')
 
+            print('get batch target')
             batch_target = batch_target.to(self.device)
+            print('got batch target')
             # Compute target weights on-the-fly for loss function
             batch_weights_real = batch_target * self.real_weight
             batch_weights_fake = (1 - batch_target) * self.fake_weight
             batch_weights = batch_weights_real + batch_weights_fake
+            print('before zero grad')
             self.model.zero_grad()
+            print('after zero grad')
+            print('passing in batch')
             batch_output = self.model(batch_input)
+            print('got batch output')
+            print('calculating loss')
             batch_loss = self.loss_func(batch_output, batch_target, weight=batch_weights)
+            print('got batch loss')
+            print('before backward')
             batch_loss.backward()
+            print('backward done')
+            print('before opt.step()')
             self.optimizer.step()
             sum_loss += batch_loss.item()
             self.logger.debug('  batch %i, loss %f', i, batch_loss.item())
+            print('stepped it')
 
         summary['lr'] = self.optimizer.param_groups[0]['lr']
         summary['train_time'] = time.time() - start_time
