@@ -1,0 +1,28 @@
+output_dir: /uscms/home/lagray/nobackup/hgcal_ai/heptrkx-gnn-tracking/output/med_002
+
+trainer:
+    name: gnn
+    real_weight: 2.5   # 0.5 / 0.2
+    fake_weight: 0.625 # 0.5 / 0.8
+
+data:
+    name: hitgraphs
+    input_dir: /uscms/home/lagray/nobackup/hgcal_ai/hgcal_ldrd/notebooks/graph_generation/single_mu
+    n_train: 800
+    n_valid: 100
+    batch_size: 10
+    #n_workers: 4 # seg fault when distributed...
+
+model:
+    name: 'gnn_segment_classifier'
+    input_dim: 5
+    hidden_dim: 64
+    n_iters: 6
+    loss_func: 'binary_cross_entropy'
+    optimizer: 'Adam'
+    learning_rate: 0.001
+    lr_scaling: 'linear'
+    lr_warmup_epochs: 2
+
+training:
+    n_epochs: 4
