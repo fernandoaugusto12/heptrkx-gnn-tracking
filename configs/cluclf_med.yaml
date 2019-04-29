@@ -1,4 +1,4 @@
-output_dir: /uscms/home/lagray/nobackup/hgcal_ai/heptrkx-gnn-tracking/output/med_002
+output_dir: /home/lindsey_gray/heptrkx-gnn-tracking/output/med_002
 
 trainer:
     name: gnn
@@ -7,10 +7,10 @@ trainer:
 
 data:
     name: hitgraphs
-    input_dir: /uscms/home/lagray/nobackup/hgcal_ai/hgcal_ldrd/notebooks/graph_generation/single_mu
+    input_dir: /home/lindsey_gray/training_data/single_mu
     n_train: 800
     n_valid: 100
-    batch_size: 10
+    batch_size: 3
     #n_workers: 4 # seg fault when distributed...
 
 model:

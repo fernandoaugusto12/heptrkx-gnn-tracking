@@ -1,10 +1,10 @@
-2019-04-18 18:17:13,028 INFO Initialized rank 0
-2019-04-18 18:17:13,029 INFO Command line config: Namespace(config='configs/cluclf_med.yaml', device='cuda', interactive=False, show_config=False, verbose=False)
-2019-04-18 18:17:13,029 INFO Configuration: {'output_dir': '/uscms/home/lagray/nobackup/hgcal_ai/heptrkx-gnn-tracking/output/med_002', 'trainer': {'name': 'gnn', 'real_weight': 2.5, 'fake_weight': 0.625}, 'data': {'name': 'hitgraphs', 'input_dir': '/uscms/home/lagray/nobackup/hgcal_ai/hgcal_ldrd/notebooks/graph_generation/single_mu', 'n_train': 800, 'n_valid': 100, 'batch_size': 10}, 'model': {'name': 'gnn_segment_classifier', 'input_dim': 5, 'hidden_dim': 64, 'n_iters': 6, 'loss_func': 'binary_cross_entropy', 'optimizer': 'Adam', 'learning_rate': 0.001, 'lr_scaling': 'linear', 'lr_warmup_epochs': 2}, 'training': {'n_epochs': 4}}
-2019-04-18 18:17:13,029 INFO Saving job outputs to /uscms/home/lagray/nobackup/hgcal_ai/heptrkx-gnn-tracking/output/med_002
-2019-04-18 18:17:13,128 INFO Loaded 800 training samples
-2019-04-18 18:17:13,129 INFO Loaded 100 validation samples
-2019-04-18 18:17:16,920 INFO Model: 
+2019-04-26 13:55:32,260 INFO Initialized rank 0
+2019-04-26 13:55:32,260 INFO Command line config: Namespace(config='configs/cluclf_med.yaml', device='cuda:0', interactive=False, show_config=False, verbose=False)
+2019-04-26 13:55:32,260 INFO Configuration: {'output_dir': '/home/lindsey_gray/heptrkx-gnn-tracking/output/med_002', 'trainer': {'name': 'gnn', 'real_weight': 2.5, 'fake_weight': 0.625}, 'data': {'name': 'hitgraphs', 'input_dir': '/home/lindsey_gray/training_data/single_mu', 'n_train': 800, 'n_valid': 100, 'batch_size': 3}, 'model': {'name': 'gnn_segment_classifier', 'input_dim': 5, 'hidden_dim': 64, 'n_iters': 6, 'loss_func': 'binary_cross_entropy', 'optimizer': 'Adam', 'learning_rate': 0.001, 'lr_scaling': 'linear', 'lr_warmup_epochs': 2}, 'training': {'n_epochs': 4}}
+2019-04-26 13:55:32,260 INFO Saving job outputs to /home/lindsey_gray/heptrkx-gnn-tracking/output/med_002
+2019-04-26 13:55:35,244 INFO Loaded 800 training samples
+2019-04-26 13:55:35,244 INFO Loaded 100 validation samples
+2019-04-26 13:55:58,720 INFO Model: 
 GNNSegmentClassifier(
   (input_network): Sequential(
     (0): Linear(in_features=5, out_features=64, bias=True)
@@ -28,4 +28,4 @@ GNNSegmentClassifier(
   )
 )
 Parameters: 26817
-2019-04-18 18:17:16,921 INFO Epoch 0
+2019-04-26 13:55:58,720 INFO Epoch 0

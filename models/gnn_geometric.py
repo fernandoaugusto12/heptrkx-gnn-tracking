@@ -5,6 +5,70 @@ message-passing graph neural networks for hit or segment classification.
 
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
+from torch.nn import Sequential, Linear
+from torch_geometric.nn import NNConv
+
+class EdgeNetworkG(nn.Module):
+    def __init__(self, input_dim, hidden_dim=8, hidden_activation=nn.Tanh):
+        super(EdgeNetwork, self).__init__()
+        edgec = nn.Sequential(
+            nn.Linear(input_dim * 2, hidden_dim),
+            hidden_activation(),
+            nn.Linear(hidden_dim, 1),
+            nn.Sigmoid())
+        self.network = NNConv(input_dim * 2, hidden_dim, edgec, aggr='add')
+
+    def forward(self, data):
+        return self.network(data.x, data.edge_index, data.edge_attr)
+
+class NodeNetworkG(nn.Module):
+    def __init__(self, input_dim, output_dim, hidden_activation=nn.Tanh):
+        nodec = nn.Sequential(
+            nn.Linear(input_dim * 3, output_dim),
+            hidden_activation(),
+            nn.Linear(output_dim, output_dim),
+            hidden_activation())
+        self.network = NNConv(input_dim * 3, output_dim, nodec, aggr='add')
+
+    def forward(self, data):
+        return self.network(data.x, data.edge_index, data.edge_attr)
+
+class GNNSegmentClassifierG(nn.Module):
+    def __init__(self, input_dim=2, hidden_dim=8, n_iters=3, hidden_activation=nn.Tanh):
+        super(GNNSegmentClassifierG, self).__init__()
+        self.n_iters = n_iters
+        # Setup the input network
+        self.input_network = nn.Sequential(
+            nn.Linear(input_dim, hidden_dim),
+            hidden_activation())
+        # Setup the edge network
+        self.edge_network = EdgeNetworkG(input_dim + hidden_dim, hidden_dim,
+                                         hidden_activation)
+        # Setup the node layers
+        self.node_network = NodeNetworkG(input_dim + hidden_dim, hidden_dim,
+                                         hidden_activation)
+
+    def forward(self, data):
+        """Apply forward pass of the model"""
+        X = data.x
+        # Apply input network to get hidden representation
+        H = self.input_network(X)
+        # Shortcut connect the inputs onto the hidden representation
+        H = torch.cat([H, X], dim=-1)
+        data.x = H
+        # Loop over iterations of edge and node networks
+        for i in range(self.n_iters):
+            # Apply edge network
+            e = self.edge_network(data)
+            # Apply node network
+            H = self.node_network(data)
+            # Shortcut connect the inputs onto the hidden representation
+            H = torch.cat([H, X], dim=-1)
+            # Apply final edge network
+        return self.edge_network(H, Ri, Ro)
+        
+    
 from torch_sparse import spmm
 from torch_sparse import spspmm
 

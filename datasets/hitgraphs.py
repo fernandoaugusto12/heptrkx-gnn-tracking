@@ -72,9 +72,9 @@ def collate_fn(graphs):
 
     for i, g in enumerate(graphs):
         batch_X[i, :n_nodes[i]] = g.X
-
-        ispRi = SpTensor(g.spRi.idxs, g.spRi.vals, (max_nodes, max_edges))
-        ispRo = SpTensor(g.spRo.idxs, g.spRo.vals, (max_nodes, max_edges))        
+        
+        ispRi = SpTensor(torch.from_numpy(g.spRi[0]), torch.from_numpy(g.spRi[1]), (max_nodes, max_edges))
+        ispRo = SpTensor(torch.from_numpy(g.spRo[0]), torch.from_numpy(g.spRo[1]), (max_nodes, max_edges))
         batch_spRi.append(ispRi)
         batch_spRo.append(ispRo)
 
@@ -85,7 +85,7 @@ def collate_fn(graphs):
     
     batch_inputs = [batch_X, batch_spRi, batch_spRo]
     batch_target = batch_y
-
+    
     return batch_inputs, batch_target
 
     # Special handling of batch size 1

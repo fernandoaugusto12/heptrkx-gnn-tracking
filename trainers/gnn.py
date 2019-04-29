@@ -93,8 +93,13 @@ class GNNTrainer(BaseTrainer):
             print('passing in batch')
             batch_output = self.model(batch_input)
             print('got batch output')
+            print('batch input:',type(batch_input[0]),batch_input[0].shape,
+                 [batch_input[1][i].shape for i in range(len(batch_input[1]))])
+            print('batch output:',type(batch_output),batch_output.shape)
             print('calculating loss')
             batch_loss = self.loss_func(batch_output, batch_target, weight=batch_weights)
+            print('batch_loss.is_cuda',batch_loss.is_cuda)
+            print('batch_loss:',batch_target, batch_output)
             print('got batch loss')
             print('before backward')
             batch_loss.backward()
