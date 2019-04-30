@@ -31,7 +31,7 @@ def sparse_to_graph(X, Ri_rows, Ri_cols, Ro_rows, Ro_cols, y, simmatched, dtype=
     spRo_idxs = np.stack([Ro_rows.astype(np.int64), Ro_cols.astype(np.int64)])
     # Ro_rows and Ro_cols have the same shape
     spRo_vals = np.ones((Ro_rows.shape[0],), dtype=dtype)
-    spRo = (spRi_idxs,spRi_vals,n_nodes,n_edges)#SpTensor(spRo_idxs, spRo_vals, (n_nodes, n_edges))
+    spRo = (spRo_idxs,spRo_vals,n_nodes,n_edges)#SpTensor(spRo_idxs, spRo_vals, (n_nodes, n_edges))
 
     if y.dtype != np.uint8:
         y = y.astype(np.uint8)
