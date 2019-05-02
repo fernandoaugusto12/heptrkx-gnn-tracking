@@ -22,14 +22,14 @@ class EdgeNetworkG(nn.Module):
         self.network = NNConv(input_dim * 2, 1, self.edgec, aggr='add')
 
     def forward(self, data):
-        row,col = data.edge_index.detach()
-        bi = data.x[col]
-        bo = data.x[row]
+        row,col = data.edge_index
+        #bi = data.x[col]
+        #bo = data.x[row]
         # the original network constantly updates the edge network
         # the neural networks used are actually edge attributes
         #data.edge_attr = torch.cat([bo,bi],dim=-1)
         #print('EdgeNetworkG forward:',data.edge_attr.shape)
-        B = torch.cat([bi,bo],dim=-1).detach()
+        B = torch.cat([data.x[col],data.x[row]],dim=-1).detach()
         return self.edgec(B) #self.network(data.x, data.edge_index, data.edge_attr)
 
 class NodeNetworkG(nn.Module):
@@ -43,17 +43,13 @@ class NodeNetworkG(nn.Module):
         self.network = NNConv(input_dim * 3, output_dim, self.nodec, aggr='add')
 
     def forward(self, data):
-        row,col = data.edge_index.detach()
-        e = data.edge_attr.detach()
-        bi = data.x[col]*e
-        bo = data.x[row]*e
+        row,col = data.edge_index
         mi = data.x.new_zeros(data.x.shape)
         mo = data.x.new_zeros(data.x.shape)
-
-        mi = scatter_add(bo,col,dim=0,out=mi)
-        mo = scatter_add(bi,row,dim=0,out=mo)
+        mi = scatter_add(data.edge_attr*data.x[row],col,dim=0,out=mi)
+        mo = scatter_add(data.edge_attr*data.x[col],row,dim=0,out=mo)
         
-        M = torch.cat([mi,mo,data.x],dim=-1).detach()
+        M = torch.cat([mi,mo,data.x],dim=-1)
         
         return self.nodec(M)
 
