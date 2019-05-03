@@ -1,3 +1,4 @@
+import os
 import os.path as osp
 import math
 
@@ -15,7 +16,7 @@ from torch_geometric.nn import (NNConv, graclus, max_pool, max_pool_x,
 directed = False
 sig_weight = 1.0
 bkg_weight = 0.15
-batch_size = 16
+batch_size = 32
 
 path = osp.join(osp.dirname(osp.realpath(__file__)), '..', 'training_data', 'single_mu')
 full_dataset = HitGraphDatasetG(path, directed=directed)
@@ -36,15 +37,25 @@ num_features = d.num_features
 num_classes = d[0].y.max().item() + 1 if d[0].y.dim() == 1 else d[0].y.size(1)
 
 from models.gnn_geometric import GNNSegmentClassifierG as Net
+from EdgeNet import EdgeNet
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-model = Net(input_dim=5,hidden_dim=64,n_iters=6).to(device)
+model = EdgeNet(input_dim=5,hidden_dim=64,n_iters=6).to(device)
 optimizer = torch.optim.Adam(model.parameters(), lr = 0.01)
+
+model_name = type(model).__name__
+model_params = sum(p.numel() for p in model.parameters())
+import hashlib
+model_cfghash = hashlib.blake2b(repr(model).encode()).hexdigest()[:10]
+model_user = os.environ['USER']
+
+model_fname = '%s_%d_%s_%s'%(model_name,model_params,
+                             model_cfghash, model_user)
 
 def train(epoch):
     model.train()
 
-    if epoch == 30:
+    if epoch == 10:
         for param_group in optimizer.param_groups:
             param_group['lr'] = 0.001
     
@@ -66,11 +77,14 @@ def train(epoch):
         sum_loss += batch_loss.item()
         optimizer.step()
 
+    modpath = osp.join(os.getcwd(),model_fname+'.%d.ptm'%epoch)
+    torch.save(model,modpath)
+    
     return sum_loss/(i+1)
 
 
 @torch.no_grad()
-def test():
+def test(loader=test_loader):
     model.eval()
     correct = 0
 
@@ -83,7 +97,7 @@ def test():
     sum_true = 0
     sum_false = 0
     sum_total = 0
-    for i,data in enumerate(test_loader):
+    for i,data in enumerate(loader):
         data = data.to(device)
         batch_target = data.y
         batch_output = model(data)
@@ -109,10 +123,21 @@ def test():
           'sfp', sum_falsepos,
           'sfn', sum_falseneg,
           'stot', sum_total)
-    return sum_correct / sum_total, sum_truepos/sum_true, sum_falsepos / sum_false, sum_falseneg / sum_true, sum_truepos/(sum_truepos+sum_falsepos)
+    return sum_correct / sum_total, sum_truepos/sum_true, sum_falsepos / sum_false, sum_falseneg / sum_true, sum_truepos/(sum_truepos+sum_falsepos + 1e-6)
 
+print('Model: \n%s\nParameters: %i' %
+            (model, sum(p.numel()
+                             for p in model.parameters())))
 
-for epoch in range(1, 60):
+for epoch in range(1, 20):
     epoch_loss = train(epoch)
     test_acc, test_eff, test_fp, test_fn, test_pur = test()
     print('Epoch: {:02d}, Epoch Loss: {:.4f}, Eff.: {:.4f}, FalsePos: {:.4f}, FalseNeg: {:.4f}, Purity: {:,.4f}'.format(epoch, epoch_loss, test_eff, test_fp, test_fn, test_pur))
+
+valid_acc, valid_eff, valid_fp, valid_fn, valid_pur = test(valid_loader)
+print('Validation: Eff.: {:.4f}, FalsePos: {:.4f}, FalseNeg: {:.4f}, Purity: {:,.4f}'.format(valid_eff, valid_fp,
+                                                                                             valid_fn, valid_pur))
+
+modpath = osp.join(os.getcwd(),model_fname+'.final.ptm')
+print('final model saved to:',modpath)
+torch.save(model,modpath)

@@ -10,6 +10,7 @@ import os.path as osp
 # External imports
 import numpy as np
 import torch
+from tqdm import tqdm
 from torch.utils.data import Dataset, random_split
 from torch_geometric.utils import is_undirected, to_undirected
 from torch_geometric.data import Dataset as DatasetG
@@ -55,7 +56,7 @@ class HitGraphDatasetG(DatasetG):
     def process(self):
         #convert the npz into pytorch tensors and save them
         path = self.processed_dir
-        for idx,raw_path in enumerate(self.raw_paths):
+        for idx,raw_path in enumerate(tqdm(self.raw_paths)):
             g = load_graph(raw_path)
 
             Ro = g.spRo[0].T.astype(np.int64)
