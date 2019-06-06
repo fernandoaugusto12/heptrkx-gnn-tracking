@@ -20,7 +20,7 @@ from EdgeNet import EdgeNet
 
 from heptrx_nnconv import test
 
-batch_size = 1
+batch_size = 32
 hidden_dim = 64
 n_iters = 6
 
@@ -55,29 +55,30 @@ def main(args):
     
     model.load_state_dict(torch.load(model_fname))
 
-    #test_loss, test_acc, test_eff, test_fp, test_fn, test_pur = test(model, test_loader, test_samples)
-    #print('Testing: Loss: {:.4f}, Eff.: {:.4f}, FalsePos: {:.4f}, FalseNeg: {:.4f}, Purity: {:,.4f}'.format(test_loss, test_eff,
-    #                                                                                                        test_fp, test_fn, test_pur))
+    test_loss, test_acc, test_eff, test_fp, test_fn, test_pur = test(model, test_loader, test_samples)
+    print('Testing: Loss: {:.4f}, Eff.: {:.4f}, FalsePos: {:.4f}, FalseNeg: {:.4f}, Purity: {:,.4f}'.format(test_loss, test_eff,
+                                                                                                            test_fp, test_fn, test_pur))
 
 
-    t = tqdm.tqdm(enumerate(test_loader),total=test_samples/batch_size)
-    for i,data in t:
-        data = data.to(device)
-        batch_target = data.y
-        batch_output = model(data)
-        X = data.x
-        row,col = data.edge_index
-        print(X.shape)
-        print(X)
-        print(row.shape)
-        print(row)
-        print(col.shape)
-        print(col)
-        print(batch_target.shape)
-        print(batch_target)
-        print(batch_output.shape)
-        print(batch_output)
-        break
+    # plotting:
+    #t = tqdm.tqdm(enumerate(test_loader),total=test_samples/batch_size)
+    #for i,data in t:
+    #    data = data.to(device)
+    #    batch_target = data.y
+    #    batch_output = model(data)
+    #    X = data.x
+    #    row,col = data.edge_index
+    #    print(X.shape)
+    #    print(X)
+    #    print(row.shape)
+    #    print(row)
+    #    print(col.shape)
+    #    print(col)
+    #    print(batch_target.shape)
+    #    print(batch_target)
+    #    print(batch_output.shape)
+    #    print(batch_output)
+    #    break
 
     
 if __name__ == "__main__":
