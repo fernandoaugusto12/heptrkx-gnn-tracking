@@ -137,6 +137,7 @@ def main(args):
 
     model = EdgeNet(input_dim=num_features,hidden_dim=hidden_dim,n_iters=n_iters).to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr = lr)
+    model_fname = get_model_fname(model)
     
     print('Model: \n%s\nParameters: %i' %
           (model, sum(p.numel()
