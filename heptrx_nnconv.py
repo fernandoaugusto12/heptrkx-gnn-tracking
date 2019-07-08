@@ -21,7 +21,7 @@ batch_size = 32
 n_epochs = 20
 lr = 0.01
 hidden_dim = 64
-n_iter = 6
+n_iters = 6
 
 from models.gnn_geometric import GNNSegmentClassifierG as Net
 from EdgeNet import EdgeNet
