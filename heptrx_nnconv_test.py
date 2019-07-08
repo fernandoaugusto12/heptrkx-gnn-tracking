@@ -20,6 +20,12 @@ from EdgeNet import EdgeNet
 
 from heptrx_nnconv import test
 
+from datasets.graph import draw_sample
+
+import awkward
+import matplotlib.pyplot as plt
+import scipy.stats as stats
+
 batch_size = 32
 hidden_dim = 64
 n_iters = 6
@@ -61,24 +67,71 @@ def main(args):
 
 
     # plotting:
-    #t = tqdm.tqdm(enumerate(test_loader),total=test_samples/batch_size)
-    #for i,data in t:
-    #    data = data.to(device)
-    #    batch_target = data.y
-    #    batch_output = model(data)
-    #    X = data.x
-    #    row,col = data.edge_index
-    #    print(X.shape)
-    #    print(X)
-    #    print(row.shape)
-    #    print(row)
-    #    print(col.shape)
-    #    print(col)
-    #    print(batch_target.shape)
-    #    print(batch_target)
-    #    print(batch_output.shape)
-    #    print(batch_output)
-    #    break
+    figs = []
+    t = tqdm.tqdm(enumerate(test_loader),total=test_samples/batch_size)
+    out = []
+    y = []
+    x = []
+    edge_index = []
+    simmatched = []
+    for i,data in t:
+        x.append(data.x.cpu().detach().numpy())
+        y.append(data.y.cpu().detach().numpy())
+        edge_index.append(data.edge_index.cpu().detach().numpy())
+        simmatched.append(data.simmatched.cpu().detach().numpy())
+        data = data.to(device)
+
+    out = awkward.fromiter(out)
+    x = awkward.fromiter(x)
+    y = awkward.fromiter(y)
+    simmatched = awkward.fromiter(simmatched)
+    edge_index = awkward.fromiter(edge_index)
+
+    predicted_edge = (out > 0.5)
+    truth_edge = (y > 0.5)
+    node_energy = x[:,:,4]
+    node_layer = x[:,:,2]
+
+    predicted_connected_node_indices = awkward.JaggedArray.concatenate([edge_index[:,0][predicted_edge], edge_index[:,1][predicted_edge]], axis=1)
+    predicted_connected_node_indices = awkward.fromiter(map(np.unique, predicted_connected_node_indices))
+    predicted_energy_sum = node_energy[predicted_connected_node_indices].sum()
+    truth_connected_node_indices = awkward.JaggedArray.concatenate([edge_index[:,0][truth_edge],edge_index[:,1][truth_edge]], axis=1)
+    truth_connected_node_indices = awkward.fromiter(map(np.unique, truth_connected_node_indices))
+    truth_energy_sum = node_energy[truth_connected_node_indices].sum()
+    
+    nonzeromask = (truth_energy_sum !=0.0)
+    energy_captured_ratio = predicted_energy_sum[nonzeromask]/truth_energy_sum[nonzeromask]
+    
+    fig,axes = plt.subplots(figsize=(12, 7))
+    _, bins,_ = axes.hist(energy_captured_ratio, bins=100)
+    plt.title("Ratio of energy sum for predicted hits/truth (preprocessed) hits")
+    plt.ylabel("events (pos+neg)")
+    plt.xlabel("Ratio")
+    cut = energy_captured_ratio[(energy_captured_ratio>0.975) & (energy_captured_ratio < 1.025)] #NB: restricted fit
+    (mu, sigma) = stats.norm.fit(cut)
+    c_paras = stats.crystalball.fit(cut)
+    lnspc = np.linspace(bins[0], bins[-1], len(bins))
+    pdf_g = stats.norm.pdf(lnspc, mu, sigma)
+    pdf_c = stats.crystalball.pdf(lnspc, *c_paras)
+    pdf_g = pdf_g / pdf_g.sum() * len(energy_captured_ratio)
+    pdf_c = pdf_c / pdf_c.sum() * len(energy_captured_ratio)
+    plt.plot(lnspc, pdf_g, label="Norm, restricted fit")
+    plt.plot(lnspc, pdf_c, label="Crystalball, restricted fit")
+    plt.legend(loc='upper left')
+    figs.append(fig)
+
+
+    # visualisation
+    idxs = [0]
+    for idx in idxs:
+        fig = draw_sample(x[idx].regular(), edge_index[idx].regular()[0], edge_index[idx].regular()[1], y[idx], out[idx], sim_list=simmatched[idx])
+        figs.append(fig)
+    
+    import matplotlib.backends.backend_pdf
+    pdf = matplotlib.backends.backend_pdf.PdfPages("test_plots.pdf")
+    for fig in figs: 
+        pdf.savefig(fig)
+    pdf.close()
 
     
 if __name__ == "__main__":
