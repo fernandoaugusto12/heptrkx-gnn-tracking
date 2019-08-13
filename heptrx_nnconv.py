@@ -16,12 +16,13 @@ import tqdm
 import argparse
 directed = False
 sig_weight = 1.0
-bkg_weight = 0.15
+bkg_weight = 0.1
 batch_size = 32
-n_epochs = 20
+n_epochs = 1000
+patience = 10
 lr = 0.01
-hidden_dim = 64
-n_iters = 6
+hidden_dim = 8
+n_iters = 2
 
 from models.gnn_geometric import GNNSegmentClassifierG as Net
 from EdgeNet import EdgeNet
@@ -116,7 +117,8 @@ def test(model,loader,total):
 
 def main(args):    
 
-    path = osp.join(osp.dirname(osp.realpath(__file__)), '..', 'training_data', 'single_mu')
+    #path = osp.join(osp.dirname(osp.realpath(__file__)), '..', 'training_data', 'single_mu')
+    path = '/data/jduarte1/train_1_hitgraphs/'
     full_dataset = HitGraphDatasetG(path, directed=directed)
     fulllen = len(full_dataset)
     tv_frac = 0.10
@@ -147,6 +149,7 @@ def main(args):
     print('Training with %s samples'%train_samples)
     print('Validating with %s samples'%valid_samples)
 
+    stale_epochs = 0
     for epoch in range(0, n_epochs):
         epoch_loss = train(model, optimizer, epoch, train_loader, train_samples)
         valid_loss, valid_acc, valid_eff, valid_fp, valid_fn, valid_pur = test(model, valid_loader, valid_samples)
@@ -162,6 +165,13 @@ def main(args):
             modpath = osp.join(os.getcwd(),model_fname+'.best.pth')
             print('New best model saved to:',modpath)
             torch.save(model.state_dict(),modpath)
+            stale_epochs = 0
+        else:
+            print('Stale epoch')
+            stale_epochs += 1
+        if stale_epochs >= patience: 
+            print('Early stopping after %i stale epochs'%patience)
+            break
         
     modpath = osp.join(os.getcwd(),model_fname+'.final.pth')
     print('Final model saved to:',modpath)

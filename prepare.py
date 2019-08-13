@@ -74,8 +74,20 @@ def select_segments(hits1, hits2, phi_slope_max, z0_max):
 
 def construct_graph(hits, layer_pairs,
                     phi_slope_max, z0_max,
-                    feature_names, feature_scale):
+                    feature_names, feature_scale,
+                    max_tracks=None,
+                    no_missing_hits=False):
     """Construct one graph (e.g. from one event)"""
+
+    if no_missing_hits:
+        hits = (hits.groupby(['particle_id'])
+                .filter(lambda x: len(x.layer.unique()) == 10))
+    # Max tracks selection
+    if max_tracks is not None:           
+        particle_keys = hits['particle_id'].drop_duplicates().values
+        np.random.shuffle(particle_keys)
+        sample_keys = particle_keys[0:max_tracks]
+        hits = hits[hits['particle_id'].isin(sample_keys)]
 
     # Loop over layer pairs and construct segments
     layer_groups = hits.groupby('layer')
@@ -99,8 +111,8 @@ def construct_graph(hits, layer_pairs,
     n_hits = hits.shape[0]
     n_edges = segments.shape[0]
     X = (hits[feature_names].values / feature_scale).astype(np.float32)
-    Ri = np.zeros((n_hits, n_edges), dtype=np.uint8)
-    Ro = np.zeros((n_hits, n_edges), dtype=np.uint8)
+    spRi = np.zeros((n_hits, n_edges), dtype=np.uint8)
+    spRo = np.zeros((n_hits, n_edges), dtype=np.uint8)
     y = np.zeros(n_edges, dtype=np.float32)
 
     # We have the segments' hits given by dataframe label,
@@ -113,17 +125,17 @@ def construct_graph(hits, layer_pairs,
     # Now we can fill the association matrices.
     # Note that Ri maps hits onto their incoming edges,
     # which are actually segment endings.
-    Ri[seg_end, np.arange(n_edges)] = 1
-    Ro[seg_start, np.arange(n_edges)] = 1
+    spRi[seg_end, np.arange(n_edges)] = 1
+    spRo[seg_start, np.arange(n_edges)] = 1
     # Fill the segment labels
     pid1 = hits.particle_id.loc[segments.index_1].values
     pid2 = hits.particle_id.loc[segments.index_2].values
     y[:] = (pid1 == pid2)
     # Return a tuple of the results
-    return Graph(X, Ri, Ro, y)
+    return Graph(X, spRi, spRo, y)
 
 
-def select_hits(hits, truth, particles, pt_min=0):
+def select_hits(hits, truth, particles, pt_min=0, no_missing_hits=False):
     # Barrel volume and layer ids
     vlids = [(8, 2), (8, 4), (8, 6), (8, 8),
              (13, 2), (13, 4), (13, 6), (13, 8),
@@ -147,6 +159,10 @@ def select_hits(hits, truth, particles, pt_min=0):
     hits = (hits[['hit_id', 'z', 'layer']]
             .assign(r=r, phi=phi)
             .merge(truth[['hit_id', 'particle_id']], on='hit_id'))
+    if no_missing_hits:
+        # Filter tracks that hit every layer 
+        hits = (hits.groupby(['particle_id'])
+                .filter(lambda x: len(x.layer.unique()) == n_det_layers))
     # Remove duplicate hits
     hits = hits.loc[
         hits.groupby(['particle_id', 'layer'], as_index=False).r.idxmin()
@@ -175,7 +191,7 @@ def split_detector_sections(hits, phi_edges, eta_edges):
 
 
 def process_event(prefix, output_dir, pt_min, n_eta_sections, n_phi_sections,
-                  eta_range, phi_range, phi_slope_max, z0_max):
+                  eta_range, phi_range, phi_slope_max, z0_max, n_tracks, no_missing_hits):
     # Load the data
     evtid = int(prefix[-9:])
     logging.info('Event %i, loading data' % evtid)
@@ -184,7 +200,7 @@ def process_event(prefix, output_dir, pt_min, n_eta_sections, n_phi_sections,
 
     # Apply hit selection
     logging.info('Event %i, selecting hits' % evtid)
-    hits = select_hits(hits, truth, particles, pt_min=pt_min).assign(evtid=evtid)
+    hits = select_hits(hits, truth, particles, pt_min=pt_min, no_missing_hits=no_missing_hits).assign(evtid=evtid)
 
     # Divide detector into sections
     # phi_range = (-np.pi, np.pi)
@@ -206,7 +222,9 @@ def process_event(prefix, output_dir, pt_min, n_eta_sections, n_phi_sections,
     graphs = [construct_graph(section_hits, layer_pairs=layer_pairs,
                               phi_slope_max=phi_slope_max, z0_max=z0_max,
                               feature_names=feature_names,
-                              feature_scale=feature_scale)
+                              feature_scale=feature_scale,
+                              max_tracks=n_tracks,
+                              no_missing_hits=no_missing_hits)
               for section_hits in hits_sections]
 
     # Write these graphs to the output directory

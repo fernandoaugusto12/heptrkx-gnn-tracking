@@ -26,9 +26,9 @@ import awkward
 import matplotlib.pyplot as plt
 import scipy.stats as stats
 
-batch_size = 32
-hidden_dim = 64
-n_iters = 6
+batch_size = 1
+hidden_dim = 8
+n_iters = 1
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print('using device %s'%device)
@@ -36,7 +36,8 @@ print('using device %s'%device)
 def main(args):
     
     directed = False
-    path = osp.join(osp.dirname(osp.realpath(__file__)), '..', 'training_data', 'single_mu')
+    #path = osp.join(osp.dirname(osp.realpath(__file__)), '..', 'training_data', 'single_mu')
+    path = '/data/jduarte1/train_1_hitgraphs/'
     full_dataset = HitGraphDatasetG(path, directed=directed)
     fulllen = len(full_dataset)
     tv_frac = 0.10
@@ -73,25 +74,28 @@ def main(args):
     y = []
     x = []
     edge_index = []
-    simmatched = []
+    #simmatched = []
     for i,data in t:
         x.append(data.x.cpu().detach().numpy())
         y.append(data.y.cpu().detach().numpy())
         edge_index.append(data.edge_index.cpu().detach().numpy())
-        simmatched.append(data.simmatched.cpu().detach().numpy())
+        #simmatched.append(data.simmatched.cpu().detach().numpy())
         data = data.to(device)
+        out.append(model(data).cpu().detach().numpy())
+    print(len(out))
+    print([o.shape for o in out])
 
     out = awkward.fromiter(out)
     x = awkward.fromiter(x)
     y = awkward.fromiter(y)
-    simmatched = awkward.fromiter(simmatched)
+    #simmatched = awkward.fromiter(simmatched)
     edge_index = awkward.fromiter(edge_index)
 
     predicted_edge = (out > 0.5)
     truth_edge = (y > 0.5)
+    '''
     node_energy = x[:,:,4]
     node_layer = x[:,:,2]
-
     predicted_connected_node_indices = awkward.JaggedArray.concatenate([edge_index[:,0][predicted_edge], edge_index[:,1][predicted_edge]], axis=1)
     predicted_connected_node_indices = awkward.fromiter(map(np.unique, predicted_connected_node_indices))
     predicted_energy_sum = node_energy[predicted_connected_node_indices].sum()
@@ -119,12 +123,13 @@ def main(args):
     plt.plot(lnspc, pdf_c, label="Crystalball, restricted fit")
     plt.legend(loc='upper left')
     figs.append(fig)
-
+    '''
 
     # visualisation
     idxs = [0]
     for idx in idxs:
-        fig = draw_sample(x[idx].regular(), edge_index[idx].regular()[0], edge_index[idx].regular()[1], y[idx], out[idx], sim_list=simmatched[idx])
+        print(out[idx])
+        fig = draw_sample(x[idx].regular(), edge_index[idx].regular()[0], edge_index[idx].regular()[1], y[idx], out[idx])#, sim_list=simmatched[idx])
         figs.append(fig)
     
     import matplotlib.backends.backend_pdf

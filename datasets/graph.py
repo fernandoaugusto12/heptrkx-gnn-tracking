@@ -14,14 +14,21 @@ from sparse_tensor import SpTensor
 
 Graph = namedtuple('Graph', ['X', 'spRi', 'spRo', 'y'])
 
-def graph_to_sparse(graph):
-    Ri_rows, Ri_cols = graph.Ri.nonzero()
-    Ro_rows, Ro_cols = graph.Ro.nonzero()
-    return dict(X=graph.X, y=graph.y,
-                Ri_rows=Ri_rows, Ri_cols=Ri_cols,
-                Ro_rows=Ro_rows, Ro_cols=Ro_cols)
+SparseGraph = namedtuple('SparseGraph',
+        ['X', 'Ri_rows', 'Ri_cols', 'Ro_rows', 'Ro_cols', 'y'])
 
-def sparse_to_graph(X, Ri_rows, Ri_cols, Ro_rows, Ro_cols, y, simmatched, dtype=np.float32):
+
+def make_sparse_graph(X, Ri, Ro, y):
+    Ri_rows, Ri_cols = Ri.nonzero()
+    Ro_rows, Ro_cols = Ro.nonzero()
+    return SparseGraph(X, Ri_rows, Ri_cols, Ro_rows, Ro_cols, y)
+
+def graph_to_sparse(graph):
+    Ri_rows, Ri_cols = graph.spRi.nonzero()
+    Ro_rows, Ro_cols = graph.spRo.nonzero()
+    return SparseGraph(graph.X, Ri_rows, Ri_cols, Ro_rows, Ro_cols, graph.y)
+
+def sparse_to_graph(X, Ri_rows, Ri_cols, Ro_rows, Ro_cols, y, dtype=np.float32):
     n_nodes, n_edges = X.shape[0], Ri_rows.shape[0]
     spRi_idxs = np.stack([Ri_rows.astype(np.int64), Ri_cols.astype(np.int64)])
     # Ri_rows and Ri_cols have the same shape
@@ -41,7 +48,7 @@ def sparse_to_graph(X, Ri_rows, Ri_cols, Ro_rows, Ro_cols, y, simmatched, dtype=
 
 def save_graph(graph, filename):
     """Write a single graph to an NPZ file archive"""
-    np.savez(filename, **graph_to_sparse(graph))
+    np.savez(filename, **graph_to_sparse(graph)._asdict())
 
 
 def save_graphs(graphs, filenames):
@@ -69,16 +76,17 @@ def draw_sample(X, Ri, Ro, y, out,
     feats_o = X[Ro]
     feats_i = X[Ri]    
     # Prepare the figure
+    import matplotlib.pyplot as plt
     fig, (ax0,ax1) = plt.subplots(1, 2, figsize=(20,12))
     cmap = plt.get_cmap(cmap)
     
     if sim_list is None:    
-        # Draw the hits (layer, x, y)
-        ax0.scatter(X[:,0], X[:,2], c='k')
-        ax1.scatter(X[:,1], X[:,2], c='k')
+        # Draw the hits (r, phi, z)
+        ax0.scatter(X[:,0], X[:,1], c='k')
+        ax1.scatter(X[:,0], X[:,2], c='k')
     else:        
-        ax0.scatter(X[:,0], X[:,2], c='k')
-        ax1.scatter(X[:,1], X[:,2], c='k')
+        ax0.scatter(X[:,0], X[:,1], c='k')
+        ax1.scatter(X[:,0], X[:,2], c='k')
         ax0.scatter(X[sim_list,0], X[sim_list,2], c='b')
         ax1.scatter(X[sim_list,1], X[sim_list,2], c='b')
     
@@ -90,25 +98,25 @@ def draw_sample(X, Ri, Ro, y, out,
         else:
             seg_args = dict(c=cmap(float(y[j])))
         ax0.plot([feats_o[j,0], feats_i[j,0]],
-                 [feats_o[j,2], feats_i[j,2]], '-', **seg_args)
-        ax1.plot([feats_o[j,1], feats_i[j,1]],
+                 [feats_o[j,1], feats_i[j,1]], '-', **seg_args)
+        ax1.plot([feats_o[j,0], feats_i[j,0]],
                  [feats_o[j,2], feats_i[j,2]], '-', **seg_args)
         
      
     if out is not None:
         for j in range(out.shape[0]):
-            if out[j]<0.5 : continue
-            seg_args = dict(c='r')        
+            #if out[j]<0.5 : continue
+            seg_args = dict(c='r',alpha=out[j])        
             ax0.plot([feats_o[j,0], feats_i[j,0]],
-                     [feats_o[j,2], feats_i[j,2]], '-', **seg_args)
-            ax1.plot([feats_o[j,1], feats_i[j,1]],
+                     [feats_o[j,1], feats_i[j,1]], '-', **seg_args)
+            ax1.plot([feats_o[j,0], feats_i[j,0]],
                      [feats_o[j,2], feats_i[j,2]], '-', **seg_args)
         
         
     # Adjust axes
-    ax0.set_xlabel('$x$ [cm]')
-    ax1.set_xlabel('$y$ [cm]')
-    ax0.set_ylabel('$layer$ [arb]')
-    ax1.set_ylabel('$layer$ [arb]')
+    ax0.set_xlabel('$r$ [m]')
+    ax1.set_xlabel('$r$ [m]')
+    ax0.set_ylabel('$\phi$ [pi/8]')
+    ax1.set_ylabel('$z$ [m]')
     plt.tight_layout()
     return fig;
