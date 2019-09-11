@@ -9,15 +9,28 @@ The main python scripts for running:
 - *[prepare.py](prepare.py)*: the data preparation script which reads
 TrackML data files, cleans and reduces the data, and writes hit graphs to
 the filesystem.
-- *[train.py](train.py)*: the main training script which is steered by
-configuration file and loads the data, model, and trainer, and invokes
-the trainer to train the model.
+- *[heptrx_nnconv.py](heptrx_nnconv.py)*: the main training script
+- *[heptrx_nnconv_test.py](heptrx_nnconv_test.py)*: the main testing script
 
-Other stuff:
-- In the scripts directory are SLURM batch scripts for running the jobs
-on Cori at NERSC.
-- The GNN model code lives in [models/gnn.py](models/gnn.py).
-- The dataset code for reading the prepared hit graphs lives in
-[datasets/hitgraphs.py](datasets/hitgraphs.py).
-- The main trainer code for the GNN segment classifier lives in
-[trainers/gnn.py](trainers/gnn.py).
+## Instructions
+
+### Setup
+```bash
+source setup.sh
+```
+
+### Prepare files
+Note to change input and output data locations. Input data is available here: https://www.kaggle.com/c/trackml-particle-identification/data or on `correlator2.fnal.gov`. This step converts input data into graph data.
+```bash
+python prepare.py configs/prep_small.yaml
+```
+
+### Train an EdgeNet model
+```bash
+python heptrx_nnconv.py
+```
+
+### Evaluate a trained EdgeNet model
+```bash
+python heptrx_nnconv_test.py [model.pth]
+```
